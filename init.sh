@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-ln -sf vim ~/.vim
-ln -sf vimrc ~/.vimrc
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+ln -sf "$SCRIPT_DIR/vim" ~/.vim
+ln -sf "$SCRIPT_DIR/vimrc" ~/.vimrc
