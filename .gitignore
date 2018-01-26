@@ -1,0 +1,11 @@
+# Lots of junk goes in here.
+/vim/dein/
+
+# Ignore any file with LOCAL in the name (good for per-machine vars/functions)
+*LOCAL*
+
+# Ignore vim undo history
+/vim/.undo
+/vim/.backup
+/vim/.swap
+
