@@ -1,0 +1,50 @@
+source ~/.vimrc
+
+nnoremap gd :action GotoImplementation<CR>
+nnoremap gD :action GotoDeclaration<CR>
+nnoremap gf :action GotoTypeDeclaration<CR>
+
+nnoremap <Leader>hr :action Vcs.RollbackChangedLines<CR>
+" do annotate action twice because of relative numbering weirdness with ideavim
+nnoremap <Leader>ha :action Annotate<CR>:action Annotate<CR>
+
+nnoremap ]c :action VcsShowNextChangeMarker<CR>
+nnoremap [c :action VcsShowPrevChangeMarker<CR>
+
+nnoremap <Leader>/ :action FindInPath<cr>
+
+nnoremap <Leader>t :action GotoFile<cr>
+nnoremap <Leader>i :action SplitHorizontally<cr>:action GotoFile
+nnoremap <Leader>v :action SplitVertically<cr>:action GotoFile
+nnoremap <Leader>e :action GotoFile<cr>
+nnoremap <Leader>b :action RecentFiles<cr>
+
+nnoremap <Leader>n :action FindUsages<cr>
+nnoremap <Leader>* :action FindUsages<cr>
+nnoremap <C-S-Tab> :action PreviousTab<cr>
+nnoremap <C-Tab> :action NextTab<cr>
+
+nnoremap <Leader>lb :action ToggleLineBreakpoint<cr>
+
+nnoremap <M-1> :action Go To Tab #1<cr>
+nnoremap <M-2> :action Go To Tab #2<cr>
+nnoremap <M-3> :action Go To Tab #3<cr>
+nnoremap <M-4> :action Go To Tab #4<cr>
+nnoremap <M-5> :action Go To Tab #5<cr>
+nnoremap <M-6> :action Go To Tab #6<cr>
+nnoremap <M-7> :action Go To Tab #7<cr>
+nnoremap <M-8> :action Go To Tab #8<cr>
+nnoremap <M-9> :action Go To Tab #9<cr>
+
+nnoremap <Leader>f :action SelectIn<cr><cr>
+
+" mimic behavior of macvim for copy/paste, which escapes from visual mode after Cmd+C/Cmd+V
+vnoremap <M-C> "*y
+nnoremap <M-V> "*p
+vnoremap <M-V> "*p
+inoremap <M-V> <C-C>"*pa
+
+nnoremap <M-E> :action ActivateProjectToolWindow<cr>
+nnoremap <Leader><M-E> :action ActivateProjectToolWindow<cr>
+
+set surround

@@ -1,0 +1,38 @@
+[user]
+	name = Ryan Koval
+	email = ryan@ryankoval.com
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	pager = less -+F -c
+[push]
+	default = current
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	branchcleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+[mergetool]
+	keepBackup = false
+	prompt = false
+[rebase]
+	autosquash = true
+[merge]
+	tool = gvimdiff
+[color "diff"]
+	meta = cyan
+	frag = cyan dim
+[color "status"]
+	untracked = black
+[difftool "sourcetree"]
+	cmd = " "
+	path = 
+[mergetool "sourcetree"]
+	cmd = " "
+	trustExitCode = true
+[commit]
+	template = ~/.stCommitMsg
+	gpgsign = true
+[diff "ansible-vault"]
+	textconv = ansible-vault view --vault-password-file ~/.ssh/vault_pass.txt
+[url "git@github.com:"]
+    insteadOf = https://github.com/
