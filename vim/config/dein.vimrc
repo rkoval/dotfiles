@@ -155,6 +155,7 @@ call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('wellle/targets.vim')
 call dein#add('metakirby5/codi.vim', {
   \ 'on_cmd': 'Codi',
+  \ 'build': 'pip2 install pyflakes',
   \ 'hook_post_source': 'source ~/.vim/config/codi.vimrc',
   \})
 call dein#add('mattn/emmet-vim', {
@@ -288,7 +289,7 @@ call dein#add('mustache/vim-mustache-handlebars', {
   \})
 call dein#add('fatih/vim-go', {
   \  'on_ft': ['go'],
-  \  'build': 'brew unlink gotags && brew install gotags',
+  \  'build': 'brew install gotags',
   \  'hook_post_source': 'source ~/.vim/config/vim-go.vimrc'
   \})
 call dein#add('kylef/apiblueprint.vim', {

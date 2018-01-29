@@ -8,9 +8,6 @@ alias plz='sudo'
 # copies public ssh key to clipboard
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-# start mongo in a separate process
-alias rkmongo='sudo mongod --port 27017 --fork'
-
 # [megusta]
 alias colors='for code in {0..255}; do echo -e "\e[38;05;${code}m $code: colours!@#$%^&*()"; done'
 
