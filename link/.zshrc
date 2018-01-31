@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+export NVM_LAZY_LOAD=true
+
 # load zgen
 source "${HOME}/dotfiles/submodules/zgen/zgen.zsh"
 
@@ -65,5 +67,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 if $(which kops > /dev/null 2>&1); then
   source <(kops completion zsh)
 fi
-
-export NVM_LAZY_LOAD=true
