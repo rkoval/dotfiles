@@ -9,6 +9,7 @@ source "${HOME}/dotfiles/submodules/zgen/zgen.zsh"
 if ! zgen saved; then
     echo "Creating a zgen save"
 
+    # prezto config
     zgen prezto editor key-bindings 'vi'
     zgen prezto git:status:ignore submodules 'all'
     zgen prezto syntax-highlighting highlighters 'main' 'brackets' 'root'
@@ -17,6 +18,7 @@ if ! zgen saved; then
 
     zgen prezto
 
+    # prezto modules
     zgen prezto git
     zgen prezto terminal
     zgen prezto environment
@@ -26,7 +28,6 @@ if ! zgen saved; then
     zgen prezto history
     zgen prezto history-substring-search
     zgen prezto directory
-    zgen prezto spectrum
     zgen prezto utility
     zgen prezto completion
     zgen prezto syntax-highlighting
@@ -34,13 +35,21 @@ if ! zgen saved; then
     zgen prezto fasd
     zgen prezto prompt
     zgen prezto homebrew
-    zgen prezto node
     zgen prezto docker
 
+    # use custom nvm and npm completion since prezto node module is slow
+    zgen load lukechilds/zsh-nvm
+    # doesn't work presently?
+    # zgen load lukechilds/zsh-better-npm-completion
+
+    # misc github plugins
     zgen load djui/alias-tips
     zgen load mattbangert/kubectl-zsh-plugin
     zgen load Dbz/zsh-kubernetes
     zgen load tomsquest/nvm-auto-use.zsh
+    zgen load docker/compose contrib/completion/zsh
+    zgen load docker/cli contrib/completion/zsh
+    zgen load sbodiu-pivotal/fly-zsh-autocomplete-plugin
 
     # save all to init script
     zgen save
@@ -57,7 +66,4 @@ if $(which kops > /dev/null 2>&1); then
   source <(kops completion zsh)
 fi
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-export NVM_DIR="$HOME/.nvm"
-. $(brew --prefix nvm)/nvm.sh
+export NVM_LAZY_LOAD=true
