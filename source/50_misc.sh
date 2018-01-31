@@ -37,9 +37,9 @@ gptags () {
 alias hpr='hub pull-request'
 alias hbr='hub browse'
 
-alias cib='circleci-cli browse'
-alias cin='circleci-cli notify'
-alias cic='circleci-cli cancel'
+alias cib='circleci browse'
+alias cin='circleci notify'
+alias cic='circleci cancel'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias alg='alias | grep'
 
