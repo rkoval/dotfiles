@@ -7,32 +7,10 @@ alias vs='vagrant suspend'
 
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
-export GOPATH=/nastygoat/go
-export PATH=$PATH:$GOPATH/bin
-
-alias pys='py setup.py'
-alias pyst='pys test'
-
 dockercleanup() {
   docker rmi $(docker images --filter "dangling=true" -q --no-trunc) \
   docker rm $(docker ps -qa --no-trunc --filter "status=exited")
 }
-
-# don't generate .pyc
-export PYTHONDONTWRITEBYTECODE=1
-
-# pyenv
-export PYENV_ROOT=/usr/local/var/pyenv
-export PATH="$PYENV_ROOT/shims:$PATH:/usr/local/bin"
-
-export VIRTUAL_ENV=venv
-
-# syntastic pylint
-LC_CTYPE=en_US.UTF-8
-export LC_CTYPE
-
-alias sba='source venv/bin/activate || source bin/activate'
-alias venvinit='virtualenv venv -p $(which python) && sba && pip install --upgrade pip && pip install -r requirements.txt'
 
 # server aliases
 alias a3t='ssh analytics3 tail -f /var/log/nodejs/dash.log -n 500'
