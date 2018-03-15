@@ -324,13 +324,13 @@ call dein#add('hail2u/vim-css3-syntax', {
   \  'on_ft': ['css']
   \})
 call dein#add('othree/csscomplete.vim', {
-  \  'on_ft': ['css']
+  \  'on_ft': ['css', 'stylus']
   \})
 call dein#add('vim-scripts/CSS-one-line--multi-line-folding', {
   \  'on_ft': ['css']
   \})
 call dein#add('ap/vim-css-color', {
-  \  'on_ft': ['css', 'scss', 'sass']
+  \  'on_ft': ['css', 'scss', 'sass', 'stylus']
   \})
 call dein#add('cakebaker/scss-syntax.vim', {
   \  'on_ft': ['scss', 'sass']
