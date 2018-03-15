@@ -165,6 +165,7 @@ call dein#add('mattn/emmet-vim', {
   \ 'on_ft': ['html', 'css', 'vue'],
   \ 'hook_source': 'source ~/.vim/config/emmet-vim.vimrc',
   \})
+call dein#add('AndrewRadev/splitjoin.vim')
 
 " }}}
 "
