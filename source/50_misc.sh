@@ -30,7 +30,7 @@ alias gbu='BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-
 gptags () {
   for tag in "$@"
   do
-    git tag -f $tag && git push -f origin $tag
+    git tag -f $tag && git push --no-verify -f origin $tag
   done
 }
 
