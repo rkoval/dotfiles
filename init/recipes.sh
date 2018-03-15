@@ -6,6 +6,7 @@ recipes=(
   'htop --ignore-dependencies'
   ag
   cmake
+  ctop
   editorconfig
   fasd
   ghostscript
