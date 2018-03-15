@@ -13,6 +13,10 @@ smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
 	\ : (<SID>is_whitespace() ? "\<Tab>"
 	\ : neocomplete#start_manual_complete()))
 
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
 inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:is_whitespace()
