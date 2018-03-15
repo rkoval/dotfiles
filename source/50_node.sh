@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 PATH="$PATH:node_modules/.bin"
 export PATH
 
