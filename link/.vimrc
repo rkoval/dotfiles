@@ -113,10 +113,15 @@ set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set scrolloff=12           " line scrolling with start x lines from border
-set cursorline             " highlight line that cursor is on
 set relativenumber         " show relative numbering for line numbers
 set showtabline=2          " always show tabline
 syntax on
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " ----------------------------------------------------------------------------
 " Visual Cues
