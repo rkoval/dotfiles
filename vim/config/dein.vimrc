@@ -245,7 +245,7 @@ call dein#add('honza/vim-snippets', {
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('davidhalter/jedi-vim', {
   \  'depends': ['neocomplete.vim'],
-  \  'build':  'git submodule update --init',
+  \  'build':  'git submodule update --init && pip install jedi',
   \  'on_ft': ['python', 'python3']
   \})
 call dein#add('ternjs/tern_for_vim', {
