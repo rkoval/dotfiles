@@ -1,4 +1,5 @@
-nnoremap <buffer> <silent> gd :w!<cr>:GoDef<cr>
+nnoremap <silent> gd :w!<cr>:GoDef<cr>
+nnoremap <silent> gb :w!<cr>:GoDefPop<cr>
 nnoremap <D-S-i> <Plug>(go-implements)
 nnoremap <S-F6> :wa<cr>:GoRename<cr>
 nnoremap gr :GoReferrers<cr>
@@ -7,7 +8,7 @@ nnoremap gr :GoReferrers<cr>
 au FileType go nmap <S-C-P> <Plug>(go-info)
 
 " syntastic fix
-let g:go_list_type = "quickfix"
+let g:go_list_type = "locationlist"
 
 " use goimports instead of gofmt
 let g:go_fmt_command = "goimports"
