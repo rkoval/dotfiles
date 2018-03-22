@@ -71,6 +71,12 @@ call dein#add('vim-airline/vim-airline-themes', {
   \  'depends': ['vim-airline']
   \})
 call dein#add('Xuyuanp/nerdtree-git-plugin')
+call dein#add('roxma/nvim-yarp', {
+  \  'if': has('nvim')
+  \})
+call dein#add('roxma/vim-hug-neovim-rpc', {
+  \  'if': has('nvim')
+  \})
 call dein#add('mrtazz/simplenote.vim', {
   \  'hook_post_source': 'source ~/.vim/config/simplenote.vimrc'
   \})
@@ -134,7 +140,8 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('dbsr/vimpy', {
   \  'on_ft': ['python', 'python3'],
   \  'build': 'pip install pyflakes',
-  \  'hook_post_source': 'source ~/.vim/config/vimpy.vimrc'
+  \  'hook_post_source': 'source ~/.vim/config/vimpy.vimrc',
+  \  'if': 0
   \})
 call dein#add('fisadev/vim-isort', {
   \  'on_ft': ['python', 'python3'],
@@ -197,34 +204,27 @@ call dein#add('suan/vim-instant-markdown', {
 "
 " Autocomplete {{{
 "
-call dein#add('Shougo/neocomplete.vim', {
-  \  'hook_add': 'let g:neocomplete#enable_at_startup = 1',
-  \  'hook_source': 'source ~/.vim/config/neocomplete.vimrc',
-  \  'if': !has('nvim')
-  \})
 call dein#add('Shougo/deoplete.nvim', {
-  \  'build': 'pip3 install neovim',
+  \  'build': 'pip3 install neovim && pip3 install --upgrade neovim',
   \  'hook_add': 'let g:deoplete#enable_at_startup = 1',
   \  'hook_source': 'source ~/.vim/config/deoplete.vimrc',
-  \  'if': has('nvim')
   \})
 call dein#add('zchee/deoplete-go', {
   \  'depends': ['deoplete.nvim'],
   \  'build': 'make',
   \  'on_ft': 'go',
   \  'on_i': 1,
-  \  'if': has('nvim') && ! empty($GOPATH)
   \})
 call dein#add('zchee/deoplete-jedi', {
   \  'depends': ['deoplete.nvim'],
   \  'on_ft': ['python', 'python3'],
+  \  'build':  'git submodule update --init && pip install jedi',
   \  'on_i': 1,
   \  'hook_source': 'autocmd MyAutoCmd FileType python setlocal omnifunc=',
-  \  'if': has('nvim')
   \})
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/neosnippet.vim', {
-  \  'depends': ['neocomplete.vim', 'neosnippet-snippets', 'vim-snippets'],
+  \  'depends': ['deocomplete.vim', 'neosnippet-snippets', 'vim-snippets'],
   \  'hook_post_source': 'source ~/.vim/config/neosnippet.vimrc'
   \})
 call dein#add('Shougo/neco-vim', {
@@ -235,32 +235,24 @@ call dein#add('Shougo/neomru.vim', {
   \  'on_source': 'unite.vim',
   \})
 call dein#add('Shougo/neco-syntax', {
-  \  'on_source': ['neocomplete.vim']
+  \  'on_source': ['deoplete.vim']
   \})
 call dein#add('honza/vim-snippets', {
   \  'depends': 'neosnippet.vim',
   \  'build':  'rm -f snippets/_.snippets'
   \})
 call dein#add('Shougo/neoinclude.vim')
-call dein#add('davidhalter/jedi-vim', {
-  \  'depends': ['neocomplete.vim'],
-  \  'build':  'git submodule update --init && pip install jedi',
-  \  'on_ft': ['python', 'python3']
-  \})
 call dein#add('ternjs/tern_for_vim', {
   \  'build': 'npm install',
   \  'hook_add': 'source ~/.vim/config/tern_for_vim.vimrc',
-  \  'hook_post_source': 'autocmd MyAutoCmd FileType javascript setlocal omnifunc=tern#Complete',
   \  'on_i': 1,
   \  'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'vue'],
-  \  'if': !has('nvim')
   \})
 call dein#add('carlitux/deoplete-ternjs', {
   \  'depends': ['deoplete.nvim'],
   \  'build': 'npm install -g tern',
   \  'hook_post_source': 'source ~/.vim/config/deoplete-ternjs.vimrc',
   \  'on_ft': ['javascript', 'jsx', 'javascript.jsx'],
-  \  'if': has('nvim')
   \})
 call dein#add('othree/jspc.vim', {
   \  'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'vue']
