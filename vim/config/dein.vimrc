@@ -49,8 +49,7 @@ call dein#add('w0rp/ale', {
   \})
 call dein#add('Shougo/unite.vim', {
   \ 'depends': 'neomru.vim',
-  \  'hook_post_source': 'source ~/.vim/config/unite.vimrc',
-  \  'if': !has('nvim')
+  \  'hook_post_source': 'source ~/.vim/config/unite.vimrc'
   \})
 call dein#add('Shougo/denite.nvim', {
   \  'hook_post_source': 'source ~/.vim/config/denite.vimrc',

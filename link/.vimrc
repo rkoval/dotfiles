@@ -4,7 +4,12 @@ scriptencoding utf-8
 let g:mapleader = ","
 if !has("gui_vimr")
   set gfn=AnonymicePowerline\ Nerd\ Font:h12
+else
+  source ~/.gvimrc
 endif
+
+set completeopt=noselect,menuone,preview
+autocmd CompleteDone * pclose
 
 source ~/.vim/config/dein.vimrc
 
