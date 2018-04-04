@@ -72,10 +72,10 @@ call dein#add('vim-airline/vim-airline-themes', {
   \})
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 call dein#add('roxma/nvim-yarp', {
-  \  'if': has('nvim')
+  \  'if': !has('nvim')
   \})
 call dein#add('roxma/vim-hug-neovim-rpc', {
-  \  'if': has('nvim')
+  \  'if': !has('nvim')
   \})
 call dein#add('mrtazz/simplenote.vim', {
   \  'hook_post_source': 'source ~/.vim/config/simplenote.vimrc'
@@ -262,6 +262,11 @@ call dein#add('jmcantrell/vim-virtualenv', {
   \  'on_ft': ['python', 'python3'],
   \  'hook_post_source': 'source ~/.vim/config/vim-virtualenv.vimrc'
   \})
+call dein#add('autozimu/LanguageClient-neovim', {
+  \ 'rev': 'next',
+  \ 'build': 'bash install.sh && npm install -g javascript-typescript-langserver dockerfile-language-server-nodejs',
+  \ 'hook_post_source': 'source ~/.vim/config/LanguageClient-neovim.vimrc',
+  \ })
 
 " }}}
 "
