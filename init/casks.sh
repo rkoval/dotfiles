@@ -32,6 +32,7 @@ casks=(
   the-unarchiver
   virtualbox
   vlc
+  vimr
   yakyak
 )
 

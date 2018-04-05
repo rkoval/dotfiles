@@ -2,8 +2,14 @@
 set encoding=utf-8
 scriptencoding utf-8
 let g:mapleader = ","
+
+if !has("nvim")
+  set transparency=5
+endif
+
 if !has("gui_vimr")
   set gfn=AnonymicePowerline\ Nerd\ Font:h12
+  colors atom-dark-256
 else
   source ~/.gvimrc
 endif
@@ -100,8 +106,6 @@ nnoremap ' `
 " ----------------------------------------------------------------------------
 "  UI
 " ----------------------------------------------------------------------------
-
-colors atom-dark-256
 
 set splitbelow             " where to open new horizontal panes
 set splitright             " where to open new vertical panes

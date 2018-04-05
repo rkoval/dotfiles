@@ -4,7 +4,6 @@ set guioptions=egmrt
 set colorcolumn=160
 set t_Co=256
 set columns=177
-set transparency=5
 colors atom-dark
 
 function! GuiTabLabel()
@@ -33,4 +32,3 @@ nmap <d-6> 6gt
 nmap <d-7> 7gt
 nmap <d-8> 8gt
 nmap <d-9> 9gt
-

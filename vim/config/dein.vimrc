@@ -34,7 +34,7 @@ call dein#add('airblade/vim-gitgutter', {
 call dein#add('kshenoy/vim-signature', {
   \  'hook_post_source': 'source ~/.vim/config/vim-signature.vimrc',
   \})
-call dein#add('jistr/vim-nerdtree-tabs', {
+call dein#add('rkoval/vim-nerdtree-tabs', {
   \  'depends': ['nerdtree']
   \})
 call dein#add('scrooloose/nerdtree', {

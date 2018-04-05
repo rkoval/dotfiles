@@ -2,7 +2,6 @@
 echo "installing homebrew recipes ..."
 recipes=(
   'lastpass-cli --with-pinentry --with-doc'
-  'macvim --with-lua'
   'htop --ignore-dependencies'
   ag
   cmake
@@ -16,6 +15,7 @@ recipes=(
   hub
   imagemagick
   jq
+  neovim
   nvm
   pyenv
   shellcheck
