@@ -172,6 +172,11 @@ call dein#add('mattn/emmet-vim', {
   \ 'hook_source': 'source ~/.vim/config/emmet-vim.vimrc',
   \})
 call dein#add('AndrewRadev/splitjoin.vim')
+call dein#add('Galooshi/vim-import-js', {
+  \  'build': 'brew install watchman && npm install -g import-js',
+  \  'hook_add': 'source ~/.vim/config/vim-import-js.vimrc',
+  \  'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'vue'],
+  \})
 
 " }}}
 "

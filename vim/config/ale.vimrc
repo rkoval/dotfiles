@@ -12,7 +12,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
+\   'javascript': ['importjs', 'prettier', 'eslint'],
 \   'sass': ['prettier'],
 \   'css': ['prettier'],
 \   'less': ['prettier'],
