@@ -9,9 +9,12 @@ endif
 
 if !has("gui_vimr")
   set gfn=AnonymicePowerline\ Nerd\ Font:h12
-  colors atom-dark-256
 else
   source ~/.gvimrc
+endif
+
+if !has("gui_vimr") && !has('gui_running')
+  colors atom-dark-256
 endif
 
 set completeopt=noselect,menuone,preview
