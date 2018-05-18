@@ -37,6 +37,7 @@ endif
 set backupdir=~/.vim/.backup//
 set backup
 set directory=~/.vim/.swap//
+set updatetime=200 " mostly for gitgutter updates, but reduce time that vim writes to swap file
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
