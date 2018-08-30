@@ -6,11 +6,13 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	pager = less -+F -c
+	attributesfile = ~/.gitattributes
 [push]
 	default = current
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	branchcleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+	diff-image = "!f() { GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
 [mergetool]
 	keepBackup = false
 	prompt = false
@@ -36,3 +38,5 @@
 	textconv = ansible-vault view --vault-password-file ~/.ssh/vault_pass.txt
 [url "git@github.com:"]
     insteadOf = https://github.com/
+[diff "image"]
+	command = /nastygoat/git-diff-image/git_diff_image

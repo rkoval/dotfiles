@@ -24,6 +24,7 @@ recipes=(
   universal-ctags
   vimpager
   zsh
+  fzf
 )
 
 for recipe in "${recipes[@]}"; do

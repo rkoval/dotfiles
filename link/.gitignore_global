@@ -2,3 +2,5 @@
 .DS_Store
 .codi_scratch*.py
 .vimtags
+gin-bin
+.vscode

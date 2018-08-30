@@ -216,7 +216,7 @@ call dein#add('Shougo/deoplete.nvim', {
   \})
 call dein#add('zchee/deoplete-go', {
   \  'depends': ['deoplete.nvim'],
-  \  'build': 'make',
+  \  'build': 'make && go get -u github.com/nsf/gocode',
   \  'on_ft': 'go',
   \  'on_i': 1,
   \})
