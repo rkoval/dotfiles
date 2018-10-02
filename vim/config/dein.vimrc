@@ -367,6 +367,9 @@ call dein#add('heavenshell/vim-jsdoc', {
 call dein#add('moll/vim-node', {
   \  'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'vue']
   \})
+call dein#add('leafgarland/typescript-vim', {
+  \  'on_ft': ['typescript']
+  \})
 " call dein#add('othree/javascript-libraries-syntax.vim', {
   " \  'on_ft': ['javascript', 'javascript.jsx']
   " \})
