@@ -12,7 +12,7 @@ alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resou
 alias pf='open -a "Path Finder.app" .'
 
 # open current directory in sourcetree
-alias st='open -a SourceTree `git rev-parse --show-toplevel`'
+alias st='fork `git rev-parse --show-toplevel`'
 
 # alias vim to macvim vim for updated version
 export GIT_EDITOR=$EDITOR # has to be manual reference otherwise git picks up native vim, not alias
