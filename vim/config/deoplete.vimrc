@@ -10,6 +10,7 @@ call deoplete#custom#source('LanguageClient',  'sorters', ['sorter_rank'])
 call deoplete#custom#source('LanguageClient',  'rank', 400)
 call deoplete#custom#source('LanguageClient',  'min_pattern_length', 2)
 
+let g:deoplete#ignore_sources = {}
 let g:deoplete#ignore_sources.go = ['member', 'buffer']
 
 autocmd FileType html,markdown setlocal omnifunc=

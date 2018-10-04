@@ -247,18 +247,6 @@ call dein#add('honza/vim-snippets', {
   \  'build':  'rm -f snippets/_.snippets'
   \})
 call dein#add('Shougo/neoinclude.vim')
-call dein#add('ternjs/tern_for_vim', {
-  \  'build': 'npm install',
-  \  'hook_add': 'source ~/.vim/config/tern_for_vim.vimrc',
-  \  'on_i': 1,
-  \  'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'vue'],
-  \})
-call dein#add('carlitux/deoplete-ternjs', {
-  \  'depends': ['deoplete.nvim'],
-  \  'build': 'npm install -g tern',
-  \  'hook_post_source': 'source ~/.vim/config/deoplete-ternjs.vimrc',
-  \  'on_ft': ['javascript', 'jsx', 'javascript.jsx'],
-  \})
 call dein#add('othree/jspc.vim', {
   \  'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'vue']
   \})
