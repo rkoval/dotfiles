@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
-export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 # load zgen
 source "${HOME}/dotfiles/submodules/zgen/zgen.zsh"
@@ -48,7 +49,6 @@ if ! zgen saved; then
     zgen load djui/alias-tips
     zgen load mattbangert/kubectl-zsh-plugin
     zgen load Dbz/zsh-kubernetes
-    zgen load tomsquest/nvm-auto-use.zsh
     zgen load docker/compose contrib/completion/zsh
     zgen load docker/cli contrib/completion/zsh
     zgen load sbodiu-pivotal/fly-zsh-autocomplete-plugin
