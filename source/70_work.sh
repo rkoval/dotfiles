@@ -42,7 +42,6 @@ sshrkoval () {
   ssh ec2-user@$IP -i ~/.ssh/aws-sdev-rkoval.pem
 }
 
-export AWS_DEFAULT_REGION=us-west-2
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ssh/vault_pass.txt
 
 alias cqlshprod='cqlsh --ssl --cqlshrc ~/.cassandra/cqlshrc-prod'
