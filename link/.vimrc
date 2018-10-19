@@ -82,8 +82,6 @@ xnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
-nnoremap <TAB> >>
-nnoremap <S-TAB> <<
 xnoremap <TAB> >gv
 xnoremap <S-TAB> <gv
 inoremap <S-TAB> <C-d>
