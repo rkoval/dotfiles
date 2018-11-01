@@ -9,6 +9,7 @@
 
 - Install XCode from App Store
 - Explicitly open XCode after install to install extras
+- [Generate an SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) and associate it with your GitHub account (submodule cloning will fail otherwise)
 - Initialize dotfiles:
 
   ```sh
@@ -20,4 +21,15 @@
   ```sh
   csrutil enable
   reboot
+  ```
+
+# Troubleshooting
+
+- If homebrew installation can't find and install the command line extras, then you may need to open Software Update to install missing updates for XCode. If macOS prompts you to reinstall the exact same updates after installing, try restarting (yes, actually)
+- If MacVim fails to install because of missing ruby headers, try symlinking the `universal-darwinXX/ruby/config.h` header to the system ruby directory:
+
+  ```sh
+  # replace Xs with actual version numbers
+  # from ruby directory output by `brew install --verbose`
+  sudo ln -s ../../ruby-X.X.X/universal-darwinXX/ruby/config.h
   ```

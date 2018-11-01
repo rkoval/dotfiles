@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-echo "disabling jamf ..."
 jamfDir=/usr/local/jamf/bin
-cd $jamfDir || (echo 'jamf not detected. exitting ...' && exit)
+if [ ! -d "$jamfDir" ]; then
+  echo 'jamf not detected; ignoring jamf disable operations'
+  exit
+fi
+echo "disabling jamf ..."
 launchctl remove com.jamfsoftware.jamf.agent
 
 files=(

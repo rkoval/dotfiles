@@ -1,3 +1,3 @@
 #!/usr/bin/env bash -e
 echo "copying fonts ..."
-cp -f $DOTFILES/conf/osx/fonts/* ~/Library/Fonts/
+cp -f ~/dotfiles/conf/osx/fonts/* ~/Library/Fonts/

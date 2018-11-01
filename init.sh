@@ -2,13 +2,16 @@
 set -e
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# setup xcode
-xcode-select --install || true
-sudo xcodebuild -license accept
+if [ ! -d "$HOME/dotfiles" ]; then
+  echo 'cloning dotfiles repo ...'
+  git clone git@github.com:rkoval/dotfiles.git "$HOME/dotfiles"
+fi
 
-sudo chown -R $USER /usr/local
+echo 'setting up xcode ...'
+( set -x ; sudo xcodebuild -license accept )
+( set -x ; sudo chown -R $USER /usr/local )
 
-# install homebrew
+echo 'installing homebrew...'
 command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ./init/submodules.sh

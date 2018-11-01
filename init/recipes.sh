@@ -3,6 +3,8 @@ echo "installing homebrew recipes ..."
 recipes=(
   'lastpass-cli --with-pinentry --with-doc'
   'htop --ignore-dependencies'
+  'universal-ctags/universal-ctags/universal-ctags'
+  'macvim --with-lua --with-luajit --with-override-system-vim'
   ag
   cmake
   ctop
@@ -11,17 +13,16 @@ recipes=(
   ghostscript
   git
   git-extras
-  htop-osx
+  gpg2
   hub
   imagemagick
   jq
   neovim
   nvm
-  pyenv
+  rbenv
   shellcheck
   ssh-copy-id
   tree
-  universal-ctags
   vimpager
   zsh
   fzf
@@ -31,5 +32,5 @@ for recipe in "${recipes[@]}"; do
   brew install $recipe
 done
 
-# custom
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+# post-install steps
+/usr/local/opt/fzf/install --no-bash --key-bindings --completion --update-rc
