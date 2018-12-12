@@ -16,6 +16,7 @@ let g:ale_fixers = {
 \   'sass': ['prettier'],
 \   'css': ['prettier'],
 \   'less': ['prettier'],
+\   'scss': ['prettier'],
 \   'json': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
