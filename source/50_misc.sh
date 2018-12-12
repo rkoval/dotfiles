@@ -6,7 +6,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 alias plz='sudo'
 
 # copies public ssh key to clipboard
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # [megusta]
 alias colors='for code in {0..255}; do echo -e "\e[38;05;${code}m $code: colours!@#$%^&*()"; done'
@@ -20,12 +20,14 @@ alias bower='noglob bower'
 alias localtunnel='/usr/local/lib/node_modules/localtunnel/bin/client'
 
 alias grp='git rev-parse'
-alias grph='git rev-parse HEAD'
+alias grph="git rev-parse HEAD | tr -d '\\n'"
+alias grphc="grph | pbc"
 alias grpah='git rev-parse --abbrev-ref HEAD'
 alias gwds='git diff --no-ext-diff --staged'
 alias gba='git branch --all'
 alias gwS='git status'
 alias gws='git status --short'
+alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch -D'
 alias gbu='BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=origin/$BRANCH $BRANCH'
 gptags () {
   for tag in "$@"

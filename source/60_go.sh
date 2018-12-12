@@ -1,3 +1,3 @@
 #!/bin/bash
-export GOPATH ; export GOPATH=/nastygoat/go
+export GOPATH ;
 export PATH="$PATH:$GOPATH/bin"
