@@ -12,3 +12,16 @@ else
   echo "`docker-langserver` not installed!\n"
 endif
 
+if executable('css-languageserver')
+  let g:LanguageClient_serverCommands.css = ['css-languageserver', '--stdio']
+  let g:LanguageClient_serverCommands.scss = ['css-languageserver', '--stdio']
+  let g:LanguageClient_serverCommands.less = ['css-languageserver', '--stdio']
+else
+  echo "`css-langserver` not installed!\n"
+endif
+
+if executable('bash-language-server')
+  let g:LanguageClient_serverCommands.sh = ['bash-language-server', 'start']
+else
+  echo "`bash-language-server` not installed!\n"
+endif
