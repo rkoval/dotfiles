@@ -38,6 +38,8 @@ gptags () {
 
 alias hpr='hub pull-request'
 alias hbr='hub browse'
+alias hbrv="hub browse -- commit/$(grph)"
+alias hbrc="hub browse -c -- commit/$(grph)"
 
 alias cib='circleci browse'
 alias cin='circleci notify'

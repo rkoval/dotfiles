@@ -26,6 +26,7 @@ recipes=(
   vimpager
   zsh
   fzf
+  coreutils
 )
 
 for recipe in "${recipes[@]}"; do
