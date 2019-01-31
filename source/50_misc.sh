@@ -38,8 +38,8 @@ gptags () {
 
 alias hpr='hub pull-request'
 alias hbr='hub browse'
-alias hbrv="hub browse -- commit/$(grph)"
-alias hbrc="hub browse -c -- commit/$(grph)"
+alias hbrv='hub browse -- commit/$(grph)'
+alias hbrc='hub browse -c -- commit/$(grph) && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""'
 
 alias cib='circleci browse'
 alias cin='circleci notify'
