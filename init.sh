@@ -22,6 +22,8 @@ command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.github
 ./init/alfred.sh
 ./link.sh
 ./init/shell.sh
+./init/macos.sh
+./init/settings.sh
 
 cd /usr/local/bin
 # sourcetree requires that the command is named gpg2, so symlink the command

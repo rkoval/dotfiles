@@ -12,9 +12,11 @@ casks=(
   docker
   dropbox
   firefox
+  fork
   google-chrome
   istat-menus
   iterm2
+  karabiner-elements
   java
   path-finder
   postman
@@ -23,9 +25,10 @@ casks=(
   slack
   spotify
   steam
+  sublime-text
+  tableplus
   the-unarchiver
   vlc
-  vimr
 )
 
 for cask in "${casks[@]}"; do

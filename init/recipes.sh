@@ -3,8 +3,8 @@ echo "installing homebrew recipes ..."
 recipes=(
   'lastpass-cli --with-pinentry --with-doc'
   'htop --ignore-dependencies'
-  'universal-ctags/universal-ctags/universal-ctags'
-  'macvim --with-lua --with-luajit --with-override-system-vim'
+  '--HEAD universal-ctags/universal-ctags/universal-ctags'
+  macvim
   ag
   cmake
   ctop
