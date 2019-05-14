@@ -17,7 +17,7 @@ if executable('css-languageserver')
   let g:LanguageClient_serverCommands.scss = ['css-languageserver', '--stdio']
   let g:LanguageClient_serverCommands.less = ['css-languageserver', '--stdio']
 else
-  echo "`css-langserver` not installed!\n"
+  echo "`css-languageserver` not installed!\n"
 endif
 
 if executable('bash-language-server')

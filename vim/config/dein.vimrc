@@ -82,10 +82,10 @@ call dein#add('mrtazz/simplenote.vim', {
   \})
 call dein#add('xolox/vim-misc')
 " use fork version because universal ctags detection is broken on master
-call dein#add('oepn/vim-easytags', {
-  \  'depends': ['vim-misc'],
-  \  'hook_post_source': 'source ~/.vim/config/vim-easytags.vimrc'
-  \})
+" call dein#add('oepn/vim-easytags', {
+"   \  'depends': ['vim-misc'],
+"   \  'hook_post_source': 'source ~/.vim/config/vim-easytags.vimrc'
+"   \})
 call dein#add('majutsushi/tagbar', {
   \  'hook_add': 'nmap <F8> :TagbarToggle<CR>',
   \  'hook_post_source': 'source ~/.vim/config/tagbar.vimrc',
