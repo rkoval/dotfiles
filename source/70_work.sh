@@ -90,3 +90,8 @@ kudc () {
 alias tf='terraform'
 alias pa='pachctl'
 alias jest='nocorrect jest'
+
+guilded_profile=~/workspace/guilded/guilded_profile.sh
+if [ -f $guilded_profile ]; then
+  source $guilded_profile
+fi
