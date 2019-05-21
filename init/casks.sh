@@ -13,6 +13,9 @@ casks=(
   dropbox
   firefox
   fork
+  font-lato
+  font-anonymous-pro
+  font-anonymouspro-nerd-font-mono
   google-chrome
   istat-menus
   iterm2
@@ -30,6 +33,8 @@ casks=(
   the-unarchiver
   vlc
 )
+
+brew tap homebrew/cask-fonts
 
 for cask in "${casks[@]}"; do
   brew cask install $cask

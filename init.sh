@@ -16,7 +16,6 @@ command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.github
 
 ./init/submodules.sh
 ./init/jamf.sh
-./init/fonts.sh
 ./init/recipes.sh
 ./init/casks.sh
 ./init/alfred.sh
