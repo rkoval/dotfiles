@@ -4,12 +4,13 @@ recipes=(
   'lastpass-cli --with-pinentry --with-doc'
   'htop --ignore-dependencies'
   '--HEAD universal-ctags/universal-ctags/universal-ctags'
-  macvim
   ag
   cmake
+  coreutils
   ctop
   editorconfig
   fasd
+  fzf
   ghostscript
   git
   git-extras
@@ -17,6 +18,8 @@ recipes=(
   hub
   imagemagick
   jq
+  lsd
+  macvim
   neovim
   nvm
   rbenv
@@ -25,8 +28,6 @@ recipes=(
   tree
   vimpager
   zsh
-  fzf
-  coreutils
 )
 
 for recipe in "${recipes[@]}"; do
