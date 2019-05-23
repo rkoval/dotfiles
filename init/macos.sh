@@ -22,3 +22,6 @@ defaults write -g "com.apple.trackpad.forceClick" -int 0;
 
 # natural scroll direction is unnatural
 defaults write -g "com.apple.swipescrolldirection" -int 0
+
+# prevent two-finger trackpad navigation
+defaults write -g AppleEnableSwipeNavigateWithScrolls -int 0
