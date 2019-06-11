@@ -36,6 +36,11 @@ gptags () {
   done
 }
 
+gcowt() {
+  tempDir=$(mktemp -d)
+  git worktree add $tempDir $@ && subl $tempDir
+}
+
 alias hpr='hub pull-request'
 alias hbr='hub browse'
 alias hbrv='hub browse -- commit/$(grph)'
