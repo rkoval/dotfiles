@@ -29,6 +29,7 @@ alias gwS='git status'
 alias gws='git status --short'
 alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch -D'
 alias gbu='BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=origin/$BRANCH $BRANCH'
+alias gwt='git worktree'
 gptags () {
   for tag in "$@"
   do
@@ -37,8 +38,10 @@ gptags () {
 }
 
 gcowt() {
+  repoFolder=$(basename "$(git rev-parse --show-toplevel)")
   tempDir=$(mktemp -d)
-  git worktree add $tempDir $@ && subl $tempDir
+  tempRepoFolder="$tempDir/$repoFolder"
+  git worktree add "$tempRepoFolder" $@ && subl "$tempRepoFolder" && cd "$tempRepoFolder"
 }
 
 alias hpr='hub pull-request'
