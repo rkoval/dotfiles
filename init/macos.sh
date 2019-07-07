@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# command to list all
+# defaults read -g
+
 # to disable accent menu on longpress
 defaults write -g ApplePressAndHoldEnabled -bool false
 
@@ -25,3 +28,6 @@ defaults write -g "com.apple.swipescrolldirection" -int 0
 
 # prevent two-finger trackpad navigation
 defaults write -g AppleEnableSwipeNavigateWithScrolls -int 0
+
+# make clicking on scrollbar jump to that spot on page, not page up/down
+defaults write -g AppleScrollerPagingBehavior -int 1
