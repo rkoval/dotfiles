@@ -31,3 +31,6 @@ defaults write -g AppleEnableSwipeNavigateWithScrolls -int 0
 
 # make clicking on scrollbar jump to that spot on page, not page up/down
 defaults write -g AppleScrollerPagingBehavior -int 1
+
+# don't make mac type period after two periods (why?)
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -int 0
