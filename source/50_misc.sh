@@ -47,7 +47,10 @@ gcowt() {
 alias hpr='hub pull-request'
 alias hbr='hub browse'
 alias hbrv='hub browse -- commit/$(grph)'
-alias hbrc='hub browse -c -- commit/$(grph) && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""'
+hbrc() {
+  hub browse -c -- commit/$(grph) && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
+  git push || osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
+}
 
 alias cib='circleci browse'
 alias cin='circleci notify'
