@@ -257,7 +257,7 @@ call dein#add('jmcantrell/vim-virtualenv', {
   \})
 call dein#add('autozimu/LanguageClient-neovim', {
   \ 'rev': 'next',
-  \ 'build': 'bash install.sh && npm install -g javascript-typescript-langserver dockerfile-language-server-nodejs bash-language-server vscode-css-languageservice',
+  \ 'build': 'bash install.sh && npm install -g javascript-typescript-langserver dockerfile-language-server-nodejs bash-language-server vscode-css-languageservice-bin',
   \ 'hook_post_source': 'source ~/.vim/config/LanguageClient-neovim.vimrc',
   \ })
 
