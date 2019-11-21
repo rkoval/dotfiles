@@ -59,6 +59,8 @@ fi
 
 # Customize to your needs...
 bindkey '^R' history-incremental-search-backward
+bindkey '^N' down-history
+bindkey '^P' up-history
 
 setopt nosharehistory
 

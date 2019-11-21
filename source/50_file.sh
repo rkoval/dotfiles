@@ -20,6 +20,7 @@ alias eachdir=". eachdir"
 alias ls="lsd --group-dirs first"
 alias ll="ls -l"
 alias la="ll -a"
+alias less="less -j 4"
 
 # Create a new directory and enter it
 function md() {
