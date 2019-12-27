@@ -62,6 +62,7 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^N' down-history
 bindkey '^P' up-history
 
+export KEYTIMEOUT=1
 setopt nosharehistory
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
