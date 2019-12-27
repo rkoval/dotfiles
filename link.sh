@@ -20,3 +20,4 @@ function symlinkDirectory() {
 
 symlinkDirectory "$SCRIPT_DIR/link"
 ln -sFv "$SCRIPT_DIR/link/.config/nvim" ~/.config
+ln -sFv "$SCRIPT_DIR/prompt_rkoval_setup" ~/.zgen/sorin-ionescu/prezto-master/modules/prompt/functions

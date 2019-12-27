@@ -1,0 +1,59 @@
+#
+# A simple theme inspired by the Damoekri theme
+#
+# Authors:
+#   Ryan Koval <ryan@ryankoval.com>
+#
+# Screenshots:
+#
+
+# Load dependencies.
+pmodload 'helper'
+
+prompt_rkoval_precmd() {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Format PWD.
+  _prompt_rkoval_pwd=$(prompt-pwd)
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+}
+
+function prompt_rkoval_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook for calling git-info and ruby-info before each command.
+  add-zsh-hook precmd prompt_rkoval_precmd
+
+  # Set editor-info parameters.
+  zstyle ':prezto:module:editor:info:keymap:primary' format '%F{green}»»%f'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '%F{white}««%f'
+
+
+  # Set git-info parameters.
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:action' format ':%F{magenta}%s%f'
+  zstyle ':prezto:module:git:info:branch' format '%F{blue}%b%f'
+  zstyle ':prezto:module:git:info:clean' format ' %F{green}✔%f'
+  zstyle ':prezto:module:git:info:dirty' format ' %F{red}✗%f'
+  zstyle ':prezto:module:git:info:commit' format '%F{blue}%.7c%f'
+  zstyle ':prezto:module:git:info:position' format '%F{blue}%p%f'
+  zstyle ':prezto:module:git:info:keys' format \
+    'git_info_key' ' $(coalesce "%b" "%p" "%c")%s%C%D'
+
+  rkoval_prompt_date='%F{black}%D{%H:%M:%S}%F%f'
+  rkoval_prompt_ret_status='%(?. . %F{red}[%?]%f)'
+  # Define prompts.
+  PROMPT='%F{cyan}${_prompt_rkoval_pwd}%f${rkoval_prompt_ret_status}${git_info:+${(e)git_info[git_info_key]}}  ${rkoval_prompt_date}'$'\n''${editor_info[keymap]} '
+}
+
+prompt_rkoval_setup "$@"

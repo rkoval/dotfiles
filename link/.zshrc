@@ -16,7 +16,7 @@ if ! zgen saved; then
     zgen prezto editor key-bindings 'vi'
     zgen prezto git:status:ignore submodules 'all'
     zgen prezto syntax-highlighting highlighters 'main' 'brackets' 'root'
-    zgen prezto prompt theme 'damoekri'
+    zgen prezto prompt theme 'rkoval'
     zgen prezto '*:*' color 'yes'
 
     zgen prezto
