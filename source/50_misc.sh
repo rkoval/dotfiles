@@ -19,6 +19,7 @@ alias bower='noglob bower'
 
 alias localtunnel='/usr/local/lib/node_modules/localtunnel/bin/client'
 
+alias gp='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 alias grp='git rev-parse'
 alias grph="git rev-parse HEAD | tr -d '\\n'"
 alias grphc="grph | pbc"
@@ -30,6 +31,11 @@ alias gws='git status --short'
 alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch -D'
 alias gbu='BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=origin/$BRANCH $BRANCH'
 alias gwt='git worktree'
+
+gbcleanup() {
+  git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
+}
+
 gptags () {
   for tag in "$@"
   do
@@ -49,7 +55,7 @@ alias hbr='hub browse'
 alias hbrv='hub browse -- commit/$(grph)'
 hbrc() {
   hub browse -c -- commit/$(grph) && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
-  git push || osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
+  gp || osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
 }
 
 alias cib='circleci browse'
