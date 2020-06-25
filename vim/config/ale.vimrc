@@ -9,10 +9,13 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'python': ['pylint', 'flake8'],
 \   'go': ['go build', 'go vet', 'golint'],
+\   'graphql': ['eslint', 'gqlint'],
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['importjs', 'prettier', 'eslint'],
+\   'graphql': ['prettier'],
+\   'markdown': ['prettier'],
 \   'sass': ['prettier'],
 \   'css': ['prettier'],
 \   'less': ['prettier'],

@@ -389,6 +389,9 @@ call dein#add('wavded/vim-stylus', {
 call dein#add('raimon49/requirements.txt.vim', {
   \  'on_ft': ['requirements']
   \})
+call dein#add('jparise/vim-graphql', {
+  \  'on_ft': ['graphql', 'javascript']
+  \})
 
 if dein#check_install()
   call dein#install()

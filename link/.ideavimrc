@@ -1,5 +1,7 @@
 source ~/.vimrc
 
+let mapleader = ','
+
 nnoremap gd :action GotoImplementation<CR>
 nnoremap gD :action GotoDeclaration<CR>
 nnoremap gf :action GotoTypeDeclaration<CR>
