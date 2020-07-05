@@ -1,3 +1,4 @@
 #!/bin/bash
-export GOPATH ;
-export PATH="$PATH:$GOPATH/bin"
+GOROOT='/usr/local/opt/go'
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
