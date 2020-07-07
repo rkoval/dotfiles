@@ -58,6 +58,25 @@ hbrc() {
   gp || osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
 }
 
+hbrp() {
+  local prefix
+  prefix="$1"
+  commit_link="$(hub browse -u -- commit/$(grph))"
+  echo "$prefix$commit_link" | share-to-clipboard-url
+}
+
+gcmp() {
+  local message
+  message="$1"
+  shift 1
+  gcm "$message" -n
+  if gp; then
+    hbrp $@
+  else
+    osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
+  fi
+}
+
 alias cib='circleci browse'
 alias cin='circleci notify'
 alias cic='circleci cancel'
