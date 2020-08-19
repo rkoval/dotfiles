@@ -100,3 +100,32 @@ alias jg2="cd ~/workspace/guilded2 && source guilded_user_profile.sh && source g
 alias jg3="cd ~/workspace/guilded3 && source guilded_user_profile.sh && source guilded_profile.sh"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+copy-to-other-git-repo() {
+  src="$1"
+  dest="$2"
+  echo "copying git working tree from $src to $dest ..."
+  shift 2
+
+  cd "$src"
+  changes="$(gwd)"
+  if [ -n "$changes" ]; then
+    cd "$dest"
+    echo "$changes" | git apply
+  fi
+
+  cd "$src"
+  changes="$(gwds)"
+  if [ -n "$changes" ]; then
+    cd "$dest"
+    echo "$changes" | git apply
+  fi
+}
+
+c2o() {
+  if ! pwd | grep guilded3 >> /dev/null; then
+    copy-to-other-git-repo "$GUILDED_ROOT_DIR" "$HOME/workspace/guilded3"
+  else
+    copy-to-other-git-repo "$GUILDED_ROOT_DIR" "$HOME/workspace/guilded"
+  fi
+}
