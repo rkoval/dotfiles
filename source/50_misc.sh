@@ -61,8 +61,9 @@ hbrc() {
 hbrp() {
   local prefix
   prefix="$1"
+  prefix="$(echo "$prefix" | xargs)" # trim whitespace
   commit_link="$(hub browse -u -- commit/$(grph))"
-  echo "$prefix$commit_link" | share-to-clipboard-url
+  echo "$prefix $commit_link" | share-to-clipboard-url
 }
 
 gcmp() {
