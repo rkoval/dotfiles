@@ -31,6 +31,7 @@ alias gws='git status --short'
 alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch -D'
 alias gbu='BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=origin/$BRANCH $BRANCH'
 alias gwt='git worktree'
+alias gs='git stash save --include-untracked'
 
 gbcleanup() {
   git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
