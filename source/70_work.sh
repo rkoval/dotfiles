@@ -1,4 +1,8 @@
 #!/bin/bash
+GRAY='\033[1;30m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+RESET_COLOR='\033[0m'
 alias v='vagrant'
 alias vu='vagrant up'
 alias vd='vagrant destroy'
@@ -104,7 +108,7 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 copy-to-other-git-repo() {
   src="$1"
   dest="$2"
-  echo "copying git working tree from $src to $dest ..."
+  echo "copying git working tree from ${YELLOW}$src${RESET_COLOR} to ${CYAN}$dest${RESET_COLOR} ..."
   shift 2
 
   cd "$src"
@@ -123,10 +127,18 @@ copy-to-other-git-repo() {
 }
 
 c2o() {
-  gws
+  src="$GUILDED_ROOT_DIR"
   if ! pwd | grep guilded3 >> /dev/null; then
-    copy-to-other-git-repo "$GUILDED_ROOT_DIR" "$HOME/workspace/guilded3"
+    dest="$HOME/workspace/guilded3"
   else
-    copy-to-other-git-repo "$GUILDED_ROOT_DIR" "$HOME/workspace/guilded"
+    dest="$HOME/workspace/guilded"
   fi
+  copy-to-other-git-repo "$src" "$dest"
+
+  echo -e "\n${GRAY}current working tree:${RESET_COLOR}"
+  gws
+  cd "$dest"
+  echo -e "\n${GRAY}updated destination working tree:${RESET_COLOR}"
+  gws
+  cd "$src"
 }
