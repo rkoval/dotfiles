@@ -123,6 +123,7 @@ copy-to-other-git-repo() {
 }
 
 c2o() {
+  gws
   if ! pwd | grep guilded3 >> /dev/null; then
     copy-to-other-git-repo "$GUILDED_ROOT_DIR" "$HOME/workspace/guilded3"
   else
