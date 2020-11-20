@@ -71,7 +71,7 @@ gcmp() {
   local message
   message="$1"
   shift 1
-  gcm "$message" -n
+  git commit --message "$message" -n
   if gp; then
     hbrp $@
   else
