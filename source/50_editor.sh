@@ -11,3 +11,4 @@ fi
 
 export VISUAL="vimr"
 export PAGER='less'
+export MANPAGER='nvim +Man!'
