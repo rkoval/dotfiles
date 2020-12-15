@@ -62,16 +62,21 @@ hbrc() {
 hbrp() {
   local prefix
   prefix="$1"
+  url="$2"
+  if [[ -z "$url" && $prefix = http* ]]; then
+    url="$prefix"
+    prefix=""
+  fi
   prefix="$(echo "$prefix" | xargs)" # trim whitespace
   commit_link="$(hub browse -u -- commit/$(grph))"
-  echo "$prefix $commit_link" | share-to-clipboard-url
+  share-to-clipboard-url -content="$prefix $commit_link" -url="$url"
 }
 
 gcmp() {
   local message
   message="$1"
   shift 1
-  git commit --message "$message" -n
+  git commit --message "$message" -n || return 1
   if gp; then
     hbrp $@
   else
