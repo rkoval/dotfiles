@@ -28,6 +28,7 @@ recipes=(
   tree
   vimpager
   zsh
+  git-delta
 )
 
 for recipe in "${recipes[@]}"; do

@@ -5,8 +5,11 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
-	pager = less -+F -c
+	# pager = less -+F -c
+	pager = delta
 	attributesfile = ~/.gitattributes
+[interactive]
+  diffFilter = delta --color-only
 [push]
 	default = current
 [alias]
@@ -27,7 +30,7 @@
 	untracked = black
 [difftool "sourcetree"]
 	cmd = " "
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = " "
 	trustExitCode = true
@@ -40,3 +43,13 @@
     insteadOf = https://github.com/
 [diff "image"]
 	command = /nastygoat/git-diff-image/git_diff_image
+[delta]
+  decorations = true
+  side-by-side = true
+  whitespace-error-style = 22 reverse
+  file-decoration-style = none
+  hunk-header-style = omit
+  line-numbers = true
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
