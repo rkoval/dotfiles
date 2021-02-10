@@ -58,9 +58,6 @@ if ! zgen saved; then
 fi
 
 # Customize to your needs...
-bindkey '^R' history-incremental-search-backward
-bindkey '^N' down-history
-bindkey '^P' up-history
 
 export KEYTIMEOUT=1
 setopt nosharehistory
@@ -71,4 +68,17 @@ if $(which kops > /dev/null 2>&1); then
   source <(kops completion zsh)
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey '^R' history-incremental-search-backward
+bindkey '^N' down-history
+bindkey '^P' up-history
+if [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+
+    bindkey '^R' fzf-history-widget
+    # ^N and ^P are natively handled in fzf,
+    # so just make them open the widget because it's the same exact number of keypresses
+    bindkey '^N' fzf-history-widget
+    bindkey '^P' fzf-history-widget
+fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
