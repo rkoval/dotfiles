@@ -2,6 +2,11 @@
 export NVM_AUTO_USE=true
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+# prevent error on init
+# see https://apple.stackexchange.com/a/340718/69081
+autoload -Uz compinit
+compinit
+
 # load zgen
 source "${HOME}/dotfiles/submodules/zgen/zgen.zsh"
 
