@@ -29,9 +29,18 @@ alias gba='git branch --all'
 alias gwS='git status'
 alias gws='git status --short'
 alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch -D'
-alias gbu='BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=origin/$BRANCH $BRANCH'
 alias gwt='git worktree'
 alias gs='git stash save --include-untracked'
+
+gbu() {
+  local BRANCH
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  if gp; then
+    git branch --set-upstream-to=origin/$BRANCH $BRANCH
+  else
+    osascript -e "display notification \"Failed to push (probably needs force)\" with title \"Error\""
+  fi
+}
 
 gbcleanup() {
   git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
