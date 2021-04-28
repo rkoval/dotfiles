@@ -34,3 +34,6 @@ defaults write -g AppleScrollerPagingBehavior -int 1
 
 # don't make mac type period after two periods (why?)
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -int 0
+
+# disable mouse acceleration
+defaults write -g com.apple.mouse.scaling -int -1
