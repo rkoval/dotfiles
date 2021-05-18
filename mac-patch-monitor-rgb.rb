@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 # Create display override file to force Mac OS X to use RGB mode for Display
 # see http://embdev.net/topic/284710
+# see https://bentumbleson.com/macos-big-sur-fix-fuzzy-external-display-force-rgb-mode/
 
 require 'base64'
 
