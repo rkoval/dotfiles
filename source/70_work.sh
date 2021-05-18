@@ -3,11 +3,6 @@ GRAY='\033[1;30m'
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 RESET_COLOR='\033[0m'
-alias v='vagrant'
-alias vu='vagrant up'
-alias vd='vagrant destroy'
-alias vh='vagrant halt'
-alias vs='vagrant suspend'
 
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
@@ -16,47 +11,15 @@ dockercleanup() {
   docker rm $(docker ps -qa --no-trunc --filter "status=exited")
 }
 
-# server aliases
-alias a3t='ssh analytics3 tail -f /var/log/nodejs/dash.log -n 500'
-alias aqat='ssh ad-dash-qa tail -f /var/log/nodejs/dash.log -n 500'
-
 alias vaulte="EDITOR=\$GIT_EDITOR ansible-vault edit --vault-password-file ~/.ssh/vault_pass.txt"
 alias vaultv='ansible-vault view --vault-password-file ~/.ssh/vault_pass.txt'
 alias vaulten='ansible-vault encrypt --vault-password-file ~/.ssh/vault_pass.txt'
 alias vaultde='ansible-vault decrypt --vault-password-file ~/.ssh/vault_pass.txt'
 alias vault='ansible-vault --vault-password-file ~/.ssh/vault_pass.txt'
 
-sshsdev () {
-  IP=$1
-  ssh ec2-user@$IP -i ~/.ssh/sdev_rsa
-}
-
-sshpub () {
-  IP=$1
-  ssh ec2-user@$IP -i ~/.ssh/publishing.pem
-}
-
-sshcol () {
-  IP=$1
-  ssh ec2-user@$IP -i ~/.ssh/acds-collabs.pem
-}
-
-sshrkoval () {
-  IP=$1
-  ssh ec2-user@$IP -i ~/.ssh/aws-sdev-rkoval.pem
-}
-
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ssh/vault_pass.txt
 
-alias cqlshprod='cqlsh --ssl --cqlshrc ~/.cassandra/cqlshrc-prod'
-alias cqlshsdev='cqlsh --ssl --cqlshrc ~/.cassandra/cqlshrc-sdev'
-alias cqlshpub='cqlsh --ssl --cqlshrc ~/.cassandra/cqlshrc-pub'
-
 alias dco='docker-compose'
-alias dcobrew='brew unlink docker-compose && brew link --overwrite docker-compose'
-dpq () {
-  docker push quay.io/rewardstyle/$1
-}
 
 dcou () {
   if [ -z "$1" ]; then
@@ -95,11 +58,7 @@ alias tf='terraform'
 alias pa='pachctl'
 alias jest='nocorrect jest'
 
-guilded_profile=~/workspace/guilded/guilded_profile.sh
-if [ -f $guilded_profile ]; then
-  source $guilded_profile
-fi
-
+alias jg1="cd ~/workspace/guilded && source guilded_user_profile.sh && source guilded_profile.sh"
 alias jg2="cd ~/workspace/guilded2 && source guilded_user_profile.sh && source guilded_profile.sh"
 alias jg3="cd ~/workspace/guilded3 && source guilded_user_profile.sh && source guilded_profile.sh"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
