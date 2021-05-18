@@ -37,3 +37,6 @@ defaults write -g NSAutomaticPeriodSubstitutionEnabled -int 0
 
 # disable mouse acceleration
 defaults write -g com.apple.mouse.scaling -int -1
+
+# disable expanded clock in top menubar. istatmenus provides a better one
+defaults write com.apple.menuextra.clock IsAnalog -bool true
