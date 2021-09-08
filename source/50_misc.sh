@@ -31,6 +31,7 @@ alias gws='git status --short'
 alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch -D'
 alias gwt='git worktree'
 alias gs='git stash save --include-untracked'
+alias gcom='git checkout master'
 
 gbu() {
   local BRANCH
