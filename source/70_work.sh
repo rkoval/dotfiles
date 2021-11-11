@@ -58,9 +58,9 @@ alias tf='terraform'
 alias pa='pachctl'
 alias jest='nocorrect jest'
 
-alias jg1="cd ~/workspace/guilded && source guilded_user_profile.sh && source guilded_profile.sh"
-alias jg2="cd ~/workspace/guilded2 && source guilded_user_profile.sh && source guilded_profile.sh"
-alias jg3="cd ~/workspace/guilded3 && source guilded_user_profile.sh && source guilded_profile.sh"
+alias jg1="cd ~/workspace/guilded && source guilded_profile.sh"
+alias jg2="cd ~/workspace/guilded2 && source guilded_profile.sh"
+alias jg3="cd ~/workspace/guilded3 && source guilded_profile.sh"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
