@@ -101,3 +101,7 @@ c2o() {
   gws
   cd "$src"
 }
+
+alias sshuserver='ec2connect i-012c81a7a5763cd0a'
+alias sshuserverstress='ec2connect i-069ab7d5062ca8196'
+alias sshmodbot='ec2connect i-0a4789ff84f0393ef'
