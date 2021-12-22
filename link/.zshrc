@@ -43,7 +43,7 @@ if ! zgen saved; then
     zgen prezto fasd
     zgen prezto prompt
     zgen prezto homebrew
-    zgen prezto docker
+    command -v docker > /dev/null && zgen prezto docker
 
     # use custom nvm and npm completion since prezto node module is slow
     zgen load lukechilds/zsh-nvm
@@ -52,11 +52,11 @@ if ! zgen saved; then
 
     # misc github plugins
     zgen load djui/alias-tips
-    zgen load mattbangert/kubectl-zsh-plugin
-    zgen load Dbz/zsh-kubernetes
-    zgen load docker/compose contrib/completion/zsh
-    zgen load docker/cli contrib/completion/zsh
-    zgen load sbodiu-pivotal/fly-zsh-autocomplete-plugin
+    command -v kubectl > /dev/null && zgen load mattbangert/kubectl-zsh-plugin
+    command -v kubectl > /dev/null && zgen load Dbz/zsh-kubernetes
+    command -v docker-compose > /dev/null && zgen load docker/compose contrib/completion/zsh
+    command -v docker > /dev/null && zgen load docker/cli contrib/completion/zsh
+    command -v fly > /dev/null && zgen load sbodiu-pivotal/fly-zsh-autocomplete-plugin
 
     # save all to init script
     zgen save
