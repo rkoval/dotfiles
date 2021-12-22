@@ -62,7 +62,7 @@ alias jg1="cd ~/workspace/guilded && source guilded_profile.sh"
 alias jg2="cd ~/workspace/guilded2 && source guilded_profile.sh"
 alias jg3="cd ~/workspace/guilded3 && source guilded_profile.sh"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
+pathappend "$ANDROID_HOME/platform-tools"
 
 copy-to-other-git-repo() {
   src="$1"

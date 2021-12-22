@@ -85,5 +85,3 @@ if [ -f ~/.fzf.zsh ]; then
     bindkey '^N' fzf-history-widget
     bindkey '^P' fzf-history-widget
 fi
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

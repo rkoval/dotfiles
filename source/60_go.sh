@@ -1,4 +1,8 @@
-#!/bin/bash
-GOROOT='/usr/local/opt/go'
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+#!/usr/bin/env bash
+if command -v go; then
+  pathappend "$(go env GOPATH)/bin"
+  GOPATH=$(go env GOPATH)
+  export GOPATH
+  GOROOT='/usr/local/opt/go'
+  pathprepend "$GOPATH/bin" "$GOROOT/bin"
+fi

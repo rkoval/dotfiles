@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-PATH="$PATH:node_modules/.bin"
-export PATH
+pathappend "node_modules/.bin"
+pathprepend "$HOME/.yarn/bin" "$HOME/.config/yarn/global/node_modules/.bin"
 
 alias nr='npm run'
 alias nrd='npm run dev'

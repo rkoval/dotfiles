@@ -7,6 +7,7 @@ umask 022
 # Easier navigation: .., ..., -
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias -- -='cd -'
 
 # File size
