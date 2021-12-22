@@ -74,7 +74,8 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 
-# arm-only
-if [[ -e /opt/homebrew/bin/brew && $(command -v brew >> /dev/null) ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+# homebrew
+source ./dotfiles/export_homebrew_home.sh
+if [[ -e $HOMEBREW_HOME/bin/brew && $(command -v brew >> /dev/null) ]]; then
+  eval "$($HOMEBREW_HOME/bin/brew shellenv)"
 fi

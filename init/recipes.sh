@@ -28,4 +28,4 @@ for recipe in "${recipes[@]}"; do
 done
 
 # post-install steps
-/usr/local/opt/fzf/install --no-bash --key-bindings --completion --update-rc
+"$HOMEBREW_HOME/opt/fzf/install" --no-bash --key-bindings --completion --update-rc

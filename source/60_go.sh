@@ -3,6 +3,6 @@ if command -v go >> /dev/null; then
   pathappend "$(go env GOPATH)/bin"
   GOPATH=$(go env GOPATH)
   export GOPATH
-  GOROOT='/usr/local/opt/go'
+  GOROOT="$HOMEBREW_HOME/opt/go"
   pathprepend "$GOPATH/bin" "$GOROOT/bin"
 fi

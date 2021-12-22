@@ -17,8 +17,6 @@ alias psg='ps -Af | head -1 && ps -Af | grep'
 # bower fix for zsh
 alias bower='noglob bower'
 
-alias localtunnel='/usr/local/lib/node_modules/localtunnel/bin/client'
-
 alias gp='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 alias grp='git rev-parse'
 alias grph="git rev-parse HEAD | tr -d '\\n'"

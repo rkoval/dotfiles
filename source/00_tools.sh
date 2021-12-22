@@ -13,7 +13,6 @@ pathappend() {
 }
 
 pathprepend() {
-  echo $PATH
   for ((i=$#; i>0; i--));
   do
     ARG=$@[i]
@@ -21,6 +20,5 @@ pathprepend() {
       PATH="$ARG${PATH:+":$PATH"}"
     fi
   done
-  echo $PATH
   export PATH
 }

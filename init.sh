@@ -7,6 +7,9 @@ if [ ! -d "$HOME/dotfiles" ]; then
   git clone git@github.com:rkoval/dotfiles.git "$HOME/dotfiles"
 fi
 
+cd "$HOME/dotfiles"
+source ./export_homebrew_home.sh
+
 echo 'setting up xcode ...'
 ( set -x ; sudo xcodebuild -license accept )
 ( set -x ; sudo chown -R $USER /usr/local )
@@ -30,7 +33,6 @@ if ! command -v brew > /dev/null; then
   fi
 fi
 
-cd "$HOME/dotfiles"
 
 ./init/submodules.sh
 ./init/jamf.sh
