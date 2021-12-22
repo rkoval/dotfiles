@@ -11,7 +11,6 @@ recipes=(
   fasd
   fzf
   git
-  git-extras
   gpg2
   hub
   imagemagick
