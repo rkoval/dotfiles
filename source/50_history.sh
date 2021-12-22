@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # History settings
 
 # Entries beginning with space aren't added into history, and duplicate

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # don't generate .pyc
 export PYTHONDONTWRITEBYTECODE=1
 

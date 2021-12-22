@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 export GREP_OPTIONS='--color=auto'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # alias vim to macvim vim for updated version
 export EDITOR='nvim'
