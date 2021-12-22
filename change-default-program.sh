@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 set -e
+echo "this script is not configured for a vim editor"
+exit 1
 
-PROGRAM="com.vim.MacVim"
+PROGRAM="com.todo.TODO"
 file_types=(
   "public.plain-text"
   "net.daringfireball.markdown"

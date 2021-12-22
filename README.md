@@ -30,10 +30,3 @@
 # Troubleshooting
 
 - If homebrew installation can't find and install the command line extras, then you may need to open Software Update to install missing updates for XCode. If macOS prompts you to reinstall the exact same updates after installing, try restarting (yes, actually)
-- If MacVim fails to install because of missing ruby headers, try symlinking the `universal-darwinXX/ruby/config.h` header to the system ruby directory:
-
-  ```sh
-  # replace Xs with actual version numbers
-  # from ruby directory output by `brew install --verbose`
-  sudo ln -s ../../ruby-X.X.X/universal-darwinXX/ruby/config.h
-  ```

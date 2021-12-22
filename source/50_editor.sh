@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# alias vim to macvim vim for updated version
+# alias vim for updated version
 export EDITOR='nvim'
 alias vim="\$GIT_EDITOR"
 alias vi=vim
