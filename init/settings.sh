@@ -10,11 +10,4 @@ setup_karabiner() {
   ln -s "$HOME/Sync/Settings/karabiner" "$directory"
 }
 
-setup_adium() {
-  directory="$HOME/Library/Application Support/Adium 2.0"
-  rm -rf "$directory"
-  ln -s "$HOME/Sync/Settings/Adium 2.0" "$directory"
-}
-
 setup_karabiner
-setup_adium
