@@ -18,7 +18,6 @@ alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Aliasing eachdir like this allows you to use aliases/functions as commands.
 alias eachdir=". eachdir"
-# alias ls="lsd --group-dirs first"
 alias ll="ls -l"
 alias la="ll -a"
 alias less="less -j 4"

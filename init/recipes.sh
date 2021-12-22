@@ -15,7 +15,6 @@ recipes=(
   hub
   imagemagick
   jq
-  lsd
   neovim
   nvm
   rbenv
