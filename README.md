@@ -1,6 +1,10 @@
 # rkoval's dotfiles
 
-- Restart your Mac while pressing Cmd+R to boot into recovery OS and run:
+- Shut down your Mac entirely and then boot into recovery OS
+  - Intel: Press power button then hold Cmd+R while booting
+  - M1/arm: Press and hold power button down while booting
+
+- While in recovery, run:
 
   ```sh
   csrutil disable
