@@ -10,7 +10,6 @@ recipes=(
   editorconfig
   fasd
   fzf
-  git
   gpg2
   hub
   imagemagick
