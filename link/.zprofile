@@ -73,9 +73,3 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
-
-# homebrew
-source ./dotfiles/export_homebrew_home.sh
-if [[ -e $HOMEBREW_HOME/bin/brew && ! $(command -v brew >> /dev/null) ]]; then
-  eval "$($HOMEBREW_HOME/bin/brew shellenv)"
-fi
