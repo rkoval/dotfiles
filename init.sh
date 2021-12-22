@@ -14,6 +14,16 @@ echo 'setting up xcode ...'
 echo 'installing homebrew...'
 command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# arm only
+if [ -e /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# intel only
+if [ -e /usr/local/Cellar ]; then
+  sudo chown -R "$(whoami)" /usr/local/Cellar || return $?
+fi
+
 cd "$HOME/dotfiles"
 
 ./init/submodules.sh

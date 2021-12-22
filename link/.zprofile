@@ -73,3 +73,8 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+
+# arm-only
+if [[ -e /opt/homebrew/bin/brew && $(command -v brew >> /dev/null) ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
