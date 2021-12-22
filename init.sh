@@ -14,6 +14,8 @@ echo 'setting up xcode ...'
 echo 'installing homebrew...'
 command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+cd "$HOME/dotfiles"
+
 ./init/submodules.sh
 ./init/jamf.sh
 ./init/recipes.sh
