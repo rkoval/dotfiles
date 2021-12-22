@@ -14,17 +14,16 @@ echo 'setting up xcode ...'
 ( set -x ; sudo xcodebuild -license accept )
 ( set -x ; sudo chown -R $USER /usr/local )
 
-# arm only
-if [ -e /opt/homebrew/bin/brew ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -e $HOMEBREW_HOME/bin/brew ]; then
+  eval "$($HOMEBREW_HOME/bin/brew shellenv)"
 fi
 
 if ! command -v brew > /dev/null; then
   echo 'installing homebrew...'
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   # arm only, must do after also
-  if [ -e /opt/homebrew/bin/brew ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+  if ! command -v brew > /dev/null ; then
+    eval "$($HOMEBREW_HOME/bin/brew shellenv)"
   fi
 
   # intel only
