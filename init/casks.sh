@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 echo "installing homebrew casks ..."
 casks=(
-  # Applications
-  adium
   alfred
-  battle-net
   bettertouchtool
-  cloudapp
   discord
   disk-inventory-x
-  docker
-  dropbox
   firefox
   fork
   font-lato
@@ -20,12 +14,9 @@ casks=(
   istat-menus
   iterm2
   karabiner-elements
-  java
-  path-finder
   postman
   resilio-sync
   simplenote
-  slack
   spotify
   steam
   sublime-text

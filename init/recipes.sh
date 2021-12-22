@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 echo "installing homebrew recipes ..."
 recipes=(
-  'lastpass-cli --with-pinentry --with-doc'
   'htop --ignore-dependencies'
   '--HEAD universal-ctags/universal-ctags/universal-ctags'
   ag
@@ -11,7 +10,6 @@ recipes=(
   editorconfig
   fasd
   fzf
-  ghostscript
   git
   git-extras
   gpg2
@@ -19,15 +17,12 @@ recipes=(
   imagemagick
   jq
   lsd
-  macvim
   neovim
   nvm
   rbenv
   shellcheck
   ssh-copy-id
-  tree
   vimpager
-  zsh
   git-delta
 )
 
