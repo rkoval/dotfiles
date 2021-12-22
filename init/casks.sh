@@ -28,8 +28,5 @@ casks=(
 brew tap homebrew/cask-fonts
 
 for cask in "${casks[@]}"; do
-  brew cask install $cask
+  brew install $cask
 done
-
-# do config setup
-cd ~/Library/Application\ Support
