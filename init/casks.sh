@@ -33,5 +33,3 @@ done
 
 # do config setup
 cd ~/Library/Application\ Support
-rm -rf Adium\ 2.0
-ln -sf ~/Sync/Settings/Adium\ 2.0 Adium\ 2.0
