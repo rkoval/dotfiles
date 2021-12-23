@@ -11,8 +11,8 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 fi
 
 # homebrew
-source ./dotfiles/export_homebrew_home.sh
-if [[ -e $HOMEBREW_HOME/bin/brew && ! $(command -v brew >> /dev/null) ]]; then
+source "$HOME/dotfiles/export_homebrew_home.sh"
+if [[ -e "$HOMEBREW_HOME/bin/brew" && ! $(command -v brew >> /dev/null) ]]; then
   eval "$($HOMEBREW_HOME/bin/brew shellenv)"
 fi
 
