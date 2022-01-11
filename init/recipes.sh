@@ -11,6 +11,7 @@ recipes=(
   fasd
   fzf
   gpg2
+  php # for alfred workflows
   hub
   imagemagick
   jq
