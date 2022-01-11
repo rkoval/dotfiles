@@ -4,4 +4,4 @@
 source "$HOME/.bashrc"
 
 # this script depends on dotfiles/init/sublime-text.sh script running for this to exist
-subl-raw $@
+exec subl-raw $@
