@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# source bashrc so that env vars are consistent regardless of how sublime was opened
+source "$HOME/.bashrc"
+
+# this script depends on dotfiles/init/sublime-text.sh script running for this to exist
+subl-raw $@

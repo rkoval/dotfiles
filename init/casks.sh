@@ -25,6 +25,8 @@ casks=(
   vlc
 )
 
+./sublime-text.sh
+
 brew tap homebrew/cask-fonts
 
 for cask in "${casks[@]}"; do
