@@ -59,7 +59,7 @@ gcowt() {
   git worktree add "$tempRepoFolder" $@ && subl "$tempRepoFolder" && cd "$tempRepoFolder"
 }
 
-alias hpr='hub pull-request'
+alias hpr='hub pull-request --browse --push --edit'
 alias hbr='hub browse'
 alias hbrv='hub browse -- commit/$(grph)'
 hbrc() {
