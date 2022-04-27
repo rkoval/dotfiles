@@ -20,6 +20,7 @@ recipes=(
   rbenv
   shellcheck
   ssh-copy-id
+  lazygit
   vimpager
   git-delta
 )

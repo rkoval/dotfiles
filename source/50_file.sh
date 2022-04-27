@@ -21,6 +21,7 @@ alias eachdir=". eachdir"
 alias ll="ls -l"
 alias la="ll -a"
 alias less="less -j 4"
+alias lg="lazygit --use-config-file $HOME/.config/lazygit/config.yml"
 
 # Create a new directory and enter it
 function md() {

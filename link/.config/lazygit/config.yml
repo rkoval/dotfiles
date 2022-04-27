@@ -1,0 +1,12 @@
+---
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+    useConfig: false
+keybinding:
+  universal:
+    # prevBlock: '<left>' # goto the previous block / panel
+    prevBlock: 'p' # goto the previous block / panel
+    # nextBlock: '<right>' # goto the next block / panel
+    nextBlock: 'n' # goto the next block / panel
