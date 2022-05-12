@@ -12,6 +12,6 @@ dein/
 *LOCAL*
 
 # Ignore vim undo history
-vim/.undo
-vim/.backup
-vim/.swap
+nvim/.undo
+nvim/.backup
+nvim/.swap

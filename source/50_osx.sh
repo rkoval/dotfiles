@@ -14,6 +14,8 @@ alias pf='open -a "Path Finder.app" .'
 # open current directory in sourcetree
 alias st='fork `git rev-parse --show-toplevel`'
 
+alias vimr='vimr -n'
+
 # alias vim for updated version
 export GIT_EDITOR=$EDITOR # has to be manual reference otherwise git picks up native vim, not alias
 

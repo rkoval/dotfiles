@@ -2,8 +2,8 @@
 echo "installing homebrew recipes ..."
 recipes=(
   'htop --ignore-dependencies'
-  '--HEAD universal-ctags/universal-ctags/universal-ctags'
-  ag
+  ripgrep
+  fd
   cmake
   coreutils
   ctop
@@ -19,6 +19,7 @@ recipes=(
   nvm
   rbenv
   shellcheck
+  wget
   ssh-copy-id
   lazygit
   vimpager

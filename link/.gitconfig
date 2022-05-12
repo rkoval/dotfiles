@@ -35,7 +35,6 @@
 	cmd = " "
 	trustExitCode = true
 [commit]
-	template = ~/.stCommitMsg
 	gpgsign = true
 [diff "ansible-vault"]
 	textconv = ansible-vault view --vault-password-file ~/.ssh/vault_pass.txt
