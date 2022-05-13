@@ -6,9 +6,7 @@ let g:mapleader = ","
 
 set termguicolors
 
-if !has("gui_vimr")
-  set gfn=Anonymice\ Nerd\ Font\ Complete\ Mono:h12
-else
+if has("gui_running")
   source ~/.gvimrc
 endif
 

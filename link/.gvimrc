@@ -1,9 +1,5 @@
 set guioptions=egmrt
 
-set colorcolumn=160
-set t_Co=256
-set columns=177
-
 " Open Command+T in a new tab
 let g:CommandTAcceptSelectionTabMap='<CR>'
 
