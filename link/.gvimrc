@@ -4,11 +4,6 @@ set colorcolumn=160
 set t_Co=256
 set columns=177
 
-function! GuiTabLabel()
-   return substitute( expand( '%:p' ), '.\+\/\(.\+\)\/.\+', '\1', '' )
-endfunction
-set guitablabel=%N.\ %{expand(\"\%.\")}\ %M " show tab number, filename, and modified indicator
-
 " Open Command+T in a new tab
 let g:CommandTAcceptSelectionTabMap='<CR>'
 
