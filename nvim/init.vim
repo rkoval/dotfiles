@@ -90,6 +90,11 @@ imap jk <Esc>
 imap Jk <Esc>
 nmap K <Esc>
 
+" cmd+w should delete the buffer
+imap <D-w> :bdelete<cr>
+nmap <D-w> :bdelete<cr>
+vmap <D-w> :bdelete<cr>
+
 " map find hotkeys
 nnoremap <D-f> /
 nnoremap <D-r> :,$s//gc\|1,''-&&<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
