@@ -12,25 +12,26 @@ vim.fn.sign_define('LspDiagnosticsSignWarning', { text = '>', texthl = 'LspDiagn
 vim.fn.sign_define('LspDiagnosticsSignInformation', { text = '>', texthl = 'LspDiagnosticsSignInformation', linehl = '', numhl = '' })
 vim.fn.sign_define('LspDiagnosticsSignHint', { text = '>', texthl = 'LspDiagnosticsSignHint', linehl = '', numhl = '' })
 
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>zz', opts)
+vim.api.nvim_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>zz', opts)
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+vim.api.nvim_set_keymap('n', '[l', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+vim.api.nvim_set_keymap('n', ']l', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+
+local diagnosticOpts = '{ severity_limit = "Error", popup_opts = { severity_limit = "Error" }}'
+vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.diagnostic.goto_prev(' .. diagnosticOpts .. ')<cr>zz', opts)
+vim.api.nvim_set_keymap('n', '<leader>.', '<cmd>lua vim.diagnostic.goto_next(' .. diagnosticOpts .. ')<cr>zz', opts)
+
 local function set_lsp_keymaps(client, bufnr)
-  local opts = { noremap = true, silent = true }
-
-  vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-  vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>zz', opts)
-  vim.api.nvim_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>zz', opts)
-  vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-  vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
   -- vim.api.nvim_set_keymap('n', ',H', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
-  local diagnosticOpts = '{ severity_limit = "Error", popup_opts = { severity_limit = "Error" }}'
-  vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.diagnostic.goto_prev(' .. diagnosticOpts .. ')<cr>zz', opts)
-  vim.api.nvim_set_keymap('n', '<leader>.', '<cmd>lua vim.diagnostic.goto_next(' .. diagnosticOpts .. ')<cr>zz', opts)
 
   vim.api.nvim_set_keymap('n', '<leader>lt', '<cmd>cexpr system("tsc --pretty false") <bar> copen<cr>', opts)
   vim.api.nvim_set_keymap('n', '<leader>la', '<cmd>cexpr system("npm run lint -- --format unix") <bar> copen<cr>', opts)
   vim.api.nvim_set_keymap('n', '<leader>lf', '<cmd>%!eslint_d --stdin --fix-to-stdout --stdin-filename %<cr>', opts)
-
-  vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
 end
 
 local function handler_publishDiagnostics(level)
@@ -64,9 +65,9 @@ end
 
 --------------------------------------------------------------------------------
 
-require("nvim-lsp-installer").setup({
-    ensure_installed = { "sumneko_lua", "eslint", "tsserver", "bashls", "pyright", "vimls" }, -- ensure these servers are always installed
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+require('nvim-lsp-installer').setup({
+  ensure_installed = { 'sumneko_lua', 'eslint', 'tsserver', 'bashls', 'pyright', 'vimls' }, -- ensure these servers are always installed
+  automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require('lspconfig')
@@ -171,10 +172,19 @@ lspconfig.efm.setup({
 })
 
 -- SUMNEKO ---------------------------------------------------------------------
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
 lspconfig.sumneko_lua.setup({
   settings = {
     Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
       diagnostics = {
         globals = { 'vim', 'use' },
         disable = { 'lowercase-global' },
@@ -183,14 +193,19 @@ lspconfig.sumneko_lua.setup({
         library = {
           [vim.fn.expand('$VIMRUNTIME/lua')] = true,
           [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?.lua'] = true,
+          ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?/init.lua'] = true,
         },
+      },
+      telemetry = {
+        enable = false,
       },
     },
   },
 })
 
 -- python ---------------------------------------------------------------------
-lspconfig.pyright.setup{}
+lspconfig.pyright.setup({})
 
 -- bash ---------------------------------------------------------------------
-lspconfig.bashls.setup{}
+lspconfig.bashls.setup({})
