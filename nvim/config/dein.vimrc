@@ -71,6 +71,7 @@ call dein#add('lewis6991/gitsigns.nvim')
 " evaluating nvim plugins
 "
 call dein#add('romgrk/barbar.nvim')
+call dein#add('petertriho/nvim-scrollbar')
 
 "
 " older, but still useful vim plugins
