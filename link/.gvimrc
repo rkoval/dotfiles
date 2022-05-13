@@ -1,4 +1,3 @@
-set lines=999 columns=100
 set guioptions=egmrt
 
 set colorcolumn=160
