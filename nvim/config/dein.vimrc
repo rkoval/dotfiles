@@ -25,7 +25,7 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-call dein#add('gosukiwi/vim-atom-dark')
+call dein#add('folke/tokyonight.nvim')
 
 "
 " nvim dependencies

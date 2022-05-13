@@ -10,8 +10,8 @@ require('neo-tree').setup({
       enable_character_fade = true,
     },
     indent = {
-      indent_size = 2,
-      padding = 1, -- extra padding on left hand side
+      indent_size = 1,
+      padding = 0, -- extra padding on left hand side
       -- indent guides
       with_markers = true,
       indent_marker = '│',
@@ -65,8 +65,8 @@ require('neo-tree').setup({
       nowait = true,
     },
     mappings = {
-      ['<backspace>'] = '10k',
-      ['<space>'] = '10j',
+      ['<backspace>'] = nil,
+      ['<space>'] = nil,
       ['<cr>'] = 'open',
       ['S'] = 'open_split',
       ['s'] = 'open_vsplit',
@@ -150,7 +150,6 @@ require('neo-tree').setup({
     show_unloaded = true,
     window = {
       mappings = {
-        ['bd'] = 'buffer_delete',
         ['<bs>'] = 'navigate_up',
         ['.'] = 'set_root',
       },

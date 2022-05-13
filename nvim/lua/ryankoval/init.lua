@@ -2,6 +2,8 @@ vim.g.mapleader = ','
 
 vim.opt.termguicolors = true
 
+require('ryankoval.theme')
+
 require('ryankoval.cmp')
 require('ryankoval.gitsigns')
 require('ryankoval.neotree')

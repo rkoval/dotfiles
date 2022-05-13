@@ -4,15 +4,14 @@ let &packpath = &runtimepath
 scriptencoding utf-8
 let g:mapleader = ","
 
+set termguicolors
+
 if !has("gui_vimr")
   set gfn=Anonymice\ Nerd\ Font\ Complete\ Mono:h12
 else
   source ~/.gvimrc
 endif
 
-if !has("gui_vimr") && !has('gui_running')
-  colors atom-dark-256
-endif
 
 autocmd CompleteDone * pclose
 

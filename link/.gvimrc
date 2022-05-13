@@ -3,7 +3,6 @@ set guioptions=egmrt
 set colorcolumn=160
 set t_Co=256
 set columns=177
-colors atom-dark
 
 function! GuiTabLabel()
    return substitute( expand( '%:p' ), '.\+\/\(.\+\)\/.\+', '\1', '' )
