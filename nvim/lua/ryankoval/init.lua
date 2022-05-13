@@ -2,7 +2,7 @@ vim.g.mapleader = ','
 
 require('ryankoval.cmp')
 require('ryankoval.gitsigns')
-require('ryankoval.nvimtree')
+require('ryankoval.neotree')
 require('ryankoval.treesitter')
 require('ryankoval.indent-blankline')
 require('ryankoval.telescope')

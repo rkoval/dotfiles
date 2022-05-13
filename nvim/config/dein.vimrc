@@ -28,9 +28,15 @@ augroup END
 call dein#add('gosukiwi/vim-atom-dark')
 
 "
-" nvim plugins
+" nvim dependencies
 "
 call dein#add('nvim-lua/plenary.nvim')
+call dein#add('MunifTanjim/nui.nvim')
+call dein#add('kyazdani42/nvim-web-devicons')
+
+"
+" nvim plugins
+"
 
 call dein#add('nvim-treesitter/nvim-treesitter', {
   \  'hook_post_update': 'TSUpdate',
@@ -53,8 +59,7 @@ call dein#add('hrsh7th/cmp-path')
 call dein#add('L3MON4D3/LuaSnip')
 call dein#add('saadparwaiz1/cmp_luasnip')
 
-call dein#add('kyazdani42/nvim-web-devicons')
-call dein#add('kyazdani42/nvim-tree.lua')
+call dein#add('nvim-neo-tree/neo-tree.nvim')
 
 call dein#add('nvim-lualine/lualine.nvim')
 
