@@ -70,7 +70,7 @@ call dein#add('lewis6991/gitsigns.nvim')
 "
 " evaluating nvim plugins
 "
-call dein#add('akinsho/bufferline.nvim')
+call dein#add('romgrk/barbar.nvim')
 
 "
 " older, but still useful vim plugins

@@ -11,7 +11,7 @@ require('ryankoval.telescope')
 require('ryankoval.lsp')
 require('ryankoval.luasnip')
 require('ryankoval.lualine')
-require('ryankoval.bufferline')
+require('ryankoval.barbar')
 
 local parsers = require('nvim-treesitter.parsers')
 local configs = parsers.get_parser_configs()
