@@ -5,7 +5,7 @@ scriptencoding utf-8
 let g:mapleader = ","
 
 if !has("gui_vimr")
-  set gfn=AnonymicePowerline\ Nerd\ Font:h12
+  set gfn=Anonymice\ Nerd\ Font\ Complete\ Mono:h12
 else
   source ~/.gvimrc
 endif

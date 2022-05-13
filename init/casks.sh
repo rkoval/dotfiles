@@ -9,7 +9,7 @@ casks=(
   fork
   font-lato
   font-anonymous-pro
-  font-anonymouspro-nerd-font-mono
+  font-anonymice-nerd-font
   google-chrome
   istat-menus
   iterm2
