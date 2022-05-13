@@ -34,6 +34,11 @@ local telescope_opts = {
       '--column',
       '--smart-case',
     },
+    cache_pickers = true,
+    history = {
+      path = '~/.local/share/nvim/databases/telescope_history.sqlite3',
+      limit = 100,
+    },
 
     prompt_prefix = '> ',
     sorting_strategy = 'ascending',
@@ -56,6 +61,8 @@ local telescope_opts = {
       '%.ttf',
       '%.eot',
       '%.svg',
+      'dein/',
+      '.undo/',
       'yarn.lock',
       'package%-lock.json',
       '^%.git%/*',
@@ -70,6 +77,8 @@ local telescope_opts = {
         ['<esc>'] = actions.close,
         ['<C-o>'] = actions.send_to_qflist + actions.open_qflist,
         ['<cr>'] = actions.select_tab,
+        ['<Down>'] = actions.cycle_history_next,
+        ['<Up>'] = actions.cycle_history_prev,
       },
     },
   },
@@ -122,6 +131,7 @@ local telescope_opts = {
 }
 
 require('telescope').setup(telescope_opts)
+require('telescope').load_extension('smart_history')
 
 if vim.fn.has('win32') == 0 then
   require('telescope').load_extension('fzf')

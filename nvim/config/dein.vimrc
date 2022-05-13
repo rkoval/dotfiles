@@ -33,6 +33,7 @@ call dein#add('folke/tokyonight.nvim')
 call dein#add('nvim-lua/plenary.nvim')
 call dein#add('MunifTanjim/nui.nvim')
 call dein#add('kyazdani42/nvim-web-devicons')
+call dein#add('tami5/sqlite.lua')
 
 "
 " nvim plugins
@@ -49,6 +50,7 @@ call dein#add('nvim-telescope/telescope.nvim', {
 call dein#add('nvim-telescope/telescope-fzf-native.nvim', {
   \  'hook_post_update': 'make',
   \})
+call dein#add('nvim-telescope/telescope-smart-history.nvim')
 
 call dein#add('neovim/nvim-lspconfig')
 call dein#add('williamboman/nvim-lsp-installer')
