@@ -68,6 +68,11 @@ call dein#add('xiyaowong/nvim-cursorword')
 call dein#add('lewis6991/gitsigns.nvim')
 
 "
+" evaluating nvim plugins
+"
+call dein#add('akinsho/bufferline.nvim')
+
+"
 " older, but still useful vim plugins
 "
 call dein#add('editorconfig/editorconfig-vim')

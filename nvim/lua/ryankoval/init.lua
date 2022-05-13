@@ -1,5 +1,7 @@
 vim.g.mapleader = ','
 
+vim.opt.termguicolors = true
+
 require('ryankoval.cmp')
 require('ryankoval.gitsigns')
 require('ryankoval.neotree')
@@ -9,6 +11,7 @@ require('ryankoval.telescope')
 require('ryankoval.lsp')
 require('ryankoval.luasnip')
 require('ryankoval.lualine')
+require('ryankoval.bufferline')
 
 local parsers = require('nvim-treesitter.parsers')
 local configs = parsers.get_parser_configs()
