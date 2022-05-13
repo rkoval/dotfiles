@@ -20,6 +20,7 @@ recipes=(
   rbenv
   shellcheck
   wget
+  stylua
   ssh-copy-id
   lazygit
   vimpager

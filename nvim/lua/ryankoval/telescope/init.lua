@@ -69,7 +69,7 @@ local telescope_opts = {
         ['<c-k>'] = actions.move_selection_previous,
         ['<esc>'] = actions.close,
         ['<C-o>'] = actions.send_to_qflist + actions.open_qflist,
-        ["<cr>"] = actions.select_tab,
+        ['<cr>'] = actions.select_tab,
       },
     },
   },
@@ -88,7 +88,7 @@ local telescope_opts = {
     },
     find_files = {
       prompt_title = '~ files ~',
-      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+      find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' },
       follow = true,
       hidden = true,
       previewer = false,
@@ -97,7 +97,7 @@ local telescope_opts = {
     },
     oldfiles = {
       prompt_title = '~ oldfiles ~',
-      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+      find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' },
       previewer = false,
       theme = 'dropdown',
       layout_config = { width = 110 },
