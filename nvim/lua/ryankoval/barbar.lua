@@ -61,3 +61,19 @@ vim.g.bufferline = {
   -- where X is the buffer number. But only a static string is accepted here.
   no_name_title = nil,
 }
+
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+map('n', '<c-s-tab>', ':BufferPrevious<CR>', opts)
+map('n', '<c-tab>', ':BufferNext<CR>', opts)
+-- Goto buffer in position...
+map('n', '<D-1>', ':BufferGoto 1<CR>', opts)
+map('n', '<D-2>', ':BufferGoto 2<CR>', opts)
+map('n', '<D-3>', ':BufferGoto 3<CR>', opts)
+map('n', '<D-4>', ':BufferGoto 4<CR>', opts)
+map('n', '<D-5>', ':BufferGoto 5<CR>', opts)
+map('n', '<D-6>', ':BufferGoto 6<CR>', opts)
+map('n', '<D-7>', ':BufferGoto 7<CR>', opts)
+map('n', '<D-8>', ':BufferGoto 8<CR>', opts)
+map('n', '<D-9>', ':BufferGoto 9<CR>', opts)
+map('n', '<D-0>', ':BufferLast<CR>', opts)
