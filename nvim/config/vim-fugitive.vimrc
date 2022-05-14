@@ -1,3 +1,3 @@
-nnoremap <leader>ha = :Gblame<cr>
-nnoremap <leader>gs = :Gstatus<CR><C-w>20+
+nnoremap <leader>ha = :Git blame<cr>
+nnoremap <leader>gs = :Git<CR><C-w>20+
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
