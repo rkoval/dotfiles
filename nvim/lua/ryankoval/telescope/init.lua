@@ -16,7 +16,7 @@ local select_multiple = function(prompt_bufnr)
 
   if #multi_selections > 0 then
     actions.send_selected_to_qflist(prompt_bufnr)
-    actions.open_qflist()
+    actions.open_qflist({})
   else
     action_set.select(prompt_bufnr, 'default')
   end

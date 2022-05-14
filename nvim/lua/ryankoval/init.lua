@@ -15,6 +15,7 @@ require('ryankoval.luasnip')
 require('ryankoval.lualine')
 require('ryankoval.barbar')
 require('ryankoval.scrollbar')
+require('ryankoval.custom.copy_filename_to_clipboard')
 
 local parsers = require('nvim-treesitter.parsers')
 local configs = parsers.get_parser_configs()
