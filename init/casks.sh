@@ -18,6 +18,7 @@ casks=(
   resilio-sync
   simplenote
   spotify
+  neovide
   steam
   sublime-text
   tableplus
@@ -30,5 +31,5 @@ casks=(
 brew tap homebrew/cask-fonts
 
 for cask in "${casks[@]}"; do
-  brew install $cask
+  brew install "$cask"
 done

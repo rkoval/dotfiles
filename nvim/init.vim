@@ -6,7 +6,7 @@ let g:mapleader = ","
 
 set termguicolors
 
-if has("gui_running")
+if has("gui_running") || exists("g:neovide")
   source ~/.gvimrc
 endif
 
@@ -89,7 +89,7 @@ imap Jk <Esc>
 nmap K <Esc>
 
 " cmd+w should delete the buffer
-imap <D-w> :bdelete<cr>
+imap <D-w> <esc>:bdelete<cr>
 nmap <D-w> :bdelete<cr>
 vmap <D-w> :bdelete<cr>
 
