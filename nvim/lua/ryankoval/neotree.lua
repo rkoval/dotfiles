@@ -65,8 +65,8 @@ require('neo-tree').setup({
       nowait = true,
     },
     mappings = {
-      ['<backspace>'] = nil,
-      ['<space>'] = nil,
+      ['<backspace>'] = 'none',
+      ['<space>'] = 'none',
       ['<cr>'] = 'open',
       ['S'] = 'open_split',
       ['s'] = 'open_vsplit',
@@ -85,6 +85,7 @@ require('neo-tree').setup({
       ['y'] = 'copy_to_clipboard',
       ['x'] = 'cut_to_clipboard',
       ['p'] = 'paste_from_clipboard',
+      ['m'] = 'none',
       ['mc'] = {
         'copy',
         config = {
