@@ -18,6 +18,7 @@ require('ryankoval.scrollbar')
 require('ryankoval.nvim-autopairs')
 require('ryankoval.custom.font')
 require('ryankoval.custom.copy_filename_to_clipboard')
+require('ryankoval.custom.add_log')
 
 local parsers = require('nvim-treesitter.parsers')
 local configs = parsers.get_parser_configs()
