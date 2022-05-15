@@ -74,6 +74,7 @@ call dein#add('lewis6991/gitsigns.nvim')
 "
 call dein#add('romgrk/barbar.nvim')
 call dein#add('petertriho/nvim-scrollbar')
+call dein#add('windwp/nvim-autopairs')
 
 "
 " older, but still useful vim plugins
@@ -108,9 +109,6 @@ call dein#add('kshenoy/vim-signature', {
   \})
 call dein#add('mrtazz/simplenote.vim', {
   \  'hook_post_source': 'source ~/.config/nvim/config/simplenote.vimrc'
-  \})
-call dein#add('Raimondi/delimitMate', {
-  \  'hook_post_source': 'source ~/.config/nvim/config/delimitMate.vimrc'
   \})
 call dein#add('junegunn/vim-easy-align', {
   \  'on_cmd': 'EasyAlign',

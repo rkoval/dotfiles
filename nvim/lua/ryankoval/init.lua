@@ -15,6 +15,7 @@ require('ryankoval.luasnip')
 require('ryankoval.lualine')
 require('ryankoval.barbar')
 require('ryankoval.scrollbar')
+require('ryankoval.nvim-autopairs')
 require('ryankoval.custom.font')
 require('ryankoval.custom.copy_filename_to_clipboard')
 
