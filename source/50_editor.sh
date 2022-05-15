@@ -4,7 +4,7 @@
 export EDITOR='nvim'
 alias vim="\$GIT_EDITOR"
 alias vi=vim
-alias gvim='neovide'
+alias gvim='vimr'
 
 if [ ! $SSH_TTY ] && is_osx; then
   export LESSEDIT='gvim ?lm+%lm -- %f'

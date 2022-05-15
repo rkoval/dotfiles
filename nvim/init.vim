@@ -6,7 +6,7 @@ let g:mapleader = ","
 
 set termguicolors
 
-if has("gui_running") || exists("g:neovide")
+if has("gui_running") || has("gui_vimr")
   source ~/.gvimrc
 endif
 

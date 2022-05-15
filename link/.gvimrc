@@ -3,9 +3,6 @@ set guioptions=egmrt
 " Open Command+T in a new tab
 let g:CommandTAcceptSelectionTabMap='<CR>'
 
-let g:neovide_cursor_animation_length=0
-let g:neovide_input_use_logo=v:true
-
 noremap <D-s>  :w<CR>
 
 noremap <D-c>  "+y
@@ -20,3 +17,6 @@ inoremap <D-t>  <esc>:tabnew<cr>a
 
 
 noremap <D-S-w> :qa<cr>
+
+noremap <D-a> ggVG
+inoremap <D-a> <esc>ggVG
