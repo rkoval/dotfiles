@@ -133,6 +133,11 @@ local shellcheck = {
   lintFormats = { '%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m' },
 }
 
+local black = {
+  formatCommand = 'black --quiet -',
+  formatStdin = true,
+}
+
 lspconfig.efm.setup({
   filetypes = {
     'javascript',
@@ -143,6 +148,7 @@ lspconfig.efm.setup({
     'json',
     'sh',
     'markdown',
+    'python',
   },
 
   init_options = {
@@ -169,6 +175,7 @@ lspconfig.efm.setup({
       json = { prettier },
       markdown = { prettier },
       sh = { shellcheck },
+      python = { black },
     },
   },
 
