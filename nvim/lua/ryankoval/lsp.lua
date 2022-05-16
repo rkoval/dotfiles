@@ -20,12 +20,10 @@ vim.api.nvim_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>zz'
 vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
-vim.api.nvim_set_keymap('n', '[l', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']l', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
-local diagnosticOpts = '{ severity_limit = "Error", popup_opts = { severity_limit = "Error" }}'
-vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.diagnostic.goto_prev(' .. diagnosticOpts .. ')<cr>zz', opts)
-vim.api.nvim_set_keymap('n', '<leader>.', '<cmd>lua vim.diagnostic.goto_next(' .. diagnosticOpts .. ')<cr>zz', opts)
+local diagnosticOpts = '{ severity = "Error"}'
+vim.api.nvim_set_keymap('n', '[l', '<cmd>lua vim.diagnostic.goto_prev(' .. diagnosticOpts .. ')<cr>zz', opts)
+vim.api.nvim_set_keymap('n', ']l', '<cmd>lua vim.diagnostic.goto_next(' .. diagnosticOpts .. ')<cr>zz', opts)
 
 local function set_lsp_keymaps(client, bufnr)
   -- vim.api.nvim_set_keymap('n', ',H', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
@@ -37,11 +35,6 @@ end
 
 local function handler_publishDiagnostics(level)
   return vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = false,
-    virtual_text = {
-      severity_limit = level,
-    },
-    update_in_insert = false,
     signs = {
       severity_limit = level,
     },
@@ -64,6 +57,7 @@ local function first_match(_, result, context)
   vim.cmd('normal zz')
 end
 
+vim.diagnostic.config({ underline = true, virtual_text = false, update_in_insert = false })
 --------------------------------------------------------------------------------
 
 require('nvim-lsp-installer').setup({
@@ -165,10 +159,7 @@ lspconfig.efm.setup({
   },
 
   handlers = {
-    ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = false,
-      update_in_insert = false,
-    }),
+    ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics),
   },
 })
 
