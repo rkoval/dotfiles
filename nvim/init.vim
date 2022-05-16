@@ -38,7 +38,6 @@ set updatetime=1000 " mostly for gitgutter updates, but reduce time that vim wri
 "  Text Formatting
 " ----------------------------------------------------------------------------
 set smartindent            " be smart about it
-inoremap # X<BS>#
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
@@ -49,60 +48,6 @@ set formatoptions+=n       " support for numbered/bullet lists
 set virtualedit=block      " allow virtual edit in visual block ..
 set linebreak              " wrap lines at space, not middle of word
 set foldlevelstart=99      " don't collapse folds by default
-
-" ----------------------------------------------------------------------------
-"  Remapping
-" ----------------------------------------------------------------------------
-
-" open help in new tab
-:cabbrev help tab help
-
-" reflow paragraph with Q in normal and visual mode
-nnoremap Q gqap
-xnoremap Q gq
-
-" sane movement with wrap turned on
-nnoremap j gj
-nnoremap k gk
-xnoremap j gj
-xnoremap k gk
-map <Backspace> 10k
-map <Space> 10j
-nnoremap <Down> gj
-nnoremap <Up> gk
-xnoremap <Down> gj
-xnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
-
-nnoremap <TAB> >>
-xnoremap <TAB> >gv
-xnoremap <S-TAB> <gv
-inoremap <S-TAB> <C-d>
-
-" open new tab with current buffer in it
-map gz :tab sp<CR>
-
-" map jk to leave insert mode
-imap jk <Esc>
-imap Jk <Esc>
-nmap K <Esc>
-
-" cmd+w should delete the buffer
-imap <D-w> <esc>:bdelete<cr>
-nmap <D-w> :bdelete<cr>
-vmap <D-w> :bdelete<cr>
-
-" map find hotkeys
-nnoremap <D-f> /
-nnoremap <D-r> :,$s//gc\|1,''-&&<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
-xnoremap <D-r> :s//gc<Left><Left><Left>
-nnoremap <Leader><D-r> :,$s/<C-r><C-w>//gc\|1,''-&&<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
-xnoremap <Leader><D-r> :s/<C-r><C-w>//gc<Left><Left><Left>
-
-" swap mark keys
-nnoremap ` '
-nnoremap ' `
 
 " ----------------------------------------------------------------------------
 "  UI
