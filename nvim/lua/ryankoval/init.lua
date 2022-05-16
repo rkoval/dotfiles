@@ -81,7 +81,8 @@ vim.keymap.set('n', '`', "'", opts)
 vim.keymap.set('n', "'", '`', opts)
 
 -- split navigation
-vim.keymap.set('n', '<c-h>', ':wincmd h<cr>', opts)
-vim.keymap.set('n', '<c-j>', ':wincmd j<cr>', opts)
-vim.keymap.set('n', '<c-k>', ':wincmd k<cr>', opts)
-vim.keymap.set('n', '<c-l>', ':wincmd l<cr>', opts)
+local silent_opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<c-h>', ':wincmd h<cr>', silent_opts)
+vim.keymap.set('n', '<c-j>', ':wincmd j<cr>', silent_opts)
+vim.keymap.set('n', '<c-k>', ':wincmd k<cr>', silent_opts)
+vim.keymap.set('n', '<c-l>', ':wincmd l<cr>', silent_opts)
