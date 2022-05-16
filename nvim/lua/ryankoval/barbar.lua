@@ -62,7 +62,7 @@ vim.g.bufferline = {
   no_name_title = nil,
 }
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 map('n', '<c-s-tab>', ':BufferPrevious<CR>', opts)
 map('n', '<c-tab>', ':BufferNext<CR>', opts)

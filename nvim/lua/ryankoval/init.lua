@@ -35,46 +35,46 @@ local opts = { noremap = true }
 -- open help in new tab
 vim.cmd(':cabbrev help tab help')
 
-vim.api.nvim_set_keymap('', '<Backspace>', '10k', opts)
-vim.api.nvim_set_keymap('', '<Space>', '10j', opts)
+vim.keymap.set('', '<Backspace>', '10k', opts)
+vim.keymap.set('', '<Space>', '10j', opts)
 
 -- reflow paragraph with Q in normal and visual mode
-vim.api.nvim_set_keymap('n', 'Q', 'gqap', opts)
-vim.api.nvim_set_keymap('x', 'Q', 'gq', opts)
+vim.keymap.set('n', 'Q', 'gqap', opts)
+vim.keymap.set('x', 'Q', 'gq', opts)
 
 -- sane movement with wrap turned on
-vim.api.nvim_set_keymap('n', 'j', 'gj', opts)
-vim.api.nvim_set_keymap('n', 'k', 'gk', opts)
-vim.api.nvim_set_keymap('x', 'j', 'gj', opts)
-vim.api.nvim_set_keymap('x', 'k', 'gk', opts)
-vim.api.nvim_set_keymap('n', '<Down>', 'gj', opts)
-vim.api.nvim_set_keymap('n', '<Up>', 'gk', opts)
-vim.api.nvim_set_keymap('x', '<Down>', 'gj', opts)
-vim.api.nvim_set_keymap('x', '<Up>', 'gk', opts)
-vim.api.nvim_set_keymap('i', '<Down>', '<C-o>gj', opts)
-vim.api.nvim_set_keymap('i', '<Up>', '<C-o>gk', opts)
+vim.keymap.set('n', 'j', 'gj', opts)
+vim.keymap.set('n', 'k', 'gk', opts)
+vim.keymap.set('x', 'j', 'gj', opts)
+vim.keymap.set('x', 'k', 'gk', opts)
+vim.keymap.set('n', '<Down>', 'gj', opts)
+vim.keymap.set('n', '<Up>', 'gk', opts)
+vim.keymap.set('x', '<Down>', 'gj', opts)
+vim.keymap.set('x', '<Up>', 'gk', opts)
+vim.keymap.set('i', '<Down>', '<C-o>gj', opts)
+vim.keymap.set('i', '<Up>', '<C-o>gk', opts)
 
 -- tab indents
-vim.api.nvim_set_keymap('n', '<TAB>', '>>', opts)
-vim.api.nvim_set_keymap('x', '<TAB>', '>gv', opts)
-vim.api.nvim_set_keymap('x', '<S-TAB>', '<gv', opts)
-vim.api.nvim_set_keymap('i', '<S-TAB>', '<C-d>', opts)
+vim.keymap.set('n', '<TAB>', '>>', opts)
+vim.keymap.set('x', '<TAB>', '>gv', opts)
+vim.keymap.set('x', '<S-TAB>', '<gv', opts)
+vim.keymap.set('i', '<S-TAB>', '<C-d>', opts)
 
 -- map jk to leave insert mode
-vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {})
-vim.api.nvim_set_keymap('i', 'Jk', '<Esc>', {})
-vim.api.nvim_set_keymap('n', 'K', '<Esc>', {})
+vim.keymap.set('i', 'jk', '<Esc>', {})
+vim.keymap.set('i', 'Jk', '<Esc>', {})
+vim.keymap.set('n', 'K', '<Esc>', {})
 
 -- cmd+w should delete the buffer
-vim.api.nvim_set_keymap('i', '<D-w>', '<esc>:bdelete<cr>', opts)
-vim.api.nvim_set_keymap('n', '<D-w>', ':bdelete<cr>', opts)
-vim.api.nvim_set_keymap('v', '<D-w>', ':bdelete<cr>', opts)
+vim.keymap.set('i', '<D-w>', '<esc>:bdelete<cr>', opts)
+vim.keymap.set('n', '<D-w>', ':bdelete<cr>', opts)
+vim.keymap.set('v', '<D-w>', ':bdelete<cr>', opts)
 
 -- map find hotkeys
-vim.api.nvim_set_keymap('n', '<D-f>', '/', {})
-vim.api.nvim_set_keymap('n', '<D-r>', ':,$s/<C-r><C-w>//gc<Left><Left><Left>', {})
-vim.api.nvim_set_keymap('x', '<D-r>', ':s/<C-r><C-w>//gc<Left><Left><Left>', {})
+vim.keymap.set('n', '<D-f>', '/', {})
+vim.keymap.set('n', '<D-r>', ':,$s/<C-r><C-w>//gc<Left><Left><Left>', {})
+vim.keymap.set('x', '<D-r>', ':s/<C-r><C-w>//gc<Left><Left><Left>', {})
 
 -- swap mark keys
-vim.api.nvim_set_keymap('n', '`', "'", opts)
-vim.api.nvim_set_keymap('n', "'", '`', opts)
+vim.keymap.set('n', '`', "'", opts)
+vim.keymap.set('n', "'", '`', opts)

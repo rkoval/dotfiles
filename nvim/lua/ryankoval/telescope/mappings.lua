@@ -1,7 +1,11 @@
 local telescope = require('telescope.builtin')
 local Files = require('ryankoval.util.files')
 
-local map_tele = function(key, f, options, buffer)
+local map_options = {
+  noremap = true,
+  silent = true,
+}
+local map_tele = function(key, f, options)
   options = options or {}
   function callback()
     local default_text = options.construct_default_text and options.construct_default_text() or nil
@@ -9,18 +13,8 @@ local map_tele = function(key, f, options, buffer)
       default_text = default_text,
     })
   end
-  local map_options = {
-    noremap = true,
-    silent = true,
-    callback = callback,
-  }
 
-  local mode = 'n'
-  if not buffer then
-    vim.api.nvim_set_keymap(mode, key, '', map_options)
-  else
-    vim.api.nvim_buf_set_keymap(0, mode, key, '', map_options)
-  end
+  vim.keymap.set('n', key, callback, map_options)
 end
 
 local function filename_default_text()

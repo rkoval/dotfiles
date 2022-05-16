@@ -33,6 +33,6 @@ local function add_log()
   vim.fn.append('.', indentation .. text)
 end
 
-local opts = { noremap = true, silent = true, callback = add_log }
-vim.api.nvim_set_keymap('n', '<D-S-l>', '', opts)
-vim.api.nvim_set_keymap('v', '<D-S-l>', '', opts)
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<D-S-l>', add_log, opts)
+vim.keymap.set('v', '<D-S-l>', add_log, opts)
