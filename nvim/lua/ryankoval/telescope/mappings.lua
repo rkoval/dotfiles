@@ -1,4 +1,10 @@
-local telescope = require('telescope.builtin')
+if not pcall(require, 'telescope') then
+  return
+end
+
+package.loaded['ryankoval.telescope.mappings'] = nil
+
+local telescope = require('ryankoval.telescope')
 local Files = require('ryankoval.util.files')
 
 local map_options = {

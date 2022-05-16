@@ -3,9 +3,6 @@ if not pcall(require, 'telescope') then
 end
 
 package.loaded['ryankoval.telescope'] = nil
-package.loaded['ryankoval.telescope.mappings'] = nil
-
-require('ryankoval.telescope.mappings')
 
 local action_state = require('telescope.actions.state')
 local action_set = require('telescope.actions.set')
@@ -111,6 +108,23 @@ local telescope_opts = {
       theme = 'dropdown',
       layout_config = { width = 110 },
     },
+    grep_string = {
+      prompt_title = '~ grep string ~',
+      short_path = true,
+      word_match = '-w',
+      only_sort_text = true,
+      attach_mappings = function(prompt_bufnr, map)
+        map('i', '<cr>', select_multiple)
+        return true
+      end,
+    },
+    live_grep = {
+      prompt_title = '~ live grep ~',
+      attach_mappings = function(prompt_bufnr, map)
+        map('i', '<cr>', select_multiple)
+        return true
+      end,
+    },
     oldfiles = {
       prompt_title = '~ oldfiles ~',
       find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' },
@@ -146,60 +160,20 @@ end
 
 local M = {}
 
-function M.custom_grep()
-  package.loaded['ryankoval.telescope.grepper'] = nil
-  require('ryankoval.telescope.grepper')({
-    attach_mappings = function(prompt_bufnr, map)
-      map('i', '<cr>', select_multiple)
-      return true
-    end,
-  })
-end
-
-function M.live_grep()
-  require('telescope.builtin').live_grep({
-    prompt_title = '~ live grep ~',
-    attach_mappings = function(prompt_bufnr, map)
-      map('i', '<cr>', select_multiple)
-      return true
-    end,
-  })
-  -- require('telescope').extensions.fzf_writer.staged_grep({
-  --   prompt_title = '~ staged grep ~',
-  --   attach_mappings = function(prompt_bufnr, map)
-  --     map('i', '<cr>', select_multiple)
-  --     return true
-  --   end,
-  -- })
-end
-
-function M.grep_string()
-  require('telescope.builtin').grep_string({
-    prompt_title = '~ grep string ~',
-    short_path = true,
-    word_match = '-w',
-    only_sort_text = true,
-    attach_mappings = function(prompt_bufnr, map)
-      map('i', '<cr>', select_multiple)
-      return true
-    end,
-  })
-end
-
-function M.current_dir_files()
-  require('telescope.builtin').find_files({
+function M.current_dir_files(opts)
+  require('telescope.builtin').find_files(vim.tbl_flatten({
     prompt_title = string.format('~ files in [%s] ~', vim.fn.expand('%:h')),
     cwd = vim.fn.expand('%:p:h'),
     hidden = true,
-  })
+  }, opts))
 end
 
-function M.dotfiles()
-  require('telescope.builtin').find_files({
+function M.dotfiles(opts)
+  require('telescope.builtin').find_files(vim.tbl_flatten({
     prompt_title = string.format('~ dotfiles ~'),
     cwd = '~/dotfiles',
     hidden = true,
-  })
+  }, opts))
 end
 
 return setmetatable({}, {
