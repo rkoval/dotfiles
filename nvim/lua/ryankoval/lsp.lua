@@ -173,7 +173,7 @@ lspconfig.efm.setup({
   },
 
   handlers = {
-    ['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {}),
+    ['textDocument/publishDiagnostics'] = handler_publishDiagnostics(),
   },
 })
 
@@ -192,13 +192,20 @@ lspconfig.sumneko_lua.setup({
         path = runtime_path,
       },
       diagnostics = {
-        globals = { 'vim', 'use' },
+        globals = { 'vim', 'use', 'parse' },
+        severity = {
+          ['missing-parameter'] = 'Error',
+          ['unbalanced-assignments'] = 'Error',
+          ['redundant-parameter'] = 'Error',
+          ['undefined-global'] = 'Error',
+          ['undefined-field'] = 'Error',
+        },
         disable = { 'lowercase-global' },
       },
       workspace = {
         library = {
-          -- [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          -- [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua', nil, nil)] = true,
+          -- [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp', nil, nil)] = true,
           -- ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?.lua'] = true,
           -- ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?/init.lua'] = true,
         },
