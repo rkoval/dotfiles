@@ -21,9 +21,27 @@ vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 vim.keymap.set('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 vim.keymap.set('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
 
-local diagnosticOpts = '{ severity = "Error"}'
-vim.keymap.set('n', '[l', '<cmd>lua vim.diagnostic.goto_prev(' .. diagnosticOpts .. ')<cr>zz', opts)
-vim.keymap.set('n', ']l', '<cmd>lua vim.diagnostic.goto_next(' .. diagnosticOpts .. ')<cr>zz', opts)
+-- cycle through diagnostics by priority of severity.
+-- if no diagnostic exists for a given severity, incrementally try the next levels
+local severity_priorities = { 'Error', 'Warn', 'Info', 'Hint' }
+function generate_goto_diagnostic(fn)
+  return function()
+    for _, severity in pairs(severity_priorities) do
+      local diagnostics = vim.diagnostic.get(0, {
+        severity = severity,
+      })
+      if #diagnostics > 0 then
+        vim.diagnostic[fn]({
+          severity = severity,
+        })
+        return
+      end
+    end
+  end
+end
+
+vim.keymap.set('n', '[l', generate_goto_diagnostic('goto_prev'), opts)
+vim.keymap.set('n', ']l', generate_goto_diagnostic('goto_next'), opts)
 
 local function set_lsp_keymaps(client, bufnr)
   -- vim.keymap.set('n', ',H', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
@@ -33,12 +51,8 @@ local function set_lsp_keymaps(client, bufnr)
   vim.keymap.set('n', '<leader>lf', '<cmd>%!eslint_d --stdin --fix-to-stdout --stdin-filename %<cr>', opts)
 end
 
-local function handler_publishDiagnostics(level)
-  return vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = {
-      severity_limit = level,
-    },
-  })
+local function handler_publishDiagnostics()
+  return vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {})
 end
 
 local function first_match(_, result, context)
@@ -89,7 +103,7 @@ lspconfig.tsserver.setup({
   },
 
   handlers = {
-    ['textDocument/publishDiagnostics'] = handler_publishDiagnostics('Error'),
+    ['textDocument/publishDiagnostics'] = handler_publishDiagnostics(),
     ['textDocument/definition'] = first_match,
     ['textDocument/typeDefinition'] = first_match,
   },
