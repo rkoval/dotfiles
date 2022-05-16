@@ -5,7 +5,7 @@ local function javascript(selection)
 end
 
 local function lua(selection)
-  return 'vim.pretty_print(' .. selection .. ')'
+  return "vim.pretty_print('" .. selection:gsub("'", "\\'") .. "', " .. selection .. ')'
 end
 
 local filetype_handlers = {
