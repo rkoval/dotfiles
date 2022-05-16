@@ -7,14 +7,14 @@ local map_options = {
 }
 local map_tele = function(mode, key, f, options)
   options = options or {}
-  function callback()
+  function fn()
     local default_text = options.construct_default_text and options.construct_default_text() or nil
     telescope[f]({
       default_text = default_text,
     })
   end
 
-  vim.keymap.set(mode, key, callback, map_options)
+  vim.keymap.set(mode, key, fn, map_options)
 end
 
 local function filename_default_text()
