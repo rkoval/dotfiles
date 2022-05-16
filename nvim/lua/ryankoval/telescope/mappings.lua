@@ -43,7 +43,7 @@ map_tele('n', '<leader><leader>b', 'resume')
 map_tele('n', '<leader><leader>d', 'dotfiles')
 map_tele('n', '<leader>a', 'custom_grep')
 map_tele('n', '<leader>/', 'live_grep')
-map_tele('n', '<D-S-R>', 'treesitter')
+map_tele('n', '<D-S-r>', 'lsp_dynamic_workspace_symbols')
 map_tele('n', '<leader>*', 'live_grep', {
   construct_default_text = selection_default_text,
 })
