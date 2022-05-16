@@ -77,6 +77,7 @@ call dein#add('petertriho/nvim-scrollbar')
 call dein#add('windwp/nvim-autopairs')
 call dein#add('windwp/nvim-ts-autotag')
 call dein#add('folke/lua-dev.nvim')
+call dein#add('mfussenegger/nvim-treehopper')
 call dein#add('ethanholz/nvim-lastplace')
 
 "
