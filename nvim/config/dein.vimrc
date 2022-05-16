@@ -150,7 +150,7 @@ endif
 call dein#end()
 
 " uncomment to debug plugins not getting detected
-call dein#recache_runtimepath()
+" call dein#recache_runtimepath()
 
 call dein#call_hook('post_source')
 
