@@ -15,6 +15,7 @@ require('ryankoval.lsp')
 require('ryankoval.luasnip')
 require('ryankoval.lualine')
 require('ryankoval.barbar')
+require('ryankoval.hop')
 require('ryankoval.scrollbar')
 require('ryankoval.nvim-autopairs')
 require('ryankoval.nvim-lastplace')
@@ -38,7 +39,8 @@ local opts = { noremap = true }
 vim.cmd(':cabbrev help tab help')
 
 vim.keymap.set('', '<Backspace>', '10k', opts)
-vim.keymap.set('', '<Space>', '10j', opts)
+-- being overridden by hop
+-- vim.keymap.set('', '<Space>', '10j', opts)
 
 -- reflow paragraph with Q in normal and visual mode
 vim.keymap.set('n', 'Q', 'gqap', opts)
