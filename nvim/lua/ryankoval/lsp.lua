@@ -197,10 +197,10 @@ lspconfig.sumneko_lua.setup({
       },
       workspace = {
         library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-          ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?.lua'] = true,
-          ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?/init.lua'] = true,
+          -- [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          -- [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          -- ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?.lua'] = true,
+          -- ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?/init.lua'] = true,
         },
       },
       telemetry = {
