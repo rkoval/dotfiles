@@ -34,6 +34,7 @@ local ft_str = table.concat(
 vim.cmd('autocmd Filetype ' .. ft_str .. ' setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()')
 
 local opts = { noremap = true }
+local silent_opts = { noremap = true, silent = true }
 
 -- open help in new tab
 vim.cmd(':cabbrev help tab help')
@@ -109,8 +110,14 @@ vim.keymap.set('n', '`', "'", opts)
 vim.keymap.set('n', "'", '`', opts)
 
 -- split navigation
-local silent_opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<c-h>', ':wincmd h<cr>', silent_opts)
 vim.keymap.set('n', '<c-j>', ':wincmd j<cr>', silent_opts)
 vim.keymap.set('n', '<c-k>', ':wincmd k<cr>', silent_opts)
 vim.keymap.set('n', '<c-l>', ':wincmd l<cr>', silent_opts)
+
+-- Increment / decrement numbers
+vim.o.nrformats = ''
+vim.keymap.set('n', '+', '<C-a>', silent_opts)
+vim.keymap.set('n', '-', '<C-x>', silent_opts)
+vim.keymap.set('x', '+', 'g<C-a>', silent_opts)
+vim.keymap.set('x', '-', 'g<C-x>', silent_opts)
