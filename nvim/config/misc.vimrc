@@ -21,32 +21,6 @@ set autoread
 
 set synmaxcol=300
 
-" function that inspects remaining windows and closes vim if panes open
-" are ONLY NERDTree, quickfix, help, etc.
-function! CheckLeftBuffers()
-  let i = 1
-  while i <= winnr('$')
-    if getbufvar(winbufnr(i), '&buftype') == 'quickfix' ||
-        \ exists('t:NERDTreeBufName') &&
-        \   bufname(winbufnr(i)) == t:NERDTreeBufName ||
-        \ bufname(winbufnr(i)) == '__Tag_List__' ||
-        \ bufname(winbufnr(i)) == 'Result'
-      let i += 1
-    else
-      break
-    endif
-  endwhile
-  if i == winnr('$') + 1
-    if tabpagenr('$') == 1
-      qall
-    else
-      tabc
-    endif
-  endif
-  unlet i
-endfunction
-" autocmd BufEnter * call CheckLeftBuffers()
-
 augroup ansiblevault
   autocmd!
   autocmd BufReadPre,FileReadPre vault.yml,*_vault.yml setlocal ft=ansible

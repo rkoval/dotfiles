@@ -71,7 +71,6 @@ set nostartofline          " don't jump to the start of line when scrolling
 set scrolloff=12           " line scrolling with start x lines from border
 set relativenumber         " show relative numbering for line numbers
 set showtabline=2          " always show tabline
-syntax on
 
 augroup CursorLine
   au!
