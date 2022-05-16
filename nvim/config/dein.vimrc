@@ -75,14 +75,12 @@ call dein#add('lewis6991/gitsigns.nvim')
 call dein#add('romgrk/barbar.nvim')
 call dein#add('petertriho/nvim-scrollbar')
 call dein#add('windwp/nvim-autopairs')
+call dein#add('windwp/nvim-ts-autotag')
 
 "
 " older, but still useful vim plugins
 "
 call dein#add('editorconfig/editorconfig-vim')
-call dein#add('Valloric/MatchTagAlways', {
-  \  'on_ft': ['html', 'xml', 'vue']
-  \})
 
 "
 " probably keep
@@ -137,7 +135,6 @@ call dein#add('xolox/vim-misc')
 call dein#add('ntpeters/vim-better-whitespace', {
   \  'hook_post_source': 'source ~/.config/nvim/config/vim-better-whitespace.vimrc'
   \})
-call dein#add('alvan/vim-closetag')
 call dein#add('wellle/targets.vim')
 call dein#add('honza/vim-snippets', {
   \  'depends': 'neosnippet.vim',
