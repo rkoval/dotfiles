@@ -90,7 +90,9 @@ call dein#add('wellle/targets.vim')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('sickill/vim-pasta')
-call dein#add('rafamadriz/friendly-snippets')
+call dein#add('rafamadriz/friendly-snippets', {
+  \  'build':  'rm -f snippets/global.json'
+  \})
 call dein#add('kshenoy/vim-signature', {
   \  'hook_post_source': 'source ~/.config/nvim/config/vim-signature.vimrc',
   \})
