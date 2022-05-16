@@ -73,12 +73,9 @@ vim.keymap.set('n', 'K', '<Esc>', {})
 -- cmd+w should close the window if only one buffer left
 function close_buffer()
   local tabpages = vim.api.nvim_list_tabpages()
-  local wins = vim.api.nvim_tabpage_list_wins(tabpages[1])
-  vim.pretty_print('tabpages', tabpages)
   if #tabpages == 1 then
     local wins = vim.api.nvim_tabpage_list_wins(tabpages[1])
 
-    vim.pretty_print('wins', wins)
     local should_quit = true
     for _, win in pairs(wins) do
       local filetype = vim.api.nvim_win_call(win, function()
