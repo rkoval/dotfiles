@@ -161,7 +161,7 @@ end
 local M = {}
 
 function M.current_dir_files(opts)
-  require('telescope.builtin').find_files(vim.tbl_flatten({
+  require('telescope.builtin').find_files(vim.tbl_extend('force', {
     prompt_title = string.format('~ files in [%s] ~', vim.fn.expand('%:h')),
     cwd = vim.fn.expand('%:p:h'),
     hidden = true,
@@ -169,7 +169,7 @@ function M.current_dir_files(opts)
 end
 
 function M.dotfiles(opts)
-  require('telescope.builtin').find_files(vim.tbl_flatten({
+  require('telescope.builtin').find_files(vim.tbl_extend('force', {
     prompt_title = string.format('~ dotfiles ~'),
     cwd = '~/dotfiles',
     hidden = true,

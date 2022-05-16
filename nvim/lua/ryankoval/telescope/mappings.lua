@@ -15,9 +15,9 @@ local map_tele = function(mode, key, f, options)
   options = options or {}
   function fn()
     local default_text = options.construct_default_text and options.construct_default_text() or nil
-    telescope[f]({
+    telescope[f](vim.tbl_extend('force', options, {
       default_text = default_text,
-    })
+    }))
   end
 
   vim.keymap.set(mode, key, fn, map_options)
@@ -43,7 +43,9 @@ map_tele('n', '<leader><leader>b', 'resume')
 map_tele('n', '<leader><leader>d', 'dotfiles')
 map_tele('n', '<leader>a', 'custom_grep')
 map_tele('n', '<leader>/', 'live_grep')
-map_tele('n', '<D-S-r>', 'lsp_dynamic_workspace_symbols')
+map_tele('n', '<D-S-r>', 'lsp_dynamic_workspace_symbols', {
+  ignore_symbols = { 'variable', 'constant' },
+})
 map_tele('n', '<leader>*', 'live_grep', {
   construct_default_text = selection_default_text,
 })
