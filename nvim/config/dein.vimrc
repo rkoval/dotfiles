@@ -96,6 +96,7 @@ call dein#add('tommcdo/vim-exchange')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-unimpaired')
+call dein#add('ruanyl/vim-gh-line')
 call dein#add('tpope/vim-fugitive', {
   \  'augroup': 'fugitive',
   \  'hook_post_source': 'source ~/.config/nvim/config/vim-fugitive.vimrc'
