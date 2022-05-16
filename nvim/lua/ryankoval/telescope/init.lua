@@ -76,7 +76,13 @@ local telescope_opts = {
         ['<c-j>'] = actions.move_selection_next,
         ['<c-k>'] = actions.move_selection_previous,
         ['<esc>'] = actions.close,
-        ['<C-o>'] = actions.send_to_qflist + actions.open_qflist,
+        ['<D-r>'] = function(prompt_bufnr)
+          local raw_prompt = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, -1, false)[1]
+          local string = raw_prompt:sub(3) -- prompt includes "> ", so truncate that
+          actions.send_to_qflist(prompt_bufnr)
+          actions.open_qflist(prompt_bufnr)
+          vim.api.nvim_input(':cdo ,$s/' .. string .. '//g<Left><Left>')
+        end,
         ['<cr>'] = actions.select_tab,
         ['<Down>'] = actions.cycle_history_next,
         ['<Up>'] = actions.cycle_history_prev,
