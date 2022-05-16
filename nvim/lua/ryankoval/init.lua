@@ -79,3 +79,9 @@ vim.keymap.set('x', '<D-r>', ':s/<C-r><C-w>//gc<Left><Left><Left>', {})
 -- swap mark keys
 vim.keymap.set('n', '`', "'", opts)
 vim.keymap.set('n', "'", '`', opts)
+
+-- split navigation
+vim.keymap.set('n', '<c-h>', ':wincmd h<cr>', opts)
+vim.keymap.set('n', '<c-j>', ':wincmd j<cr>', opts)
+vim.keymap.set('n', '<c-k>', ':wincmd k<cr>', opts)
+vim.keymap.set('n', '<c-l>', ':wincmd l<cr>', opts)
