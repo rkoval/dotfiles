@@ -27,7 +27,7 @@ local function add_log()
   if not handler then
     return
   end
-  local selection = Files.get_visual_selection() or vim.fn.expand('<cword>')
+  local selection = Files.get_selection()
   local text = handler(selection)
   local indentation = get_indentation()
   vim.fn.append('.', indentation .. text)

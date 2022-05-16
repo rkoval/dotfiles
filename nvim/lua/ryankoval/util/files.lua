@@ -94,4 +94,9 @@ Files.get_current_filename_without_extension = function()
   return filename
 end
 
+Files.get_selection = function()
+  local selection = Files.get_visual_selection() or vim.fn.expand('<cword>')
+  return selection
+end
+
 return Files
