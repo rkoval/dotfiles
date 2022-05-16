@@ -1,5 +1,5 @@
 let g:SimplenoteUsername = "ryan@ryankoval.com"
-let g:SimplenotePassword = "WEZGfpWPJ2F&8qW#iXtrCQSOfe5qS2"
+let g:SimplenotePassword = ""
 
 let g:SimplenoteFiletype = "markdown"
 let g:SimplenoteSingleWindow = 1
