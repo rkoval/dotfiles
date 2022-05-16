@@ -3,6 +3,7 @@ if not pcall(require, 'telescope') then
 end
 
 package.loaded['ryankoval.telescope'] = nil
+package.loaded['ryankoval.telescope.mappings'] = nil
 
 require('ryankoval.telescope.mappings')
 

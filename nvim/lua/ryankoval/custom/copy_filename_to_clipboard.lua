@@ -1,7 +1,7 @@
 local Files = require('ryankoval.util.files')
 
 function copy_filename_to_clipboard(include_cword)
-  local filename = Files.get_filename_without_extension(vim.api.nvim_buf_get_name(0))
+  local filename = Files.get_current_filename_without_extension()
   if not filename then
     return
   end
@@ -9,7 +9,7 @@ function copy_filename_to_clipboard(include_cword)
 end
 
 function copy_filename_with_cword_to_clipboard()
-  local filename = get_current_buffer_filename()
+  local filename = Files.get_current_filename_without_extension()
   if not filename then
     return
   end

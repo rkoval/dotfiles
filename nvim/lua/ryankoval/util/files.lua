@@ -89,4 +89,9 @@ Files.get_visual_selection = function()
   return table.concat(lines)
 end
 
+Files.get_current_filename_without_extension = function()
+  local filename = Files.get_filename_without_extension(vim.api.nvim_buf_get_name(0))
+  return filename
+end
+
 return Files
