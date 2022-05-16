@@ -66,10 +66,35 @@ vim.keymap.set('i', 'jk', '<Esc>', {})
 vim.keymap.set('i', 'Jk', '<Esc>', {})
 vim.keymap.set('n', 'K', '<Esc>', {})
 
--- cmd+w should delete the buffer
-vim.keymap.set('i', '<D-w>', '<esc>:bdelete<cr>', opts)
-vim.keymap.set('n', '<D-w>', ':bdelete<cr>', opts)
-vim.keymap.set('v', '<D-w>', ':bdelete<cr>', opts)
+-- cmd+w should close the window if only one buffer left
+function close_buffer()
+  local tabpages = vim.api.nvim_list_tabpages()
+  local wins = vim.api.nvim_tabpage_list_wins(tabpages[1])
+  vim.pretty_print('tabpages', tabpages)
+  if #tabpages == 1 then
+    local wins = vim.api.nvim_tabpage_list_wins(tabpages[1])
+
+    vim.pretty_print('wins', wins)
+    local should_quit = true
+    for _, win in pairs(wins) do
+      local filetype = vim.api.nvim_win_call(win, function()
+        return vim.o.filetype
+      end)
+      if filetype ~= 'neo-tree' and filetype ~= '' then
+        should_quit = false
+        break
+      end
+    end
+    if should_quit then
+      vim.cmd(':q')
+    end
+  end
+
+  vim.api.nvim_buf_delete(0, {})
+end
+vim.keymap.set('i', '<D-w>', close_buffer, opts)
+vim.keymap.set('n', '<D-w>', close_buffer, opts)
+vim.keymap.set('v', '<D-w>', close_buffer, opts)
 
 -- map find hotkeys
 vim.keymap.set('n', '<D-f>', '/', {})
