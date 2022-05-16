@@ -102,3 +102,4 @@ lua << EOF
 EOF
 
 lua require('ryankoval')
+lua require('friendly-snippets')
