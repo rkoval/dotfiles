@@ -48,9 +48,13 @@ call dein#add('nvim-telescope/telescope.nvim', {
   \  'depends': ['nvim-lua/plenary.nvim']
   \})
 call dein#add('nvim-telescope/telescope-fzf-native.nvim', {
+  \  'depends': ['nvim-telescope/telescope.nvim'],
   \  'hook_post_update': 'make',
   \})
-call dein#add('nvim-telescope/telescope-smart-history.nvim')
+call dein#add('nvim-telescope/telescope-smart-history.nvim', {
+  \  'build':  'mkdir -p ~/.local/share/nvim/databases',
+  \  'depends': ['nvim-telescope/telescope.nvim']
+  \})
 
 call dein#add('neovim/nvim-lspconfig')
 call dein#add('williamboman/nvim-lsp-installer')
