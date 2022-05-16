@@ -12,12 +12,9 @@ set autoread
 :command! Pxml set ft=xml | %!xmllint --format --recover - 2>/dev/null
 :command! Pjson set ft=json | %!jq '.'
 :command! Djson set ft=json | %!jq '.' -c
-:command! Src source ~/.config/nvim/init.vim | source ~/.gvimrc
+:command! Src source ~/.config/nvim/init.vim
 
 :command! NewDiff diffthis|vnew|diffthis
-
-:command! Tab4 set sw=4 sts=4 et
-:command! Tab2 set sw=2 sts=2 et
 
 set synmaxcol=300
 
