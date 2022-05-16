@@ -125,19 +125,12 @@ call dein#add('mattn/emmet-vim', {
 "
 " evaluate these:
 "
-
-" replace with https://github.com/mfussenegger/nvim-lint ?
-"call dein#add('w0rp/ale', {
-  "\  'hook_post_source': 'source ~/.config/nvim/config/ale.vimrc',
-  "\  'build': 'pip install vim-vint yamllint'
-  "\})
 call dein#add('xolox/vim-misc')
 call dein#add('ntpeters/vim-better-whitespace', {
   \  'hook_post_source': 'source ~/.config/nvim/config/vim-better-whitespace.vimrc'
   \})
 call dein#add('wellle/targets.vim')
 call dein#add('honza/vim-snippets', {
-  \  'depends': 'neosnippet.vim',
   \  'build':  'rm -f snippets/_.snippets'
   \})
 
