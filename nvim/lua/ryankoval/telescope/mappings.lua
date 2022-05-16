@@ -50,3 +50,6 @@ map_tele('n', '<leader>*', 'live_grep', {
 map_tele('v', '<leader>*', 'live_grep', {
   construct_default_text = selection_default_text,
 })
+map_tele('n', '<leader>g*', 'live_grep', {
+  construct_default_text = filename_default_text,
+})
