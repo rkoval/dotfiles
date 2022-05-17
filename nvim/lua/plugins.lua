@@ -7,7 +7,6 @@ return require('packer').startup(function()
   -- nvim dependencies
   --
   use('nvim-lua/plenary.nvim')
-  use('MunifTanjim/nui.nvim')
   use('kyazdani42/nvim-web-devicons')
   use('tami5/sqlite.lua')
 
@@ -50,7 +49,15 @@ return require('packer').startup(function()
   use('L3MON4D3/LuaSnip')
   use('saadparwaiz1/cmp_luasnip')
 
-  use('nvim-neo-tree/neo-tree.nvim')
+  use({
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    },
+  })
 
   use('nvim-lualine/lualine.nvim')
 
