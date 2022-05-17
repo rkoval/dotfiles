@@ -67,7 +67,7 @@ require('neo-tree').setup({
     mappings = {
       ['<backspace>'] = 'none',
       ['<space>'] = 'none',
-      ['<cr>'] = 'open',
+      ['<cr>'] = 'open_tabnew',
       ['S'] = 'open_split',
       ['s'] = 'open_vsplit',
       -- ["S"] = "split_with_window_picker",
