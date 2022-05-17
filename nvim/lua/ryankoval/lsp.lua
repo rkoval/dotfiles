@@ -199,7 +199,7 @@ lspconfig.sumneko_lua.setup({
         path = runtime_path,
       },
       diagnostics = {
-        globals = { 'vim', 'use', 'parse' },
+        globals = { 'vim', 'use', 'parse', 'table' },
         severity = {
           ['missing-parameter'] = 'Error',
           ['unbalanced-assignments'] = 'Error',
