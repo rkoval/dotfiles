@@ -42,6 +42,7 @@ map_tele('n', '<leader>l', 'diagnostics')
 map_tele('n', '<leader><leader>b', 'resume')
 map_tele('n', '<leader><leader>d', 'dotfiles')
 map_tele('n', '<leader>a', 'custom_grep')
+map_tele('n', '<leader>n', 'notifications')
 map_tele('n', '<leader>/', 'live_grep')
 map_tele('n', '<D-S-r>', 'lsp_dynamic_workspace_symbols', {
   ignore_symbols = { 'variable', 'constant' },

@@ -84,6 +84,7 @@ call dein#add('folke/lua-dev.nvim')
 call dein#add('mfussenegger/nvim-treehopper')
 call dein#add('phaazon/hop.nvim')
 call dein#add('ethanholz/nvim-lastplace')
+call dein#add('rcarriga/nvim-notify')
 
 "
 " older, but still useful vim plugins

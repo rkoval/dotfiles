@@ -153,6 +153,7 @@ local telescope_opts = {
 
 require('telescope').setup(telescope_opts)
 require('telescope').load_extension('smart_history')
+require('telescope').load_extension('notify')
 
 if vim.fn.has('win32') == 0 then
   require('telescope').load_extension('fzf')
@@ -174,6 +175,10 @@ function M.dotfiles(opts)
     cwd = '~/dotfiles',
     hidden = true,
   }, opts))
+end
+
+function M.notifications(opts)
+  require('telescope').extensions.notify.notify(opts)
 end
 
 return setmetatable({}, {
