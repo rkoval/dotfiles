@@ -20,6 +20,26 @@ local select_multiple = function(prompt_bufnr)
   end
 end
 
+local last_prompts = {}
+
+local function run_action_with_cached_text(action, cache_key)
+  return function(prompt_bufnr)
+    local raw_prompt = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, -1, false)[1]
+    local string = raw_prompt:sub(3) -- prompt includes "> ", so truncate that
+    last_prompts[cache_key] = string
+    action(prompt_bufnr)
+  end
+end
+
+-- adapted from https://github.com/nvim-telescope/telescope.nvim/issues/1939#issuecomment-1128619298
+local function enter_select_mode_on_complete(picker)
+  local mode = vim.fn.mode()
+  local keys = mode ~= 'n' and '<ESC>' or ''
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys .. [[^llv$<C-g>]], true, false, true), 'n', true)
+  -- should you have more callbacks, just pop the first one
+  table.remove(picker._completion_callbacks, 1)
+end
+
 local telescope_opts = {
   defaults = {
     vimgrep_arguments = {
@@ -123,10 +143,13 @@ local telescope_opts = {
     },
     live_grep = {
       prompt_title = '~ live grep ~',
-      attach_mappings = function(prompt_bufnr, map)
-        map('i', '<cr>', select_multiple)
-        return true
-      end,
+      -- initial_mode = 'normal',
+      mappings = {
+        i = {
+          ['<cr>'] = run_action_with_cached_text(actions.select_tab, 'live_grep'),
+          ['<esc>'] = run_action_with_cached_text(actions.close, 'live_grep'),
+        },
+      },
     },
     oldfiles = {
       prompt_title = '~ oldfiles ~',
@@ -179,6 +202,15 @@ function M.dotfiles(opts)
     prompt_title = string.format('~ dotfiles ~'),
     cwd = '~/dotfiles',
     hidden = true,
+  }, opts))
+end
+
+function M.live_grep(opts)
+  require('telescope.builtin').live_grep(vim.tbl_extend('force', {
+    default_text = last_prompts.live_grep,
+    on_complete = {
+      enter_select_mode_on_complete,
+    },
   }, opts))
 end
 
