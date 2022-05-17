@@ -1,6 +1,3 @@
-set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/after
-let &packpath = &runtimepath
-
 scriptencoding utf-8
 let g:mapleader = ","
 
