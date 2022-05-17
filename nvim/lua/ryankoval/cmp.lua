@@ -26,6 +26,16 @@ cmp.setup({
     ['<C-p>'] = cmp.mapping.select_prev_item({ 'i', 'c' }),
     ['<Down>'] = cmp.mapping.select_next_item({ 'i', 'c' }),
     ['<Up>'] = cmp.mapping.select_prev_item({ 'i', 'c' }),
+    ['<M-n>'] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+      end
+    end, {
+      'i',
+      's',
+    }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
