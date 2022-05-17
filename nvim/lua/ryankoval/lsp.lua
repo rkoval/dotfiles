@@ -210,12 +210,8 @@ lspconfig.sumneko_lua.setup({
         disable = { 'lowercase-global' },
       },
       workspace = {
-        library = {
-          [vim.fn.expand('$VIMRUNTIME/lua', nil, nil)] = true,
-          -- [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp', nil, nil)] = true,
-          -- ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?.lua'] = true,
-          -- ['~/dotfiles/nvim/dein/.cache/init.vim/.dein/lua/?/init.lua'] = true,
-        },
+        ignoreDir = { '.undo', '.backup', '.swap' },
+        library = vim.api.nvim_get_runtime_file('', true),
       },
       telemetry = {
         enable = false,
