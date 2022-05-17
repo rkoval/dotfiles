@@ -53,7 +53,7 @@ call dein#add('nvim-telescope/telescope-fzf-native.nvim', {
   \})
 call dein#add('nvim-telescope/telescope-smart-history.nvim', {
   \  'build':  'mkdir -p ~/.local/share/nvim/databases',
-  \  'depends': ['nvim-telescope/telescope.nvim']
+  \  'depends': ['nvim-telescope/telescope.nvim', 'tami5/sqlite.lua']
   \})
 
 call dein#add('neovim/nvim-lspconfig')
