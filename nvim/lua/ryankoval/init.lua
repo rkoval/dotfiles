@@ -119,3 +119,6 @@ vim.keymap.set('n', '+', '<C-a>', silent_opts)
 vim.keymap.set('n', '-', '<C-x>', silent_opts)
 vim.keymap.set('x', '+', 'g<C-a>', silent_opts)
 vim.keymap.set('x', '-', 'g<C-x>', silent_opts)
+
+-- alt-backspace behavior
+vim.keymap.set('i', '<m-bs>', '<c-w>', silent_opts)

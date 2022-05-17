@@ -72,6 +72,9 @@ local telescope_opts = {
       i = {
         ['<c-j>'] = actions.move_selection_next,
         ['<c-k>'] = actions.move_selection_previous,
+        ['<m-bs>'] = function()
+          vim.api.nvim_input('<c-w>')
+        end,
         ['<esc>'] = actions.close,
         ['<D-r>'] = function(prompt_bufnr)
           local raw_prompt = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, -1, false)[1]
