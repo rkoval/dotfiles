@@ -92,7 +92,7 @@ function close_buffer()
     end
   end
 
-  vim.api.nvim_buf_delete(0, {})
+  vim.cmd('BufferClose')
 end
 vim.keymap.set('i', '<D-w>', close_buffer, opts)
 vim.keymap.set('n', '<D-w>', close_buffer, opts)
