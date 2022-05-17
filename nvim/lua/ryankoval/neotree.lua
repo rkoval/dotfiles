@@ -132,8 +132,8 @@ require('neo-tree').setup({
     -- instead of relying on nvim autocmd events.
     window = {
       mappings = {
-        ['<backspace>'] = '10k',
-        ['<space>'] = '10j',
+        ['<backspace>'] = 'none',
+        ['<space>'] = 'none',
         ['.'] = 'set_root',
         ['I'] = 'toggle_hidden',
         ['/'] = 'fuzzy_finder',
