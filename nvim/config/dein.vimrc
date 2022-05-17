@@ -11,11 +11,6 @@ call dein#begin(expand('~/.config/nvim/dein'))
 " Required:
 call dein#add('Shougo/dein.vim')
 
-call dein#add('Shougo/vimproc.vim', {
-  \  'build': 'make',
-  \  'on_func': 'vimproc#',
-  \})
-
 " used for simplenote list to prevent nerdtree from populating
 if empty($ENABLE_NERDTREE)
   let $ENABLE_NERDTREE=1
