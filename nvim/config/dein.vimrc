@@ -76,7 +76,9 @@ call dein#add('lewis6991/gitsigns.nvim')
 "
 " evaluating nvim plugins
 "
-call dein#add('romgrk/barbar.nvim')
+call dein#add('romgrk/barbar.nvim', {
+  \  'depends': ['kyazdani42/nvim-web-devicons']
+  \})
 call dein#add('petertriho/nvim-scrollbar')
 call dein#add('windwp/nvim-autopairs')
 call dein#add('windwp/nvim-ts-autotag')
