@@ -10,19 +10,17 @@ endif
 
 autocmd CompleteDone * pclose
 
-source ~/.config/nvim/config/dein.vimrc
-
 set completeopt=menu,menuone,noselect
 
 if has('persistent_undo')
   set undofile                " So is persistent undo ...
   set undolevels=1000         " Maximum number of changes that can be undone
   set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
-  set undodir=~/.config/nvim/.undo
+  set undodir=~/.local/share/nvim/.undo
 endif
-set backupdir=~/.config/nvim/.backup/
+set backupdir=~/.local/share/nvim/.backup/
 set backup
-set directory=~/.config/nvim/.swap/
+set directory=~/.local/share/nvim/.swap/
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
@@ -81,15 +79,34 @@ set smartcase              " if search term contains a CAPITAL LETTER, be case s
 set nohlsearch             " don't highlight searches
 set mouse=a " enable mouse selection in terminal vim
 
-source ~/.config/nvim/config/misc.vimrc
+" autosave files on focus lost (ignore unsaved buffers)
+augroup SaveOnEdit
+  autocmd!
+  autocmd FocusLost * silent! wall
+  autocmd TabLeave * silent! wall
+augroup END
+
+" auto read from disk when file contents change
+set autoread
+
+" commands
+:command! Pxml set ft=xml | %!xmllint --format --recover - 2>/dev/null
+:command! Pjson set ft=json | %!jq '.'
+:command! Djson set ft=json | %!jq '.' -c
+:command! Src source ~/.config/nvim/init.vim
+
+:command! NewDiff diffthis|vnew|diffthis
+
 
 lua << EOF
   for k, v in pairs(package.loaded) do
-    if string.match(k, "^ryankoval") then
+    if string.match(k, "^ryankoval") or k == 'plugins' then
       package.loaded[k] = nil
     end
   end
+
+  require('plugins')
+  require('ryankoval')
+  require('friendly-snippets')
 EOF
 
-lua require('ryankoval')
-lua require('friendly-snippets')

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-mkdir -p $HOME/.config
+mkdir -p "$HOME/.config"
+NVIM_PLUGINS_DIRECTORY="$HOME/.local/share/nvim/site/pack/packer/start"
+mkdir -p "$NVIM_PLUGINS_DIRECTORY"
 
 function symlinkDirectory() {
   local directory
@@ -19,4 +21,5 @@ function symlinkDirectory() {
 symlinkDirectory "$SCRIPT_DIR/link"
 ln -sFv "$SCRIPT_DIR/link/.config/lazygit" ~/.config
 ln -sFv "$SCRIPT_DIR/nvim" ~/.config
+ln -sFv "$SCRIPT_DIR/packer.nvim" "$NVIM_PLUGINS_DIRECTORY"
 ln -sFv "$SCRIPT_DIR/prompt_rkoval_setup" ~/.zgen/sorin-ionescu/prezto-master/modules/prompt/functions

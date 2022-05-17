@@ -210,7 +210,6 @@ lspconfig.sumneko_lua.setup({
         disable = { 'lowercase-global' },
       },
       workspace = {
-        ignoreDir = { '.undo', '.backup', '.swap' },
         library = vim.api.nvim_get_runtime_file('', true),
       },
       telemetry = {
