@@ -78,6 +78,9 @@ set ignorecase             " ignore case when searching
 set smartcase              " if search term contains a CAPITAL LETTER, be case sensitive
 set nohlsearch             " don't highlight searches
 set mouse=a " enable mouse selection in terminal vim
+" delete buffers when they are hidden
+" see https://github.com/romgrk/barbar.nvim/issues/108#issuecomment-801616480
+set bufhidden=delete
 
 " autosave files on focus lost (ignore unsaved buffers)
 augroup SaveOnEdit
