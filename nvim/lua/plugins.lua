@@ -60,7 +60,10 @@ return require('packer').startup(function()
     },
   })
 
-  use('nvim-lualine/lualine.nvim')
+  use({
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+  })
 
   use('lukas-reineke/indent-blankline.nvim')
   use('xiyaowong/nvim-cursorword')
