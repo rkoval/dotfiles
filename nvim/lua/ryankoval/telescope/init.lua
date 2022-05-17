@@ -148,10 +148,12 @@ local telescope_opts = {
       minimum_files_characters = 2,
       use_highlighter = true,
     },
+    frecency = {},
   },
 }
 
 require('telescope').setup(telescope_opts)
+require('telescope').load_extension('frecency')
 require('telescope').load_extension('smart_history')
 require('telescope').load_extension('notify')
 

@@ -47,6 +47,9 @@ call dein#add('nvim-treesitter/nvim-treesitter-textobjects')
 call dein#add('nvim-telescope/telescope.nvim', {
   \  'depends': ['nvim-lua/plenary.nvim']
   \})
+call dein#add('nvim-telescope/telescope-frecency.nvim', {
+  \  'depends': ['tami5/sqlite.lua'],
+  \})
 call dein#add('nvim-telescope/telescope-fzf-native.nvim', {
   \  'depends': ['nvim-telescope/telescope.nvim'],
   \  'hook_post_update': 'make',
