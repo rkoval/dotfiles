@@ -1,6 +1,6 @@
 [submodule "submodules/zgen"]
 	path = submodules/zgen
 	url = git@github.com:tarjoilija/zgen.git
-[submodule "packer.nvim"]
-	path = packer.nvim
+[submodule "submodules/packer.nvim"]
+	path = submodules/packer.nvim
 	url = https://github.com/wbthomason/packer.nvim
