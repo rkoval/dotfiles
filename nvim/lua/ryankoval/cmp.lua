@@ -54,10 +54,10 @@ cmp.setup({
     }),
   },
   sources = {
-    { name = 'nvim_lsp', keyword_length = 2, max_item_count = 25 },
-    { name = 'buffer', keyword_length = 2, max_item_count = 25 },
+    { name = 'nvim_lsp', keyword_length = 2, max_item_count = 50 },
+    { name = 'buffer', keyword_length = 2, max_item_count = 50 },
     { name = 'path' },
-    { name = 'luasnip' },
+    { name = 'luasnip', max_item_count = 10 },
   },
   -- experimental = {
   -- native_menu = false,
