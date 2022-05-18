@@ -95,7 +95,12 @@ return require('packer').startup(function()
   use('tommcdo/vim-exchange')
   use('wellle/targets.vim')
   use('editorconfig/editorconfig-vim')
-  use('scrooloose/nerdcommenter')
+  use({
+    'terrortylor/nvim-comment',
+    config = function()
+      require('ryankoval.nvim-comment')
+    end,
+  })
   use('sickill/vim-pasta')
   use({
     'rafamadriz/friendly-snippets',
