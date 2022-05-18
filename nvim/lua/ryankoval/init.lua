@@ -101,7 +101,7 @@ vim.keymap.set('v', '<D-w>', close_buffer, opts)
 -- map find hotkeys
 vim.keymap.set('n', '<D-f>', '/', {})
 vim.keymap.set('n', '<D-r>', ':,$s/<C-r><C-w>//gc<Left><Left><Left>', {})
-vim.keymap.set('x', '<D-r>', ':s/<C-r><C-w>//gc<Left><Left><Left>', {})
+vim.keymap.set('v', '<D-r>', '"8y :s/<C-r>8//gc<Left><Left><Left>', {})
 
 -- swap mark keys
 vim.keymap.set('n', '`', "'", opts)
