@@ -40,6 +40,105 @@ local function enter_select_mode_on_complete(picker)
   table.remove(picker._completion_callbacks, 1)
 end
 
+local binary_files = {
+  '*.eot',
+  '*.gif',
+  '*.jpg',
+  '*.png',
+  '*.svg',
+  '*.ttf',
+  '*.webp',
+  '*.woff',
+  '*.a',
+  '*.ai',
+  '*.aif',
+  '*.apng',
+  '*.bin',
+  '*.class',
+  '*.db',
+  '*.dds',
+  '*.dll',
+  '*.dylib',
+  '*.eot',
+  '*.exe',
+  '*.gif',
+  '*.gz',
+  '*.gzip',
+  '*.icns',
+  '*.ico',
+  '*.idb',
+  '*.jar',
+  '*.jpeg',
+  '*.jpg',
+  '*.jsbundle',
+  '*.lib',
+  '*.lock',
+  '*.m4a',
+  '*.m4v',
+  '*.map',
+  '*.mkv',
+  '*.mp3',
+  '*.mp4',
+  '*.ncb',
+  '*.o',
+  '*.obj',
+  '*.pbxproj',
+  '*.pdb',
+  '*.pdf',
+  '*.pem',
+  '*.png',
+  '*.apng',
+  '*.psd',
+  '*.pyc',
+  '*.pyo',
+  '*.sdf',
+  '*.so',
+  '*.sublime-project',
+  '*.sublime-workspace',
+  '*.suo',
+  '*.swf',
+  '*.tbz2',
+  '*.tga',
+  '*.ttf',
+  '*.wav',
+  '*.webp',
+  '*.woff',
+  '*.woff2',
+  '*.zip',
+}
+
+local find_files_command = {
+  'fd',
+  '--type',
+  'file',
+  '--strip-cwd-prefix',
+  '--exclude',
+  '.git',
+  '--exclude',
+  'node_modules',
+  '--exclude',
+  'yarn.lock',
+  '--exclude',
+  'package-lock.json',
+}
+
+local git_files_command = {
+  'git',
+  'ls-files',
+  '--others',
+  '--exclude-standard',
+  '--cached',
+  '--',
+  '.',
+  ':!:client/www/asset',
+}
+
+for _, glob in pairs(binary_files) do
+  table.insert(find_files_command, '--exclude')
+  table.insert(find_files_command, glob)
+  table.insert(git_files_command, ':!:' .. glob)
+end
+
 local telescope_opts = {
   defaults = {
     vimgrep_arguments = {
@@ -72,84 +171,6 @@ local telescope_opts = {
     grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
     qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
-    file_ignore_patterns = {
-      '%.jpg',
-      '%.png',
-      '%.woff',
-      '%.ttf',
-      '%.eot',
-      '%.svg',
-      '%.eot',
-      '%.gif',
-      '%.jpg',
-      '%.png',
-      '%.svg',
-      '%.ttf',
-      '%.webp',
-      '%.woff',
-      '%.a',
-      '%.ai',
-      '%.aif',
-      '%.apng',
-      '%.bin',
-      '%.class',
-      '%.db',
-      '%.dds',
-      '%.dll',
-      '%.dylib',
-      '%.eot',
-      '%.exe',
-      '%.gif',
-      '%.gz',
-      '%.gzip',
-      '%.icns',
-      '%.ico',
-      '%.idb',
-      '%.jar',
-      '%.jpeg',
-      '%.jpg',
-      '%.jsbundle',
-      '%.lib',
-      '%.lock',
-      '%.m4a',
-      '%.m4v',
-      '%.map',
-      '%.mkv',
-      '%.mp3',
-      '%.mp4',
-      '%.ncb',
-      '%.o',
-      '%.obj',
-      '%.pbxproj',
-      '%.pdb',
-      '%.pdf',
-      '%.pem',
-      '%.png',
-      '%.apng',
-      '%.psd',
-      '%.pyc',
-      '%.pyo',
-      '%.sdf',
-      '%.so',
-      '%.sublime-project',
-      '%.sublime-workspace',
-      '%.suo',
-      '%.swf',
-      '%.tbz2',
-      '%.tga',
-      '%.ttf',
-      '%.wav',
-      '%.webp',
-      '%.woff',
-      '%.woff2',
-      '%.zip',
-      'yarn.lock',
-      'package%-lock.json',
-      '.git',
-      'node_modules',
-      'systems/osx/iTerm2/com.googlecode.iterm2.plist',
-    },
-
     mappings = {
       i = {
         ['<c-j>'] = actions.move_selection_next,
@@ -181,16 +202,21 @@ local telescope_opts = {
         },
       },
       previewer = false,
-      theme = 'dropdown',
-      layout_config = { width = 110 },
+      layout_config = { width = 130 },
     },
     find_files = {
       prompt_title = '~ files ~',
+      find_command = find_files_command,
       follow = true,
       hidden = true,
-      previewer = false,
-      theme = 'dropdown',
-      layout_config = { width = 110 },
+      layout_config = { width = 130 },
+    },
+    git_files = {
+      prompt_title = '~ git files ~',
+      git_command = git_files_command,
+      follow = true,
+      hidden = true,
+      layout_config = { width = 130 },
     },
     grep_string = {
       prompt_title = '~ grep string ~',
@@ -204,7 +230,6 @@ local telescope_opts = {
     },
     live_grep = {
       prompt_title = '~ live grep ~',
-      -- initial_mode = 'normal',
       mappings = {
         i = {
           ['<cr>'] = run_action_with_cached_text(actions.select_tab, 'live_grep'),
@@ -214,9 +239,8 @@ local telescope_opts = {
     },
     oldfiles = {
       prompt_title = '~ oldfiles ~',
-      previewer = false,
-      theme = 'dropdown',
-      layout_config = { width = 110 },
+      find_command = find_files_command,
+      layout_config = { width = 130 },
     },
   },
   extensions = {
@@ -265,8 +289,7 @@ function M.dotfiles(opts)
   }, opts))
 end
 
-function M.project_files()
-  local opts = {} -- define here if you want to define something
+function M.git_files(opts)
   local ok = pcall(require('telescope.builtin').git_files, opts)
   if not ok then
     require('telescope.builtin').find_files(opts)
