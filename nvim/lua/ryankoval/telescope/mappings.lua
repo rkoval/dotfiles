@@ -30,7 +30,7 @@ local function selection_default_text()
   return Files.get_selection()
 end
 
-map_tele('n', '<leader>t', 'find_files')
+map_tele('n', '<leader>t', 'project_files')
 map_tele('n', 'gw', 'find_files', {
   construct_default_text = selection_default_text,
 })

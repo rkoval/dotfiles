@@ -265,6 +265,14 @@ function M.dotfiles(opts)
   }, opts))
 end
 
+function M.project_files()
+  local opts = {} -- define here if you want to define something
+  local ok = pcall(require('telescope.builtin').git_files, opts)
+  if not ok then
+    require('telescope.builtin').find_files(opts)
+  end
+end
+
 function M.live_grep(opts)
   require('telescope.builtin').live_grep(vim.tbl_extend('force', {
     default_text = last_prompts.live_grep,
