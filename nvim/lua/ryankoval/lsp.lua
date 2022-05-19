@@ -225,10 +225,6 @@ lspconfig.pyright.setup({})
 -- bash ---------------------------------------------------------------------
 lspconfig.bashls.setup({})
 
--- go ---------------------------------------------------------------------
-lspconfig.golangci_lint_ls.setup({})
-lspconfig.gopls.setup({})
-
 -- yaml ---------------------------------------------------------------------
 require('lspconfig').yamlls.setup({
   settings = {
@@ -239,6 +235,10 @@ require('lspconfig').yamlls.setup({
     },
   },
 })
+
+-- go ---------------------------------------------------------------------
+lspconfig.golangci_lint_ls.setup({})
+lspconfig.gopls.setup({})
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.go' },
