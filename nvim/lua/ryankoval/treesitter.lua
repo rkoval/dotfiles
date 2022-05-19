@@ -9,6 +9,7 @@ require('nvim-treesitter.configs').setup({
     'go',
     'gomod',
     'graphql',
+    'hcl',
     'hocon',
     'html',
     'javascript',
