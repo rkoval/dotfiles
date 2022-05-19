@@ -75,7 +75,7 @@ vim.diagnostic.config({ underline = true, virtual_text = false, update_in_insert
 --------------------------------------------------------------------------------
 
 require('nvim-lsp-installer').setup({
-  ensure_installed = { 'sumneko_lua', 'eslint', 'tsserver', 'bashls', 'pyright', 'vimls', 'gopls', 'golangci_lint_ls' },
+  ensure_installed = { 'sumneko_lua', 'eslint', 'tsserver', 'bashls', 'pyright', 'vimls', 'gopls', 'golangci_lint_ls', 'yamlls' },
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -228,3 +228,14 @@ lspconfig.bashls.setup({})
 -- go ---------------------------------------------------------------------
 lspconfig.golangci_lint_ls.setup({})
 lspconfig.gopls.setup({})
+
+-- yaml ---------------------------------------------------------------------
+require('lspconfig').yamlls.setup({
+  settings = {
+    yaml = {
+      schemas = {
+        ['https://json.schemastore.org/github-workflow.json'] = '/.github/workflows/*',
+      },
+    },
+  },
+})
