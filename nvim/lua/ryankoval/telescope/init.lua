@@ -127,7 +127,7 @@ local find_files_command = {
 local git_files_command = {
   'git',
   'ls-files',
-  '--others',
+  '--recurse-submodules',
   '--exclude-standard',
   '--cached',
   '--',
