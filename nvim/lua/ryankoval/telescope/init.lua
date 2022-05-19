@@ -105,6 +105,8 @@ local binary_files = {
   '*.woff',
   '*.woff2',
   '*.zip',
+  '*/.snapshots/*',
+  '*/__snapshots__/*',
 }
 
 local find_files_command = {
