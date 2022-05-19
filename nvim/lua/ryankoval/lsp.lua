@@ -75,7 +75,7 @@ vim.diagnostic.config({ underline = true, virtual_text = false, update_in_insert
 --------------------------------------------------------------------------------
 
 require('nvim-lsp-installer').setup({
-  ensure_installed = { 'sumneko_lua', 'eslint', 'tsserver', 'bashls', 'pyright', 'vimls' }, -- ensure these servers are always installed
+  ensure_installed = { 'sumneko_lua', 'eslint', 'tsserver', 'bashls', 'pyright', 'vimls', 'gopls', 'golangci_lint_ls' },
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -224,3 +224,7 @@ lspconfig.pyright.setup({})
 
 -- bash ---------------------------------------------------------------------
 lspconfig.bashls.setup({})
+
+-- go ---------------------------------------------------------------------
+lspconfig.golangci_lint_ls.setup({})
+lspconfig.gopls.setup({})
