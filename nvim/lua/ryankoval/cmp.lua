@@ -81,11 +81,12 @@ cmp.setup.cmdline(':', {
   },
 })
 
-cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' },
-  },
-})
+-- this will obscure the whole page on large files, so just disable for now
+-- cmp.setup.cmdline('/', {
+--   sources = {
+--     { name = 'buffer' },
+--   },
+-- })
 
 vim.cmd([[
   augroup NvimCmp
