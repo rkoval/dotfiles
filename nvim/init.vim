@@ -108,6 +108,10 @@ lua << EOF
     end
   end
 
+  -- these will get overridden by hop, so 
+  vim.keymap.set('', '<Backspace>', '10k', opts)
+  vim.keymap.set('', '<Space>', '10j', opts)
+
   require('plugins')
   require('ryankoval')
   require('friendly-snippets')

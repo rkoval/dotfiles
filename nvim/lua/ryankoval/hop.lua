@@ -6,4 +6,4 @@ local hop = require('hop')
 
 hop.setup()
 
-vim.keymap.set('n', ' ', hop.hint_words)
+-- vim.keymap.set('n', ' ', hop.hint_words)

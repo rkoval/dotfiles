@@ -40,10 +40,6 @@ local silent_opts = { noremap = true, silent = true }
 -- open help in new tab
 vim.cmd(':cabbrev help tab help')
 
-vim.keymap.set('', '<Backspace>', '10k', opts)
--- being overridden by hop
--- vim.keymap.set('', '<Space>', '10j', opts)
-
 -- reflow paragraph with Q in normal and visual mode
 vim.keymap.set('n', 'Q', 'gqap', opts)
 vim.keymap.set('x', 'Q', 'gq', opts)
