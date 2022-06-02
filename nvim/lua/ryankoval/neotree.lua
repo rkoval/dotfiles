@@ -5,6 +5,17 @@ require('neo-tree').setup({
   popup_border_style = 'rounded',
   enable_git_status = true,
   enable_diagnostics = true,
+  event_handlers = {
+    {
+      event = 'neo_tree_buffer_enter',
+      handler = function(arg)
+        vim.cmd([[
+          setlocal number
+          setlocal relativenumber
+        ]])
+      end,
+    },
+  },
   default_component_configs = {
     container = {
       enable_character_fade = true,
@@ -183,6 +194,14 @@ require('neo-tree').setup({
 
 vim.keymap.set('n', '<leader>f', '<cmd>Neotree focus<cr>', {})
 vim.keymap.set('n', '<leader><S-f>', '<cmd>Neotree toggle show filesystem<cr>', {})
+
+vim.cmd([[
+  augroup NEOTREE_AUGROUP
+    autocmd!
+    au VimEnter * lua vim.cmd("Neotree show left")
+    au TabNewEntered * lua vim.cmd("Neotree show left")
+  augroup END
+]])
 
 -- close tree if only buffer open in current tab
 -- see https://github.com/kyazdani42/nvim-tree.lua/issues/1005#issuecomment-1115831363
