@@ -144,6 +144,14 @@ require('neo-tree').setup({
         ['o'] = 'system_open',
       },
     },
+    commands = {
+      system_open = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+        -- macOs specific -- open file in default application in the background
+        vim.api.nvim_command('silent !open -g ' .. path)
+      end,
+    },
   },
   buffers = {
     follow_current_file = true, -- This will find and focus the file in the active buffer every
