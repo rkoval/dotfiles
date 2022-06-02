@@ -101,7 +101,6 @@ return require('packer').startup(function()
       require('ryankoval.nvim-comment')
     end,
   })
-  use('sickill/vim-pasta')
   use({
     'rafamadriz/friendly-snippets',
     run = 'rm -f snippets/global.json',
