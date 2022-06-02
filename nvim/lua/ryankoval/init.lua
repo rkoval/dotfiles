@@ -69,6 +69,15 @@ vim.keymap.set('n', 'K', '<Esc>', {})
 
 -- cmd+w should close the window if only one buffer left
 function close_buffer()
+  local filetype = vim.api.nvim_win_call(vim.api.nvim_get_current_win(), function()
+    return vim.o.filetype
+  end)
+
+  if filetype == 'neo-tree' then
+    vim.cmd('Neotree close')
+    return
+  end
+
   local tabpages = vim.api.nvim_list_tabpages()
   if #tabpages == 1 then
     local wins = vim.api.nvim_tabpage_list_wins(tabpages[1])
@@ -84,11 +93,15 @@ function close_buffer()
       end
     end
     if should_quit then
-      vim.cmd(':q')
+      vim.cmd('q')
     end
   end
 
+  if vim.fn.exists(':BufferClose') ~= 0 then
   vim.cmd('BufferClose')
+  else
+    vim.cmd('bdelete')
+  end
 end
 vim.keymap.set('i', '<D-w>', close_buffer, opts)
 vim.keymap.set('n', '<D-w>', close_buffer, opts)
@@ -118,3 +131,6 @@ vim.keymap.set('x', '-', 'g<C-x>', silent_opts)
 
 -- alt-backspace behavior
 vim.keymap.set('i', '<m-bs>', '<c-w>', silent_opts)
+
+-- set this globally to access more easily
+vpp = vim.pretty_print
