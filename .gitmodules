@@ -3,4 +3,4 @@
 	url = git@github.com:tarjoilija/zgen.git
 [submodule "submodules/packer.nvim"]
 	path = submodules/packer.nvim
-	url = https://github.com/wbthomason/packer.nvim
+	url = git@github.com:wbthomason/packer.nvim.git
