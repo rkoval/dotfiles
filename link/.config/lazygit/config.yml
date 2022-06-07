@@ -10,3 +10,5 @@ keybinding:
     prevBlock: 'p' # goto the previous block / panel
     # nextBlock: '<right>' # goto the next block / panel
     nextBlock: 'n' # goto the next block / panel
+    prevPage: '<c-u>' # go to next page in list
+    nextPage: '<c-d>' # go to previous page in list
