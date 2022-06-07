@@ -1,3 +1,5 @@
+" set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/after runtimepath+=/opt/homebrew/bin
+
 scriptencoding utf-8
 let g:mapleader = ","
 
