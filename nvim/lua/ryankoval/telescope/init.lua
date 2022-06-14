@@ -38,6 +38,17 @@ local function enter_select_mode_on_complete(picker)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys .. [[^llv$<C-g>]], true, false, true), 'n', true)
   -- should you have more callbacks, just pop the first one
   table.remove(picker._completion_callbacks, 1)
+
+  local prompt_bufnr = picker.prompt_bufnr
+  vim.keymap.set('s', '<C-n>', function()
+    actions.move_selection_next(prompt_bufnr)
+  end, { buffer = prompt_bufnr })
+  vim.keymap.set('s', '<C-p>', function()
+    actions.move_selection_previous(prompt_bufnr)
+  end, { buffer = prompt_bufnr })
+  vim.keymap.set('s', '<Esc>', function()
+    actions.close(prompt_bufnr)
+  end, { buffer = prompt_bufnr })
 end
 
 local binary_files = {
