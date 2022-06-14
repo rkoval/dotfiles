@@ -195,13 +195,21 @@ require('neo-tree').setup({
 vim.keymap.set('n', '<leader>f', '<cmd>Neotree focus<cr>', {})
 vim.keymap.set('n', '<leader><S-f>', '<cmd>Neotree toggle show filesystem<cr>', {})
 
-vim.cmd([[
-  augroup NEOTREE_AUGROUP
-    autocmd!
-    au VimEnter * lua vim.cmd("Neotree show left")
-    au TabNewEntered * lua vim.cmd("Neotree show left")
-  augroup END
-]])
+local neotree_augroup = vim.api.nvim_create_augroup('NEOTREE_AUGROUP', { clear = true })
+local open_neotree = function()
+  vim.pretty_print('vim.bo.filetype ', vim.bo.filetype)
+  if vim.bo.filetype ~= 'gitcommit' then
+    vim.cmd('Neotree show left')
+  end
+end
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = neotree_augroup,
+  callback = open_neotree,
+})
+vim.api.nvim_create_autocmd('TabNewEntered', {
+  group = neotree_augroup,
+  callback = open_neotree,
+})
 
 -- close tree if only buffer open in current tab
 -- see https://github.com/kyazdani42/nvim-tree.lua/issues/1005#issuecomment-1115831363
