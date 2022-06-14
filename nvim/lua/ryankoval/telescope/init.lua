@@ -175,8 +175,6 @@ local telescope_opts = {
 
     mappings = {
       i = {
-        ['<c-j>'] = actions.move_selection_next,
-        ['<c-k>'] = actions.move_selection_previous,
         ['<m-bs>'] = function()
           vim.api.nvim_input('<c-w>')
         end,
