@@ -135,7 +135,7 @@ return require('packer').startup(function()
   })
   use({
     'mattn/emmet-vim',
-    ft = { 'html', 'css', 'vue' },
+    ft = { 'html', 'css', 'less', 'scss', 'vue' },
     config = function()
       require('ryankoval.emmet-vim')
     end,
