@@ -56,7 +56,6 @@ local binary_files = {
   '*.gif',
   '*.jpg',
   '*.png',
-  '*.svg',
   '*.ttf',
   '*.webp',
   '*.woff',
