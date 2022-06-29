@@ -4,7 +4,7 @@ vim.g.user_emmet_install_command = 0
 vim.g.user_emmet_mode = 'iv' -- enable emmet functions for `i`nsert and `v`isual
 
 vim.cmd([[
-  autocmd FileType html,css,less,scss,vue EmmetInstall
+  autocmd FileType html,css,less,scss,vue,markdown EmmetInstall
 ]])
 
 vim.keymap.set('i', '<C-Return>', '<Plug>(emmet-expand-abbr)', { noremap = true, silent = true })
