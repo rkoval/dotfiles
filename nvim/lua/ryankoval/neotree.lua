@@ -197,7 +197,7 @@ vim.keymap.set('n', '<leader><S-f>', '<cmd>Neotree toggle show filesystem<cr>', 
 
 local neotree_augroup = vim.api.nvim_create_augroup('NEOTREE_AUGROUP', { clear = true })
 local open_neotree = function()
-  if vim.bo.filetype ~= 'gitcommit' then
+  if vim.bo.filetype ~= 'gitcommit' and vim.bo.filetype ~= 'gitrebase' then
     vim.cmd('Neotree show left')
   end
 end
