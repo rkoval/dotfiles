@@ -86,6 +86,7 @@ require('nvim-lsp-installer').setup({
     'golangci_lint_ls',
     'yamlls',
     'dockerls',
+    'sourcekit',
     'cssls',
   },
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -292,3 +293,6 @@ lspconfig.dockerls.setup({})
 
 -- less ---------------------------------------------------------------------
 lspconfig.cssls.setup({})
+
+-- swift ---------------------------------------------------------------------
+lspconfig.sourcekit.setup({})

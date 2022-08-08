@@ -24,6 +24,7 @@ require('nvim-treesitter.configs').setup({
     'regex',
     'scala',
     'scss',
+    'swift',
     'tsx',
     'typescript',
     'vim',
