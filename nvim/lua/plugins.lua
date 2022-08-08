@@ -73,9 +73,10 @@ return require('packer').startup(function()
   -- evaluating nvim plugins
   --
   use({
-    'romgrk/barbar.nvim',
-    requires = { { 'kyazdani42/nvim-web-devicons' } },
+    'noib3/nvim-cokeline',
+    requires = { 'kyazdani42/nvim-web-devicons' },
   })
+
   use('petertriho/nvim-scrollbar')
   use('windwp/nvim-autopairs')
   use('windwp/nvim-ts-autotag')

@@ -4,6 +4,21 @@ vim.opt.termguicolors = true
 
 require('ryankoval.theme')
 
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+-- map('n', '<c-s-tab>', ':tabprevious<CR>', opts)
+-- map('n', '<c-tab>', ':tabnext<CR>', opts)
+-- -- Goto buffer in position...
+-- map('n', '<D-1>', '1gt', opts)
+-- map('n', '<D-2>', '2gt', opts)
+-- map('n', '<D-3>', '3gt', opts)
+-- map('n', '<D-4>', '4gt', opts)
+-- map('n', '<D-5>', '5gt', opts)
+-- map('n', '<D-6>', '6gt', opts)
+-- map('n', '<D-7>', '7gt', opts)
+-- map('n', '<D-8>', '8gt', opts)
+-- map('n', '<D-9>', '9gt', opts)
+
 require('ryankoval.cmp')
 require('ryankoval.gitsigns')
 require('ryankoval.neotree')
@@ -14,7 +29,7 @@ require('ryankoval.telescope.mappings')
 require('ryankoval.lsp')
 require('ryankoval.luasnip')
 require('ryankoval.lualine')
-require('ryankoval.barbar')
+require('ryankoval.cokeline')
 require('ryankoval.hop')
 require('ryankoval.nvim-notify')
 require('ryankoval.scrollbar')
@@ -98,7 +113,7 @@ function close_buffer()
   end
 
   if vim.fn.exists(':BufferClose') ~= 0 then
-  vim.cmd('BufferClose')
+    vim.cmd('BufferClose')
   else
     vim.cmd('bdelete')
   end
