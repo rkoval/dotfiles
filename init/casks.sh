@@ -16,7 +16,6 @@ casks=(
   karabiner-elements
   postman
   resilio-sync
-  simplenote
   spotify
   neovide
   steam

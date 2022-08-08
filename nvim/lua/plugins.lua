@@ -128,12 +128,6 @@ return require('packer').startup(function()
   --
   use('terryma/vim-multiple-cursors')
   use({
-    'mrtazz/simplenote.vim',
-    config = function()
-      require('ryankoval.simplenote')
-    end,
-  })
-  use({
     'mattn/emmet-vim',
     ft = { 'html', 'css', 'less', 'scss', 'vue', 'markdown' },
     config = function()
