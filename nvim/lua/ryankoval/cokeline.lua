@@ -86,8 +86,8 @@ require('cokeline').setup({
   show_if_buffers_are_at_least = 1,
 
   buffers = {
-    -- filter_valid = function(buffer) return buffer.type ~= 'terminal' end,
-    -- filter_visible = function(buffer) return buffer.type ~= 'terminal' end,
+    filter_valid = function(buffer) return buffer.type ~= 'quickfix' end,
+    filter_visible = function(buffer) return buffer.type ~= 'quickfix' end,
     new_buffers_position = 'next',
   },
 
