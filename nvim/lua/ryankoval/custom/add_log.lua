@@ -8,10 +8,20 @@ local function lua(selection)
   return "vim.pretty_print('" .. selection:gsub("'", "\\'") .. "', " .. selection .. ')'
 end
 
+local function go(selection)
+  return "log.Printf(\"" .. selection:gsub("'", "\\'") .. " %#v\", " .. selection .. ')'
+end
+
+local function python(selection)
+  return "print(\"" .. selection:gsub("'", "\\'") .. "\", " .. selection .. ')'
+end
+
 local filetype_handlers = {
   ['javascript'] = javascript,
   ['typescript'] = javascript,
   ['lua'] = lua,
+  ['go'] = go,
+  ['python'] = python,
 }
 
 local function get_indentation()
