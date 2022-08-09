@@ -71,12 +71,6 @@ vim.keymap.set('x', '<Up>', 'gk', opts)
 vim.keymap.set('i', '<Down>', '<C-o>gj', opts)
 vim.keymap.set('i', '<Up>', '<C-o>gk', opts)
 
--- tab indents
-vim.keymap.set('n', '<TAB>', '>>', opts)
-vim.keymap.set('x', '<TAB>', '>gv', opts)
-vim.keymap.set('x', '<S-TAB>', '<gv', opts)
-vim.keymap.set('i', '<S-TAB>', '<C-d>', opts)
-
 -- map jk to leave insert mode
 vim.keymap.set('i', 'jk', '<Esc>', {})
 vim.keymap.set('i', 'Jk', '<Esc>', {})
