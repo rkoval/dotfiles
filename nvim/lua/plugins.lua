@@ -91,7 +91,10 @@ return require('packer').startup(function()
   --
   use('AndrewRadev/splitjoin.vim')
   use('tpope/vim-unimpaired')
-  use('tpope/vim-surround')
+  use({
+    'kylechui/nvim-surround',
+    tag = '*', -- Use for stability; omit for the latest features
+  })
   use('tpope/vim-repeat')
   use('tommcdo/vim-exchange')
   use('wellle/targets.vim')
