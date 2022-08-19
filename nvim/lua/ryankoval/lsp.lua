@@ -87,6 +87,7 @@ require('nvim-lsp-installer').setup({
     'yamlls',
     'dockerls',
     'sourcekit',
+    'marksman',
     'cssls',
   },
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -296,3 +297,6 @@ lspconfig.cssls.setup({})
 
 -- swift ---------------------------------------------------------------------
 lspconfig.sourcekit.setup({})
+
+-- markdown ---------------------------------------------------------------------
+lspconfig.marksman.setup({})
