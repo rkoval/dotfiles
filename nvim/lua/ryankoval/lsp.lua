@@ -15,8 +15,8 @@ vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSig
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>zz', opts)
-vim.keymap.set('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>zz', opts)
+vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, opts)
+vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 vim.keymap.set('n', '<Leader>gr', vim.lsp.buf.rename, opts)
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
