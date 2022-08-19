@@ -116,6 +116,5 @@ lua << EOF
 
   require('plugins')
   require('ryankoval')
-  require('friendly-snippets')
 EOF
 

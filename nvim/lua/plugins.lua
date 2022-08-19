@@ -106,10 +106,6 @@ return require('packer').startup(function()
     end,
   })
   use({
-    'rafamadriz/friendly-snippets',
-    run = 'rm -f snippets/global.json',
-  })
-  use({
     'kshenoy/vim-signature',
     config = function()
       require('ryankoval.vim-signature')
