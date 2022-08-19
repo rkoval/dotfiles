@@ -85,7 +85,9 @@ function close_buffer()
   end)
 
   if filetype == 'neo-tree' then
-    vim.cmd('Neotree close')
+    -- neotree should not be closable by cmd+w; force window close instead
+    vim.cmd('wincmd l')
+    vim.cmd('q')
     return
   end
 
@@ -108,12 +110,7 @@ function close_buffer()
     end
   end
 
-  if vim.fn.exists(':BufferClose') ~= 0 then
-    vim.cmd('BufferClose')
-  else
-    vim.cmd('q')
-    -- vim.cmd('bdelete')
-  end
+  vim.cmd('q')
 end
 vim.keymap.set('i', '<D-w>', close_buffer, opts)
 vim.keymap.set('n', '<D-w>', close_buffer, opts)
