@@ -73,7 +73,7 @@ return require('packer').startup(function()
   -- evaluating nvim plugins
   --
   use({
-    'noib3/nvim-cokeline',
+    'seblj/nvim-tabline',
     requires = { 'kyazdani42/nvim-web-devicons' },
   })
 
