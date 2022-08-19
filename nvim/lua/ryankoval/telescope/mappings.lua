@@ -13,7 +13,7 @@ local map_options = {
 }
 local map_tele = function(mode, key, f, options)
   options = options or {}
-  function fn()
+  local fn = function()
     local default_text = options.construct_default_text and options.construct_default_text() or nil
     telescope[f](vim.tbl_extend('force', options, {
       default_text = default_text,
