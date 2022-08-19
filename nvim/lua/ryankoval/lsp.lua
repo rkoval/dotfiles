@@ -14,12 +14,13 @@ vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSig
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>zz', opts)
 vim.keymap.set('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<cr>zz', opts)
-vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-vim.keymap.set('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-vim.keymap.set('n', '<leader>F', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+vim.keymap.set('n', '<Leader>gr', vim.lsp.buf.rename, opts)
+vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
+vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, opts)
 
 -- cycle through diagnostics by priority of severity.
 -- if no diagnostic exists for a given severity, incrementally try the next levels
