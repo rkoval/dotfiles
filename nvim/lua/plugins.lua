@@ -130,7 +130,7 @@ return require('packer').startup(function()
   --
   -- probably keep
   --
-  use('terryma/vim-multiple-cursors')
+  use('mg979/vim-visual-multi')
   use({
     'mattn/emmet-vim',
     ft = { 'html', 'css', 'less', 'scss', 'vue', 'markdown' },
