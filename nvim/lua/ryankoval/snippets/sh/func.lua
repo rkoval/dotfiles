@@ -1,8 +1,7 @@
 return {
   parse(
     'func',
-    [[${1:name} ()
-{
+    [[${1:name}() {
   ${0}
 }]]
   ),

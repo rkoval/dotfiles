@@ -1,6 +1,9 @@
 return {
-    parse('else', [[
-  else
+  parse(
+    'else',
+    [[
+else
   ${0:command}
-  ]]),
-  }
+]]
+  ),
+}

@@ -27,7 +27,7 @@ async function init() {
       if (Array.isArray(body)) {
         body = body.join('\n');
       }
-      body = body.replaceAll('\t', '  ');
+      body = body.replaceAll('\t', '  ').replaceAll(']', '\\]');
       const rawSnippet = `return {
     parse('${config.prefix}', [[${body.trim()}]]),
   }`;

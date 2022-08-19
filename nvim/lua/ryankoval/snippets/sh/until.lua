@@ -1,8 +1,9 @@
 return {
-    parse('until', [[
-  until [[ ${1:condition} ]]; do
+  parse(
+    'until',
+    [[
+  until [[ ${1:condition} \]\]; do
   ${0}
-done
-
-  ]]),
-  }
+done]]
+  ),
+}

@@ -1,5 +1,8 @@
 return {
-    parse('expr', [[
+  parse(
+    'expr',
+    [[
   expr ${0:1 + 1}
-  ]]),
-  }
+  ]]
+  ),
+}

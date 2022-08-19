@@ -1,5 +1,3 @@
 return {
-    parse('break', [[
-  break ${0}
-  ]]),
-  }
+  parse('break', [[break ${0}]]),
+}
