@@ -17,7 +17,12 @@ async function init() {
   }
   await Promise.all(
     Object.entries(snippetsJson).map(async ([description, config]) => {
-      const name = config.prefix.replaceAll('/', '').replaceAll('\\', '');
+      let name = config.prefix
+      if (Array.isArray(name)) {
+        name = name.join('');
+      }
+      name = name.replaceAll('/', '').replaceAll('\\', '');
+
       let body = config.body;
       if (Array.isArray(body)) {
         body = body.join('\n');

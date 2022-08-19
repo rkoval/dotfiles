@@ -1,0 +1,20 @@
+return {
+    parse('tdt', [[
+  func Test$1(t *testing.T) {
+  testCases := []struct {
+    desc  string
+    $2
+  }{
+    {
+      desc: "$3",
+      $4
+    },
+  }
+  for _, tC := range testCases {
+    t.Run(tC.desc, func(t *testing.T) {
+      $0
+    })
+  }
+}
+  ]]),
+  }
