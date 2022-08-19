@@ -1,8 +1,14 @@
 ---
+gui:
+  mainPanelSplitMode: 'vertical'
+  expandFocusedSidePanel: true
+  sidePanelWidth: 0.27
+  mouseEvents: false
 git:
+  diffContextSize: 4
   paging:
     colorArg: always
-    pager: delta --paging=never
+    # pager: delta --paging=never
     useConfig: false
 keybinding:
   universal:
