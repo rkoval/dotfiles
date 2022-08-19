@@ -29,9 +29,7 @@ async function init() {
       }
       body = body.replaceAll('\t', '  ');
       const rawSnippet = `return {
-    parse('${config.prefix}', [[
-  ${body}
-  ]]),
+    parse('${config.prefix}', [[${body.trim()}]]),
   }`;
 
       const file = `./${filetype}/${name}.lua`;
