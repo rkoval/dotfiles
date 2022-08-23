@@ -1,12 +1,21 @@
 return {
   parse(
     'nrc',
-    [[import React from 'react';
+    [[
+import classNames from 'classnames';
 
-export default class ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}} extends React.Component {
-  render() {
-    return <div className="${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}">TODO</div>;
-  }
+interface Props {
+  className?: string;
+}
+
+export default function ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}(props: Props) {
+  const {className} = props;
+
+  return (
+    <div className={classNames(className, '${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}')}>
+      TODO
+    </div>
+  );
 }]]
   ),
 }
