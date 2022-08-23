@@ -51,7 +51,7 @@ return require('packer').startup(function()
   use('saadparwaiz1/cmp_luasnip')
 
   use({
-    'nvim-neo-tree/neo-tree.nvim',
+    'rkoval/neo-tree.nvim',
     branch = 'v2.x',
     requires = {
       'nvim-lua/plenary.nvim',

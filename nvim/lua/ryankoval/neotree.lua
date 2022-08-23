@@ -1,6 +1,7 @@
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-require('neo-tree').setup({
+local neotree = require('neo-tree')
+neotree.setup({
   close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = 'rounded',
   enable_git_status = true,
@@ -78,12 +79,12 @@ require('neo-tree').setup({
     mappings = {
       ['<backspace>'] = 'none',
       ['<space>'] = 'none',
-      ['<cr>'] = 'open_tabnew',
+      ['<cr>'] = 'open_tab_drop',
       ['S'] = 'open_split',
       ['s'] = 'open_vsplit',
       -- ["S"] = "split_with_window_picker",
       -- ["s"] = "vsplit_with_window_picker",
-      ['t'] = 'open_tabnew',
+      ['t'] = 'open_tab_drop',
       ['C'] = 'close_node',
       ['ma'] = {
         'add',
