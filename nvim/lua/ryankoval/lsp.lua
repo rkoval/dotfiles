@@ -90,6 +90,7 @@ require('nvim-lsp-installer').setup({
     'sourcekit',
     'marksman',
     'cssls',
+    'tailwindcss',
   },
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
@@ -301,3 +302,6 @@ lspconfig.sourcekit.setup({})
 
 -- markdown ---------------------------------------------------------------------
 lspconfig.marksman.setup({})
+
+-- markdown ---------------------------------------------------------------------
+lspconfig.tailwindcss.setup({})
