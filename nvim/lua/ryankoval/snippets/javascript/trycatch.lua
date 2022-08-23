@@ -1,9 +1,10 @@
 return {
-  parse('trycatch', [[
-try {
+  parse(
+    'trycatch',
+    [[try {
   $0
 } catch (${1:error}) {
   
-}
-]]),
+}]]
+  ),
 }

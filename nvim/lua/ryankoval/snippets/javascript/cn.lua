@@ -1,7 +1,3 @@
 return {
-  parse('cn', [[
-constructor () {
-  ${0}
-}
-]]),
+  parse('cn', [[className="$0"]]),
 }

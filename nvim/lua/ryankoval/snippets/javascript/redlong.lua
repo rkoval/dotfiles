@@ -1,6 +1,6 @@
 return {
   parse(
-    'reduce',
+    'redlong',
     [[reduce((acc, ${1:item}) => {
   ${0}
 }, ${2:{}})

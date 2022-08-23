@@ -1,7 +1,8 @@
 return {
-  parse('filter', [[
-.filter((${1:item}) => {
-  ${0}
-})
-]]),
+  parse(
+    'filter',
+    [[filter((${1:item}) => {
+  return ${2:condition};
+})]]
+  ),
 }

@@ -1,12 +1,11 @@
 return {
-  parse('nc', [[
-class ${1:name} {
-  constructor (${2:arguments}) {
-    ${0}
-  }
+  parse(
+    'nc',
+    [[export default class ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}} {
+  constructor() {
+    super();
+  }}
 }
-
-module.exports = ${1:name}
-
-]]),
+]]
+  ),
 }
