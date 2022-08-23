@@ -19,27 +19,48 @@ map('n', '<D-7>', '7gt', opts)
 map('n', '<D-8>', '8gt', opts)
 map('n', '<D-9>', '9gt', opts)
 
-require('ryankoval.cmp')
-require('ryankoval.gitsigns')
-require('ryankoval.neotree')
-require('ryankoval.treesitter')
-require('ryankoval.indent-blankline')
-require('ryankoval.telescope')
-require('ryankoval.telescope.mappings')
-require('ryankoval.lsp')
-require('ryankoval.luasnip')
-require('ryankoval.lualine')
-require('ryankoval.nvim-tabline')
-require('ryankoval.nvim-surround')
-require('ryankoval.vim-visual-multi')
-require('ryankoval.hop')
-require('ryankoval.nvim-notify')
-require('ryankoval.scrollbar')
-require('ryankoval.nvim-autopairs')
-require('ryankoval.nvim-lastplace')
-require('ryankoval.custom.font')
-require('ryankoval.custom.copy_filename_to_clipboard')
-require('ryankoval.custom.add_log')
+local function try_function(func, message_prefix)
+  local ok, res = xpcall(func, debug.traceback)
+  if not ok then
+    vim.notify((message_prefix or '') .. res, 'error')
+  end
+  return res
+end
+
+try_function(function()
+  require('ryankoval.nvim-notify')
+end)
+
+local modules = {
+  'ryankoval.cmp',
+  'ryankoval.gitsigns',
+  'ryankoval.neotree',
+  'ryankoval.treesitter',
+  'ryankoval.indent-blankline',
+  'ryankoval.telescope',
+  'ryankoval.telescope.mappings',
+  'ryankoval.lsp',
+  'ryankoval.luasnip',
+  'ryankoval.lualine',
+  'ryankoval.nvim-tabline',
+  'ryankoval.nvim-surround',
+  'ryankoval.vim-visual-multi',
+  'ryankoval.hop',
+  'ryankoval.scrollbar',
+  'ryankoval.nvim-autopairs',
+  'ryankoval.nvim-lastplace',
+  'ryankoval.custom.font',
+  'ryankoval.custom.copy_filename_to_clipboard',
+  'ryankoval.custom.add_log',
+}
+
+for i, module in pairs(modules) do
+  local function init_module()
+    require(module)
+  end
+  local message_prefix = 'Error initializing module "' .. module .. '": '
+  try_function(init_module, message_prefix)
+end
 
 local parsers = require('nvim-treesitter.parsers')
 local configs = parsers.get_parser_configs()
