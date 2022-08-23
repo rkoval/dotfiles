@@ -32,7 +32,7 @@ try_function(function()
 end)
 
 local modules = {
-  'ryankoval.cmp',
+  'ryankoval.nvim-cmp',
   'ryankoval.gitsigns',
   'ryankoval.neotree',
   'ryankoval.treesitter',
