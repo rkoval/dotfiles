@@ -8,3 +8,4 @@ require('luasnip.loaders.from_lua').load({ paths = '~/dotfiles/nvim/lua/ryankova
 
 luasnip.filetype_extend('typescript', { 'javascript' })
 luasnip.filetype_extend('typescriptreact', { 'javascript' })
+luasnip.filetype_extend('typescriptreact', { 'javascriptreact' })
