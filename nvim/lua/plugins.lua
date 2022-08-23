@@ -129,7 +129,7 @@ return require('packer').startup(function()
   use('mg979/vim-visual-multi')
   use({
     'mattn/emmet-vim',
-    ft = { 'html', 'css', 'less', 'scss', 'vue', 'markdown' },
+    ft = { 'html', 'css', 'less', 'javascriptreact', 'typescriptreact', 'scss', 'vue', 'markdown' },
     config = function()
       require('ryankoval.emmet-vim')
     end,
