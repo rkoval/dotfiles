@@ -9,16 +9,18 @@ local function lua(selection)
 end
 
 local function go(selection)
-  return "log.Printf(\"" .. selection:gsub("'", "\\'") .. " %#v\", " .. selection .. ')'
+  return 'log.Printf("' .. selection:gsub("'", "\\'") .. ' %#v", ' .. selection .. ')'
 end
 
 local function python(selection)
-  return "print(\"" .. selection:gsub("'", "\\'") .. "\", " .. selection .. ')'
+  return 'print("' .. selection:gsub("'", "\\'") .. '", ' .. selection .. ')'
 end
 
 local filetype_handlers = {
   ['javascript'] = javascript,
+  ['javascriptreact'] = javascript,
   ['typescript'] = javascript,
+  ['typescriptreact'] = javascript,
   ['lua'] = lua,
   ['go'] = go,
   ['python'] = python,
