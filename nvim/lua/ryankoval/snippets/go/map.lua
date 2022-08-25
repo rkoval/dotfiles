@@ -1,5 +1,7 @@
 return {
-    parse('map', [[
-  map[${1:type}]${2:type}
-  ]]),
-  }
+  parse(
+    'map',
+    [[map[${1:type}]${2:type}
+  ]]
+  ),
+}
