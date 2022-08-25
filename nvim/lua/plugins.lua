@@ -68,6 +68,12 @@ return require('packer').startup(function()
   use('lukas-reineke/indent-blankline.nvim')
   use('xiyaowong/nvim-cursorword')
   use('lewis6991/gitsigns.nvim')
+  use('mg979/vim-visual-multi')
+  use('rcarriga/nvim-notify')
+  use('mfussenegger/nvim-treehopper')
+  use('windwp/nvim-autopairs')
+  use('windwp/nvim-ts-autotag')
+  use('petertriho/nvim-scrollbar')
 
   --
   -- evaluating nvim plugins
@@ -77,14 +83,9 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons' },
   })
 
-  use('petertriho/nvim-scrollbar')
-  use('windwp/nvim-autopairs')
-  use('windwp/nvim-ts-autotag')
   use('folke/lua-dev.nvim')
-  use('mfussenegger/nvim-treehopper')
   use('phaazon/hop.nvim')
   use('ethanholz/nvim-lastplace')
-  use('rcarriga/nvim-notify')
 
   --
   -- older, but still useful vim plugins
@@ -126,7 +127,6 @@ return require('packer').startup(function()
   --
   -- probably keep
   --
-  use('mg979/vim-visual-multi')
   use({
     'mattn/emmet-vim',
     ft = { 'html', 'css', 'less', 'javascriptreact', 'typescriptreact', 'scss', 'vue', 'markdown' },
