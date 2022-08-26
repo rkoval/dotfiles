@@ -1,7 +1,8 @@
 return {
-  parse('map', [[
-.map((${1:item}) => {
+  parse(
+    'map',
+    [[map((${1:item}) => {
   ${0}
-})
-]]),
+})]]
+  ),
 }
