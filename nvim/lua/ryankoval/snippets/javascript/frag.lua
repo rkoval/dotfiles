@@ -1,3 +1,3 @@
 return {
-  parse('frag.lua', [[<>$0</>]]),
+  parse('frag', [[<>$0</>]]),
 }

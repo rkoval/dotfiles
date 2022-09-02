@@ -1,7 +1,10 @@
 return {
-  parse('get', [[
-get ${1:property} () {
+  parse(
+    'get',
+    [[
+get ${1:property}() {
   ${0}
 }
-]]),
+]]
+  ),
 }

@@ -1,7 +1,10 @@
 return {
-  parse('foreach', [[
-.forEach((${1:item}) => {
+  parse(
+    'foreach',
+    [[
+forEach((${1:item}) => {
   ${0}
 })
-]]),
+]]
+  ),
 }
