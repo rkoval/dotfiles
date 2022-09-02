@@ -1,7 +1,7 @@
 return require('packer').startup(function()
   use('wbthomason/packer.nvim')
 
-  use('folke/tokyonight.nvim')
+  use({ 'folke/tokyonight.nvim', commit = '8223c970677e4d88c9b6b6d81bda23daf11062bb' })
 
   --
   -- nvim dependencies
@@ -47,7 +47,7 @@ return require('packer').startup(function()
   use('hrsh7th/cmp-buffer')
   use('hrsh7th/cmp-cmdline')
   use('hrsh7th/cmp-path')
-  use('L3MON4D3/LuaSnip')
+  use({ 'L3MON4D3/LuaSnip', commit = '2f948d4bd1196d4b9a3bc6c6db2537c572e814d5' })
   use('saadparwaiz1/cmp_luasnip')
 
   use({
