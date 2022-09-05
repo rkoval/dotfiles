@@ -49,7 +49,6 @@ local function set_lsp_keymaps(client, bufnr)
 
   vim.keymap.set('n', '<leader>lt', '<cmd>cexpr system("tsc --pretty false") <bar> copen<cr>', opts)
   vim.keymap.set('n', '<leader>la', '<cmd>cexpr system("npm run lint -- --format unix") <bar> copen<cr>', opts)
-  vim.keymap.set('n', '<leader>lf', '<cmd>%!eslint_d --stdin --fix-to-stdout --stdin-filename %<cr>', opts)
 end
 
 local function handler_publishDiagnostics()
@@ -132,17 +131,6 @@ local prettier = {
   formatStdin = true,
 }
 
-local eslint = {
-  lintCommand = 'eslint_d -f visualstudio --stdin --stdin-filename ${INPUT}',
-  lintStdin = true,
-  -- lintFormats = { '%f:%l:%c: %m' },
-  lintFormats = {
-    '%f(%l,%c): %tarning %m',
-    '%f(%l,%c): %rror %m',
-  },
-  lintIgnoreExitCode = true,
-}
-
 local shellcheck = {
   lintCommand = 'shellcheck -f gcc -x',
   lintSource = 'shellcheck',
@@ -186,10 +174,10 @@ lspconfig.efm.setup({
 
   settings = {
     languages = {
-      javascript = { prettier, eslint },
-      typescript = { prettier, eslint },
-      javascriptreact = { prettier, eslint },
-      typescriptreact = { prettier, eslint },
+      javascript = { prettier },
+      typescript = { prettier },
+      javascriptreact = { prettier },
+      typescriptreact = { prettier },
       less = { prettier },
       scss = { prettier },
       css = { prettier },
@@ -248,6 +236,9 @@ lspconfig.pyright.setup({})
 
 -- bash ---------------------------------------------------------------------
 lspconfig.bashls.setup({})
+
+-- javascript ---------------------------------------------------------------------
+lspconfig.eslint.setup({})
 
 -- yaml ---------------------------------------------------------------------
 require('lspconfig').yamlls.setup({
