@@ -86,6 +86,9 @@ return require('packer').startup(function()
   use('folke/lua-dev.nvim')
   use('phaazon/hop.nvim')
   use('ethanholz/nvim-lastplace')
+  use({
+    'ray-x/lsp_signature.nvim',
+  })
 
   --
   -- older, but still useful vim plugins
