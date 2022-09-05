@@ -240,6 +240,24 @@ lspconfig.bashls.setup({})
 -- javascript ---------------------------------------------------------------------
 lspconfig.eslint.setup({})
 
+vim.diagnostic.config({
+  virtual_text = false,
+  float = {
+    format = function(diagnostic)
+      if diagnostic.source == 'eslint' then
+        return string.format(
+          'eslint [%s]: %s',
+          -- shows the name of the rule
+          diagnostic.user_data.lsp.code,
+          diagnostic.message
+        )
+      end
+      return string.format('%s: %s', diagnostic.source, diagnostic.message)
+    end,
+    severity_sort = true,
+  },
+})
+
 -- yaml ---------------------------------------------------------------------
 require('lspconfig').yamlls.setup({
   settings = {
