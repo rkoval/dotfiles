@@ -48,6 +48,7 @@ map_tele('n', '<leader><leader>g', 'git_status')
 map_tele('n', '<D-S-r>', 'lsp_dynamic_workspace_symbols', {
   ignore_symbols = { 'variable', 'constant' },
 })
+map_tele('n', '<D-S-p>', 'commands')
 map_tele('n', '<leader>*', 'live_grep', {
   construct_default_text = selection_default_text,
 })

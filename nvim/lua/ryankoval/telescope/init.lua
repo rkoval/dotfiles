@@ -196,7 +196,6 @@ local telescope_opts = {
           actions.open_qflist(prompt_bufnr)
           vim.api.nvim_input(':cdo ,$s/' .. string .. '//g<Left><Left>')
         end,
-        ['<cr>'] = actions.select_tab,
         ['<Down>'] = actions.cycle_history_next,
         ['<Up>'] = actions.cycle_history_prev,
       },
@@ -213,6 +212,11 @@ local telescope_opts = {
       },
       previewer = false,
       layout_config = { width = 130 },
+      mappings = {
+        i = {
+          ['<cr>'] = actions.select_tab_drop,
+        },
+      },
     },
     find_files = {
       prompt_title = '~ files ~',
@@ -220,6 +224,11 @@ local telescope_opts = {
       follow = true,
       hidden = true,
       layout_config = { width = 130 },
+      mappings = {
+        i = {
+          ['<cr>'] = actions.select_tab_drop,
+        },
+      },
     },
     git_files = {
       prompt_title = '~ git files ~',
@@ -227,6 +236,11 @@ local telescope_opts = {
       follow = true,
       hidden = true,
       layout_config = { width = 130 },
+      mappings = {
+        i = {
+          ['<cr>'] = actions.select_tab_drop,
+        },
+      },
     },
     grep_string = {
       prompt_title = '~ grep string ~',
@@ -237,12 +251,17 @@ local telescope_opts = {
         map('i', '<cr>', select_multiple)
         return true
       end,
+      mappings = {
+        i = {
+          ['<cr>'] = actions.select_tab_drop,
+        },
+      },
     },
     live_grep = {
       prompt_title = '~ live grep ~',
       mappings = {
         i = {
-          ['<cr>'] = run_action_with_cached_text(actions.select_tab, 'live_grep'),
+          ['<cr>'] = run_action_with_cached_text(actions.select_tab_drop, 'live_grep'),
           ['<esc>'] = run_action_with_cached_text(actions.close, 'live_grep'),
         },
       },
@@ -251,6 +270,11 @@ local telescope_opts = {
       prompt_title = '~ oldfiles ~',
       find_command = find_files_command,
       layout_config = { width = 130 },
+      mappings = {
+        i = {
+          ['<cr>'] = actions.select_tab_drop,
+        },
+      },
     },
   },
   extensions = {
