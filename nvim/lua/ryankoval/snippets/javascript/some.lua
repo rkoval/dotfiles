@@ -1,7 +1,9 @@
 return {
-  parse('some', [[
-.some((${1:item}) => {
+  parse(
+    'some',
+    [[
+some((${1:item}) => {
   ${0}
-})
-]]),
+});]]
+  ),
 }

@@ -1,5 +1,3 @@
 return {
-  parse('ast', [[
-await new Promise((r) => setTimeout(r, ${0}))
-]]),
+  parse('ast', [[assert(${1:paramName}, `${1:paramName} is required`);]]),
 }
