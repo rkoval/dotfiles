@@ -25,9 +25,12 @@ vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, opts)
 -- cycle through diagnostics by priority of severity.
 -- if no diagnostic exists for a given severity, incrementally try the next levels
 local severity_priorities = { 'Error', 'Warn', 'Info', 'Hint' }
-function generate_goto_diagnostic(fn)
+function generate_goto_diagnostic(fn, use_priorities)
   return function()
     for _, severity in pairs(severity_priorities) do
+      if not use_priorities then
+        severity = nil
+      end
       local diagnostics = vim.diagnostic.get(0, {
         severity = severity,
       })
@@ -41,8 +44,10 @@ function generate_goto_diagnostic(fn)
   end
 end
 
-vim.keymap.set('n', '[l', generate_goto_diagnostic('goto_prev'), opts)
-vim.keymap.set('n', ']l', generate_goto_diagnostic('goto_next'), opts)
+vim.keymap.set('n', '[l', generate_goto_diagnostic('goto_prev', true), opts)
+vim.keymap.set('n', ']l', generate_goto_diagnostic('goto_next', true), opts)
+vim.keymap.set('n', '[L', generate_goto_diagnostic('goto_prev', false), opts)
+vim.keymap.set('n', ']L', generate_goto_diagnostic('goto_next', false), opts)
 
 local function set_lsp_keymaps(client, bufnr)
   -- vim.keymap.set('n', ',H', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)

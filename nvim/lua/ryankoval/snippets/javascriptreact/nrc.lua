@@ -15,7 +15,7 @@ export default function ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}(props: Props) {
   const {className} = props;
 
   return (
-    <div className={classNames(className, '${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}')}>
+    <div className={classNames('${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}', className)}>
       TODO
     </div>
   );
