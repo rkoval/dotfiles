@@ -162,5 +162,9 @@ vim.keymap.set('x', '-', 'g<C-x>', silent_opts)
 -- alt-backspace behavior
 vim.keymap.set('i', '<m-bs>', '<c-w>', silent_opts)
 
+-- macOS cut/paste behavior
+vim.keymap.set('v', '<D-x>', '"+d', silent_opts)
+vim.keymap.set('n', '<D-x>', 'V"+d', silent_opts)
+
 -- set this globally to access more easily
 vpp = vim.pretty_print
