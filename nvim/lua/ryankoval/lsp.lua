@@ -161,6 +161,7 @@ lspconfig.efm.setup({
     'json',
     'sh',
     'markdown',
+    'yaml',
     'python',
   },
 
@@ -188,6 +189,7 @@ lspconfig.efm.setup({
       css = { prettier },
       json = { prettier },
       html = { prettier },
+      yaml = { prettier },
       markdown = { prettier },
       svg = { prettier },
       xml = { prettier },
