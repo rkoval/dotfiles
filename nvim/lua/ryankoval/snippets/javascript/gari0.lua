@@ -1,5 +1,8 @@
 return {
-  parse('gari0', [[
+  parse(
+    'gari0',
+    [[
 [...Array(${1:length}).keys()]
-]]),
+]]
+  ),
 }
