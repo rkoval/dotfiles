@@ -19,7 +19,7 @@ alias vault='ansible-vault --vault-password-file ~/.ssh/vault_pass.txt'
 
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ssh/vault_pass.txt
 
-alias dco='docker-compose'
+alias dco='docker compose'
 
 dcou () {
   if [ -z "$1" ]; then
