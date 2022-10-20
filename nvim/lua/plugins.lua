@@ -94,7 +94,6 @@ return require('packer').startup(function()
   -- older, but still useful vim plugins
   --
   use('AndrewRadev/splitjoin.vim')
-  use('tpope/vim-unimpaired')
   use({
     'kylechui/nvim-surround',
     tag = '*', -- Use for stability; omit for the latest features
