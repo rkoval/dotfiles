@@ -7,6 +7,8 @@ pathappend() {
   do
     if ( [ -d "$ARG" ] || [[ "$ARG" != /* ]] ) && [[ ":$PATH:" != *":$ARG:"* ]]; then
         PATH="${PATH:+"$PATH:"}$ARG"
+    else
+        echo "ignoring append: $ARG"
     fi
   done
   export PATH
@@ -18,6 +20,8 @@ pathprepend() {
     ARG=$@[i]
     if ( [ -d "$ARG" ] || [[ "$ARG" != /* ]] ) && [[ ":$PATH:" != *":$ARG:"* ]]; then
       PATH="$ARG${PATH:+":$PATH"}"
+    else
+        echo "ignoring prepend: $ARG"
     fi
   done
   export PATH

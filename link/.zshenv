@@ -16,8 +16,3 @@ if [[ -e "$HOMEBREW_HOME/bin/brew" && ! $(command -v brew >> /dev/null) ]]; then
   eval "$($HOMEBREW_HOME/bin/brew shellenv)"
 fi
 
-# source bashrc
-if [ -f ~/.bashrc ]; then
-	source ~/.bashrc
-fi
-

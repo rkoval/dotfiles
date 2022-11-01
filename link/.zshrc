@@ -85,3 +85,8 @@ if [ -f ~/.fzf.zsh ]; then
     bindkey '^N' fzf-history-widget
     bindkey '^P' fzf-history-widget
 fi
+
+# source bashrc
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
