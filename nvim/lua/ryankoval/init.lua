@@ -98,6 +98,8 @@ vim.keymap.set('i', '<Up>', '<C-o>gk', opts)
 vim.keymap.set('i', 'jk', '<Esc>', {})
 vim.keymap.set('i', 'Jk', '<Esc>', {})
 vim.keymap.set('n', 'K', '<Esc>', {})
+vim.keymap.set('n', '<S-D-t>', ':tabnew #<CR>', {})
+vim.keymap.set('i', '<S-D-t>', '<Esc>:tabnew #<CR>', {})
 
 -- cmd+w should close the window if only one buffer left
 function close_buffer()
