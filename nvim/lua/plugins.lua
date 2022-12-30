@@ -17,7 +17,7 @@ return require('packer').startup(function()
   use({
     'nvim-treesitter/nvim-treesitter',
     run = 'TSUpdate',
-    commit = 'c8533707679b99dc80d5f46f7b519081fb9c1ac9',
+    commit = 'ee3e9f4dc0e5ee9e2bfb1ee47638375840b8fe0f',
   })
   use('nvim-treesitter/nvim-treesitter-textobjects')
 

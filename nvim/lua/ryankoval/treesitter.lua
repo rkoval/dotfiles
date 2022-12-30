@@ -67,9 +67,10 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
-require('nvim-treesitter.highlight').set_custom_captures({
-  ['className'] = 'TS_C_ClassName',
-  ['reactHook'] = 'TS_C_ReactHook',
-  ['jsxAttribute'] = 'TS_C_JsxAttribute',
-  ['function.call'] = 'TS_C_FunctionCall',
-})
+-- see fixes in https://github.com/apazzolini/dotfiles/commit/53ace9677928da68e30f8c9cddf2776f51949d80
+--require('nvim-treesitter.highlight').set_custom_captures({
+--  ['className'] = 'TS_C_ClassName',
+--  ['reactHook'] = 'TS_C_ReactHook',
+--  ['jsxAttribute'] = 'TS_C_JsxAttribute',
+--  ['function.call'] = 'TS_C_FunctionCall',
+--})
