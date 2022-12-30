@@ -13,8 +13,14 @@ vim.fn.sign_define('DiagnosticSignWarn', { text = '🔸', texthl = 'DiagnosticSi
 vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
+local function on_list()
+  vim.api.nvim_command('tab drop')
+end
+
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+vim.keymap.set('n', 'gd', function()
+  vim.lsp.buf.definition({ on_list = on_list })
+end, opts)
 vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, opts)
 vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
