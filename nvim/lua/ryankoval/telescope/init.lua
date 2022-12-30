@@ -220,6 +220,9 @@ local telescope_opts = {
     },
     find_files = {
       prompt_title = '~ files ~',
+      -- needs https://github.com/nvim-telescope/telescope.nvim/pull/2092
+      -- initial_mode = 'select',
+      initial_mode = 'insert',
       find_command = find_files_command,
       follow = true,
       hidden = true,
@@ -232,6 +235,9 @@ local telescope_opts = {
     },
     git_files = {
       prompt_title = '~ git files ~',
+      -- needs https://github.com/nvim-telescope/telescope.nvim/pull/2092
+      -- initial_mode = 'select',
+      initial_mode = 'insert',
       git_command = git_files_command,
       follow = true,
       hidden = true,
