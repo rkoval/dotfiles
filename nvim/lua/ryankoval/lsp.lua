@@ -13,8 +13,11 @@ vim.fn.sign_define('DiagnosticSignWarn', { text = '🔸', texthl = 'DiagnosticSi
 vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
-local function on_list()
-  vim.api.nvim_command('tab drop')
+local function on_list(options)
+  local item = options.items[1]
+  local cmd = 'tab drop ' .. vim.fn.fnameescape(item.filename) .. '"'
+  vim.cmd(cmd)
+  vim.api.nvim_win_set_cursor(0, { item.lnum, item.col - 1 })
 end
 
 local opts = { noremap = true, silent = true }
