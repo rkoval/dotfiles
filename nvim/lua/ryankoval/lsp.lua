@@ -55,6 +55,10 @@ vim.keymap.set('n', ']l', generate_goto_diagnostic('goto_next', true), opts)
 vim.keymap.set('n', '[L', generate_goto_diagnostic('goto_prev', false), opts)
 vim.keymap.set('n', ']L', generate_goto_diagnostic('goto_next', false), opts)
 
+if rkoval_lsps_initialized then
+  return
+end
+
 local function set_lsp_keymaps(client, bufnr)
   -- vim.keymap.set('n', ',H', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
@@ -381,3 +385,5 @@ require('lsp_signature').setup({
   select_signature_key = nil, -- cycle to next signature, e.g. '<M-n>' function overloading
   move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
 })
+
+rkoval_lsps_initialized = true
