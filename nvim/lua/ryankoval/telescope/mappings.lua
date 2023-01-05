@@ -5,6 +5,7 @@ end
 package.loaded['ryankoval.telescope.mappings'] = nil
 
 local telescope = require('ryankoval.telescope')
+local actions = require('telescope.actions')
 local Files = require('ryankoval.util.files')
 
 local map_options = {
@@ -31,6 +32,24 @@ local function selection_default_text()
 end
 
 map_tele('n', '<leader>t', 'find_files')
+map_tele('n', '<leader>e', 'find_files', {
+  attach_mappings = function(_, map)
+    map('i', '<cr>', actions.select)
+    return true
+  end,
+})
+map_tele('n', '<leader>v', 'find_files', {
+  attach_mappings = function(_, map)
+    map('i', '<cr>', actions.select_vertical)
+    return true
+  end,
+})
+map_tele('n', '<leader>s', 'find_files', {
+  attach_mappings = function(_, map)
+    map('i', '<cr>', actions.select_horizontal)
+    return true
+  end,
+})
 map_tele('n', 'gw', 'find_files', {
   construct_default_text = selection_default_text,
 })

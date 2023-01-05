@@ -205,15 +205,11 @@ local telescope_opts = {
     buffers = {
       prompt_title = '~ buffers ~',
       sort_lastused = true,
-      mappings = {
-        i = {
-          ['<c-u>'] = require('telescope.actions').delete_buffer,
-        },
-      },
       previewer = false,
       layout_config = { width = 130 },
       mappings = {
         i = {
+          ['<c-u>'] = require('telescope.actions').delete_buffer,
           ['<cr>'] = actions.select_tab_drop,
         },
       },
@@ -302,19 +298,22 @@ local telescope_opts = {
   },
 }
 
-require('telescope').setup(telescope_opts)
-require('telescope').load_extension('frecency')
-require('telescope').load_extension('smart_history')
-require('telescope').load_extension('notify')
+local telescope = require('telescope')
+
+telescope.setup(telescope_opts)
+telescope.load_extension('frecency')
+telescope.load_extension('smart_history')
+telescope.load_extension('notify')
+telescope_builtin = require('telescope.builtin')
 
 if vim.fn.has('win32') == 0 then
-  require('telescope').load_extension('fzf')
+  telescope.load_extension('fzf')
 end
 
 local M = {}
 
 function M.current_dir_files(opts)
-  require('telescope.builtin').find_files(vim.tbl_extend('force', {
+  telescope_builtin.find_files(vim.tbl_extend('force', {
     prompt_title = string.format('~ files in [%s] ~', vim.fn.expand('%:h')),
     cwd = vim.fn.expand('%:p:h'),
     hidden = true,
@@ -322,7 +321,7 @@ function M.current_dir_files(opts)
 end
 
 function M.dotfiles(opts)
-  require('telescope.builtin').find_files(vim.tbl_extend('force', {
+  telescope_builtin.find_files(vim.tbl_extend('force', {
     prompt_title = string.format('~ dotfiles ~'),
     cwd = '~/dotfiles',
     hidden = true,
@@ -330,9 +329,9 @@ function M.dotfiles(opts)
 end
 
 function M.git_files(opts)
-  local ok = pcall(require('telescope.builtin').git_files, opts)
+  local ok = pcall(telescope_builtin.git_files, opts)
   if not ok then
-    require('telescope.builtin').find_files(opts)
+    telescope_builtin.find_files(opts)
   end
 end
 
@@ -354,7 +353,7 @@ return setmetatable({}, {
     if M[k] then
       return M[k]
     else
-      return require('telescope.builtin')[k]
+      return telescope_builtin[k]
     end
   end,
 })
