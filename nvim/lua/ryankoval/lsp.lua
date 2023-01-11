@@ -127,7 +127,8 @@ lspconfig.tsserver.setup({
 
   on_attach = function(client, bufnr)
     -- use prettier via efm on save instead of tsserver's builtin formatting
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
     set_lsp_keymaps(client, bufnr)
   end,
 
@@ -186,7 +187,7 @@ lspconfig.efm.setup({
     vim.cmd([[
       augroup Format
         autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(null, 2000)
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ timeout_ms = 2000, async = false })
       augroup END
     ]])
   end,
@@ -297,7 +298,7 @@ lspconfig.gopls.setup({})
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.go' },
   callback = function()
-    vim.lsp.buf.formatting_sync(nil, 3000)
+    vim.lsp.buf.format({ timeout_ms = 3000, async = false })
   end,
 })
 
