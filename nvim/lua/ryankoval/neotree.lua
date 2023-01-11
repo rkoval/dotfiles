@@ -197,17 +197,17 @@ vim.keymap.set('n', '<leader>f', '<cmd>Neotree focus<cr>', {})
 vim.keymap.set('n', '<leader><S-f>', '<cmd>Neotree toggle show filesystem<cr>', {})
 
 local neotree_augroup = vim.api.nvim_create_augroup('NEOTREE_AUGROUP', { clear = true })
-local neotree_disabled_filetypes = {'gitcommit', 'gitrebase', 'man'}
+local neotree_disabled_filetypes = { 'gitcommit', 'gitrebase', 'man' }
 local open_neotree = function()
   if not vim.tbl_contains(neotree_disabled_filetypes, vim.bo.filetype) then
-    vim.cmd('Neotree show left')
+    neotree.show()
   end
 end
 vim.api.nvim_create_autocmd('VimEnter', {
   group = neotree_augroup,
   callback = open_neotree,
 })
-vim.api.nvim_create_autocmd('TabNewEntered', {
+vim.api.nvim_create_autocmd('TabNew', {
   group = neotree_augroup,
   callback = open_neotree,
 })
