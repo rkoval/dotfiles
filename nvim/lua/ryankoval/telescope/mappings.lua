@@ -34,7 +34,7 @@ end
 map_tele('n', '<leader>t', 'find_files')
 map_tele('n', '<leader>e', 'find_files', {
   attach_mappings = function(_, map)
-    map('i', '<cr>', actions.select)
+    map('i', '<cr>', actions.select_default)
     return true
   end,
 })
