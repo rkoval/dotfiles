@@ -1,5 +1,3 @@
 return {
-    parse('l', [[
-  local ${0}
-  ]]),
-  }
+  parse('l', [[local ${0}]]),
+}
