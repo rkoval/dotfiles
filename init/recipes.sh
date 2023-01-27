@@ -25,6 +25,7 @@ recipes=(
   lazygit
   vimpager
   git-delta
+  taplo
 )
 
 for recipe in "${recipes[@]}"; do

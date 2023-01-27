@@ -180,6 +180,8 @@ local telescope_opts = {
       },
     },
 
+    defaults = { file_ignore_patterns = { 'node_modules' } },
+
     grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
     qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
@@ -196,6 +198,7 @@ local telescope_opts = {
           actions.open_qflist(prompt_bufnr)
           vim.api.nvim_input(':cdo ,$s/' .. string .. '//g<Left><Left>')
         end,
+        ['<C-space>'] = actions.add_to_qflist,
         ['<Down>'] = actions.cycle_history_next,
         ['<Up>'] = actions.cycle_history_prev,
       },

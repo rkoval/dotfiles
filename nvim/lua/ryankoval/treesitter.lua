@@ -49,11 +49,22 @@ require('nvim-treesitter.configs').setup({
   textobjects = {
     select = {
       enable = true,
+      lookahead = true,
       keymaps = {
         ['af'] = '@function.outer',
         ['if'] = '@function.inner',
         ['ac'] = '@conditional.outer',
         ['ic'] = '@conditional.inner',
+        ['as'] = '@statement.outer',
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["]xs"] = "@statement.outer",
+      },
+      swap_previous = {
+        ["[xs"] = "@statement.outer",
       },
     },
   },
