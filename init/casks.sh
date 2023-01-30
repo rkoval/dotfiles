@@ -17,6 +17,7 @@ casks=(
   istat-menus
   iterm2
   karabiner-elements
+  linearmouse
   postman
   resilio-sync
   spotify
