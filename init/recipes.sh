@@ -15,6 +15,7 @@ recipes=(
   hub
   imagemagick
   jq
+  mitchellh/gon/gon # for notarizing mac apps
   neovim
   nvm
   rbenv
@@ -23,6 +24,8 @@ recipes=(
   stylua
   ssh-copy-id
   lazygit
+  go
+  golangci-lint
   vimpager
   git-delta
   taplo
