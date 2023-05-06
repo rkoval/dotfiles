@@ -109,3 +109,5 @@ codi() {
   echo "removing scratch file '$scratch_file' ..."
   rm -f $scratch_file
 }
+
+alias strip_image_metadata='exiftool -all= --icc_profile:all'

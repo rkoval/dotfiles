@@ -20,6 +20,7 @@ recipes=(
   nvm
   rbenv
   shellcheck
+  exiftool
   wget
   stylua
   ssh-copy-id
