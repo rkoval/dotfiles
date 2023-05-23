@@ -111,3 +111,28 @@ codi() {
 }
 
 alias strip_image_metadata='exiftool -all= --icc_profile:all'
+
+update_alfred_bookmarks_from_brave() {
+  local RED='\033[0;31m'
+  local GREEN="\033[0;32m"
+  local RESET_COLOR='\033[0m'
+  local brave_profile_path
+  local profile_path
+  for profile_path in "$HOME/Library/Application Support/Google/Chrome/Profile"*
+  do
+    if [ "$(jq -r .profile.name "$profile_path/Preferences")" == "Brave" ];
+    then
+      brave_profile_path="$profile_path"
+      break
+    fi
+  done
+
+  if [[ -e "$brave_profile_path" ]];
+  then
+    ln -sf "$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks" "$HOME/Library/Application Support/Google/Chrome/Profile 5"
+    open -a /Applications/Google\ Chrome.app
+    echo -e "${GREEN}success${RESET_COLOR}: bookmarks updated for profile with name Brave within path ${brave_profile_path}"
+  else
+    echo -e "${RED}error${RESET_COLOR}: could not find Google Chrome profile with name Brave. Please create one"
+  fi
+}
