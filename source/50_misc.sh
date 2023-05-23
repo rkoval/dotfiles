@@ -129,9 +129,9 @@ update_alfred_bookmarks_from_brave() {
 
   if [[ -e "$brave_profile_path" ]];
   then
-    ln -sf "$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks" "$HOME/Library/Application Support/Google/Chrome/Profile 5"
+    ln -sf "$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks" "$brave_profile_path"
     open -a /Applications/Google\ Chrome.app
-    echo -e "${GREEN}success${RESET_COLOR}: bookmarks updated for profile with name Brave within path ${brave_profile_path}"
+    echo -e "${GREEN}success${RESET_COLOR}: bookmarks updated for profile with name Brave within path $brave_profile_path"
   else
     echo -e "${RED}error${RESET_COLOR}: could not find Google Chrome profile with name Brave. Please create one"
   fi
