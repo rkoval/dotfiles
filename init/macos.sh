@@ -46,3 +46,31 @@ defaults write -g com.apple.mouse.scaling -int -1
 
 # disable expanded clock in top menubar. istatmenus provides a better one
 defaults write com.apple.menuextra.clock IsAnalog -bool true
+
+# show hidden files
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
+
+# show path at bottom
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# show all file extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+# disable file extension warning
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+# folders first when sorting
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+#
+# Dock
+#
+defaults write com.apple.dock "orientation" -string "left"
+defaults write com.apple.dock "tilesize" -int "28"
+defaults write com.apple.dock "mineffect" -string "scale"
+defaults write com.apple.dock "static-only" -bool "true"
+
+
+# load settings
+killall Finder
+killall Dock
