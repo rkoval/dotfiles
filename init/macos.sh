@@ -69,8 +69,3 @@ defaults write com.apple.dock "orientation" -string "left"
 defaults write com.apple.dock "tilesize" -int "28"
 defaults write com.apple.dock "mineffect" -string "scale"
 defaults write com.apple.dock "static-only" -bool "true"
-
-
-# load settings
-killall Finder
-killall Dock
