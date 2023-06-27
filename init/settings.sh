@@ -10,4 +10,11 @@ setup_karabiner() {
   ln -s "$HOME/Work Sync/Settings/karabiner" "$directory"
 }
 
+setup_linear_mouse() {
+  directory="$HOME/.config/linearmouse"
+  rm -rf "$directory"
+  ln -s "$HOME/Work Sync/Settings/linearmouse" "$directory"
+}
+
 setup_karabiner
+setup_linear_mouse
