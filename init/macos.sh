@@ -68,4 +68,5 @@ defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
 defaults write com.apple.dock "orientation" -string "left"
 defaults write com.apple.dock "tilesize" -int "28"
 defaults write com.apple.dock "mineffect" -string "scale"
-defaults write com.apple.dock "static-only" -bool "true"
+defaults write com.apple.dock "static-only" -bool "false" # show pinned apps
+defaults write com.apple.dock "show-recents" -bool "false" # hide recent apps
