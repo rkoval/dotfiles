@@ -17,6 +17,7 @@ recipes=(
   jq
   mitchellh/gon/gon # for notarizing mac apps
   neovim
+  lua-language-server
   nvm
   rbenv
   shellcheck

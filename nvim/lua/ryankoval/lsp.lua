@@ -43,7 +43,7 @@ vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 vim.keymap.set('n', '<Leader>gr', vim.lsp.buf.rename, opts)
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
-vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, opts)
+-- vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, opts)
 
 -- cycle through diagnostics by priority of severity.
 -- if no diagnostic exists for a given severity, incrementally try the next levels
@@ -108,7 +108,7 @@ vim.diagnostic.config({ underline = true, virtual_text = false, update_in_insert
 
 require('nvim-lsp-installer').setup({
   ensure_installed = {
-    'sumneko_lua',
+    'lua_ls',
     'eslint',
     'tsserver',
     'bashls',
@@ -231,12 +231,12 @@ lspconfig.efm.setup({
   },
 })
 
--- SUMNEKO ---------------------------------------------------------------------
+-- luals ---------------------------------------------------------------------
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       runtime = {
