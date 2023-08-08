@@ -30,7 +30,7 @@ recipes=(
   golangci-lint
   vimpager
   git-delta
-  taplo
+  rust
 )
 
 for recipe in "${recipes[@]}"; do
