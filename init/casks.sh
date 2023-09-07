@@ -18,6 +18,7 @@ casks=(
   iterm2
   karabiner-elements
   linearmouse
+  raycast
   postman
   resilio-sync
   spotify
