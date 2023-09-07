@@ -16,12 +16,5 @@ setup_linear_mouse() {
   ln -s "$HOME/Work Sync/Settings/linearmouse" "$directory"
 }
 
-setup_raycast() {
-  file="$HOME/Library/Preferences/com.raycast.macos.plist"
-  rm -f "$file"
-  ln -s "$HOME/Work Sync/Settings/Raycast/$(basename "$file")" "$file"
-}
-
 setup_karabiner
 setup_linear_mouse
-setup_raycast
