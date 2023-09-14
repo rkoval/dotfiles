@@ -20,6 +20,7 @@ recipes=(
   lua-language-server
   nvm
   rbenv
+  wakeonlan
   shellcheck
   exiftool
   wget

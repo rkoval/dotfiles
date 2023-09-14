@@ -14,6 +14,7 @@ casks=(
   font-anonymous-pro
   font-anonymice-nerd-font
   google-chrome
+  brave-browser
   istat-menus
   iterm2
   karabiner-elements
