@@ -31,6 +31,10 @@ alias gwt='git worktree'
 alias gs='git stash save --include-untracked'
 alias gcom='git checkout master 2> /dev/null || git checkout main'
 
+nb() {
+  git checkout -b ryan/$@
+}
+
 gbu() {
   local BRANCH
   BRANCH=$(git rev-parse --abbrev-ref HEAD)
