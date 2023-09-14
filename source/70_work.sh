@@ -17,6 +17,9 @@ alias vaulten='ansible-vault encrypt --vault-password-file ~/.ssh/vault_pass.txt
 alias vaultde='ansible-vault decrypt --vault-password-file ~/.ssh/vault_pass.txt'
 alias vault='ansible-vault --vault-password-file ~/.ssh/vault_pass.txt'
 
+SUBLIME_DIRECTORY="$HOME/Library/Application Support/Sublime Text/Packages/User"
+alias use-marketing-site-snippets="ln -sf $HOME/workspace/end-to-end-productions/marketing-site/editor/snippets \"$SUBLIME_DIRECTORY/project-snippets\""
+
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ssh/vault_pass.txt
 
 alias dco='docker compose'
