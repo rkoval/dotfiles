@@ -52,3 +52,5 @@
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
   file-style = bold yellow ul
+[diff "lockb"]
+	binary = true
