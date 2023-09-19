@@ -1,1 +1,1 @@
-vim.cmd[[hi default CursorWord cterm=underline gui=underline]]
+vim.cmd([[hi default CursorWord cterm=underline gui=underline]])

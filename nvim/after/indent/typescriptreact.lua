@@ -1,1 +1,1 @@
-vim.cmd "runtime! indent/typescript.vim"
+vim.cmd('runtime! indent/typescript.vim')
