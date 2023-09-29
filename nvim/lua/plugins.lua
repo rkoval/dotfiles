@@ -1,7 +1,7 @@
 return require('packer').startup(function()
   use('wbthomason/packer.nvim')
 
-  use({ 'folke/tokyonight.nvim', commit = '8223c970677e4d88c9b6b6d81bda23daf11062bb' })
+  use({ 'folke/tokyonight.nvim', commit = 'e89caa3ad6d8da9d0dd981ec74a82c55adc61ffd' })
 
   --
   -- nvim dependencies
