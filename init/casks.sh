@@ -5,25 +5,25 @@ echo "installing homebrew casks ..."
 casks=(
   alfred
   bettertouchtool
+  brave-browser
   discord
   disk-inventory-x
   docker
   firefox
-  fork
-  font-lato
-  font-anonymous-pro
   font-anonymice-nerd-font
+  font-anonymous-pro
+  font-lato
+  fork
   google-chrome
-  brave-browser
   istat-menus
   iterm2
   karabiner-elements
   linearmouse
-  raycast
+  neovide
   postman
+  raycast
   resilio-sync
   spotify
-  vimr
   steam
   sublime-text
   tableplus

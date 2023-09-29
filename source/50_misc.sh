@@ -30,6 +30,7 @@ alias gbXa='git branch | grep -v "master" | grep -v "develop" | xargs git branch
 alias gwt='git worktree'
 alias gs='git stash save --include-untracked'
 alias gcom='git checkout master 2> /dev/null || git checkout main'
+alias gmm='git merge master 2> /dev/null || git merge main'
 
 nb() {
   git checkout -b ryan/$@
