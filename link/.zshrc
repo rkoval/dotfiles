@@ -46,7 +46,7 @@ if ! zgen saved; then
     command -v docker > /dev/null && zgen prezto docker
 
     # use custom nvm and npm completion since prezto node module is slow
-    zgen load lukechilds/zsh-nvm
+    # zgen load lukechilds/zsh-nvm
     # doesn't work presently?
     # zgen load lukechilds/zsh-better-npm-completion
 
