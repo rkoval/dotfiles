@@ -61,9 +61,9 @@ alias tf='terraform'
 alias pa='pachctl'
 alias jest='nocorrect jest'
 
-alias jg1="cd ~/workspace/guilded && source guilded_profile.sh"
-alias jg2="cd ~/workspace/guilded2 && source guilded_profile.sh"
-alias jg3="cd ~/workspace/guilded3 && source guilded_profile.sh"
+alias jg1="cd ~/GitHub/guilded && source guilded_profile.sh"
+alias jg2="cd ~/GitHub/guilded2 && source guilded_profile.sh"
+alias jg3="cd ~/GitHub/guilded3 && source guilded_profile.sh"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 pathappend "$ANDROID_HOME/platform-tools"
 
@@ -91,9 +91,9 @@ copy-to-other-git-repo() {
 c2o() {
   src="$GUILDED_ROOT_DIR"
   if ! pwd | grep guilded3 >> /dev/null; then
-    dest="$HOME/workspace/guilded3"
+    dest="$HOME/GitHub/guilded3"
   else
-    dest="$HOME/workspace/guilded"
+    dest="$HOME/GitHub/guilded"
   fi
   copy-to-other-git-repo "$src" "$dest"
 
