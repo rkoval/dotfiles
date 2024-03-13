@@ -7,6 +7,7 @@ recipes=(
   cmake
   coreutils
   ctop
+  direnv
   editorconfig
   fasd
   fzf

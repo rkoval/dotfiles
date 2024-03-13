@@ -90,3 +90,5 @@ fi
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
+
+eval "$(direnv hook zsh)"
