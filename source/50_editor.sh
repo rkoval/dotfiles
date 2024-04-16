@@ -13,3 +13,6 @@ fi
 export VISUAL="gvim"
 export PAGER='less'
 export MANPAGER='nvim +Man!'
+
+# jest snapshot files are useless when parsed as js through difftastic and cause it to be very slow without this
+export DFT_OVERRIDE_1='*.snapshot.js:text'

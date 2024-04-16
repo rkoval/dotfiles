@@ -18,6 +18,7 @@ casks=(
   istat-menus
   iterm2
   karabiner-elements
+  ngrok
   linearmouse
   neovide
   postman

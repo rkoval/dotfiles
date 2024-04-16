@@ -5,6 +5,7 @@ recipes=(
   ripgrep
   fd
   cmake
+  colordiff
   coreutils
   ctop
   direnv
@@ -31,7 +32,7 @@ recipes=(
   go
   golangci-lint
   vimpager
-  git-delta
+  difftastic
   rust
 )
 
