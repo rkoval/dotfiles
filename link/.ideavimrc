@@ -1,5 +1,3 @@
-source ~/.config/nvim/init.vim
-
 let mapleader = ','
 
 nnoremap gd :action GotoImplementation<CR>
