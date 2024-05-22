@@ -11,12 +11,6 @@ dockercleanup() {
   docker rm $(docker ps -qa --no-trunc --filter "status=exited")
 }
 
-alias vaulte="EDITOR=\$GIT_EDITOR ansible-vault edit --vault-password-file ~/.ssh/vault_pass.txt"
-alias vaultv='ansible-vault view --vault-password-file ~/.ssh/vault_pass.txt'
-alias vaulten='ansible-vault encrypt --vault-password-file ~/.ssh/vault_pass.txt'
-alias vaultde='ansible-vault decrypt --vault-password-file ~/.ssh/vault_pass.txt'
-alias vault='ansible-vault --vault-password-file ~/.ssh/vault_pass.txt'
-
 SUBLIME_DIRECTORY="$HOME/Library/Application Support/Sublime Text/Packages/User"
 SNIPPET_SYMLINK="$SUBLIME_DIRECTORY/project-snippets"
 use-marketing-site-snippets () {
