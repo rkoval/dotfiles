@@ -92,3 +92,6 @@ if [ -f ~/.bashrc ]; then
 fi
 
 eval "$(direnv hook zsh)"
+
+unsetopt correct
+unsetopt correct_all
