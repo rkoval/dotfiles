@@ -54,3 +54,4 @@
   file-style = bold yellow ul
 [diff "lockb"]
 	binary = true
+	textconv = bun

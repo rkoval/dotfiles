@@ -18,7 +18,17 @@ alias vaultde='ansible-vault decrypt --vault-password-file ~/.ssh/vault_pass.txt
 alias vault='ansible-vault --vault-password-file ~/.ssh/vault_pass.txt'
 
 SUBLIME_DIRECTORY="$HOME/Library/Application Support/Sublime Text/Packages/User"
-alias use-marketing-site-snippets="ln -sf $HOME/workspace/end-to-end-productions/marketing-site/editor/snippets \"$SUBLIME_DIRECTORY/project-snippets\""
+SNIPPET_SYMLINK="$SUBLIME_DIRECTORY/project-snippets"
+use-marketing-site-snippets () {
+  rm -f "$SNIPPET_SYMLINK"
+  set -x
+  ln -sf "$HOME/workspace/end-to-end-productions/marketing-site/editor/snippets" "$SNIPPET_SYMLINK"
+}
+use-livan-snippets () {
+  rm -f "$SNIPPET_SYMLINK"
+  set -x
+  ln -sf "$HOME/workspace/livan-app/editor/sublime/snippets" "$SNIPPET_SYMLINK"
+}
 
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.ssh/vault_pass.txt
 

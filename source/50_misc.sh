@@ -69,6 +69,7 @@ gcowt() {
 
 alias hpr='hub pull-request --browse --push --edit'
 alias hbr='hub browse'
+alias hbra='hub browse -- actions'
 alias hbrv='hub browse -- commit/$(grph)'
 hbrc() {
   hub browse -c -- commit/$(grph) && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
@@ -120,27 +121,37 @@ codi() {
 
 alias strip_image_metadata='exiftool -all= --icc_profile:all'
 
-update_alfred_bookmarks_from_brave() {
+# must make sure the encryption key is the same across browsers!!
+update_alfred_bookmarks_from_chromium() {
   local RED='\033[0;31m'
   local GREEN="\033[0;32m"
   local RESET_COLOR='\033[0m'
-  local brave_profile_path
+  local alfred_profile_path
   local profile_path
+  local browser_bookmarks_file_path="$1"
   for profile_path in "$HOME/Library/Application Support/Google/Chrome/Profile"*
   do
     if [ "$(jq -r .profile.name "$profile_path/Preferences")" == "Brave" ];
     then
-      brave_profile_path="$profile_path"
+      alfred_profile_path="$profile_path"
       break
     fi
   done
 
-  if [[ -e "$brave_profile_path" ]];
+  if [[ -e "$alfred_profile_path" ]];
   then
-    ln -sf "$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks" "$brave_profile_path"
+    ln -sf "$browser_bookmarks_file_path" "$alfred_profile_path"
     open -a /Applications/Google\ Chrome.app
-    echo -e "${GREEN}success${RESET_COLOR}: bookmarks updated for profile with name Brave within path $brave_profile_path"
+    echo -e "${GREEN}success${RESET_COLOR}: bookmarks updated for profile with name Brave within path $alfred_profile_path"
   else
     echo -e "${RED}error${RESET_COLOR}: could not find Google Chrome profile with name Brave. Please create one"
   fi
+}
+
+update_alfred_bookmarks_from_brave() {
+  update_alfred_bookmarks_from_chromium "$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks"
+}
+
+update_alfred_bookmarks_from_vivaldi() {
+  update_alfred_bookmarks_from_chromium "$HOME/Library/Application Support/Vivaldi/Default/Bookmarks"
 }
