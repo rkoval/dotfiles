@@ -24,3 +24,5 @@ ln -sFv "$SCRIPT_DIR/link/.config/direnv" ~/.config
 ln -sFv "$SCRIPT_DIR/nvim" ~/.config
 ln -sFv "$SCRIPT_DIR/submodules/packer.nvim" "$NVIM_PLUGINS_DIRECTORY"
 ln -sFv "$SCRIPT_DIR/prompt_rkoval_setup" ~/.zgen/sorin-ionescu/prezto-master/modules/prompt/functions
+ln -sFv "$SCRIPT_DIR/vscode/extension/rkoval" ~/.cursor/extensions/rkoval
+ln -sFv "$SCRIPT_DIR/vscode/extension/rkoval" ~/.vscode/extensions/rkoval
