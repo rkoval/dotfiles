@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+export default class ${1:${TM_FILENAME/(.+?)(\.(server|client))?\..+|.*/$1/:name}} {
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>nsc</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: new static class</description>
+</snippet>

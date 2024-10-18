@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+BROWN='\033[0;33m'
+]]></content>
+  <tabTrigger>brown</tabTrigger>
+  <description>Snippet: Adds ANSI color code for brown</description>
+  <scope>source.shell</scope>
+</snippet>

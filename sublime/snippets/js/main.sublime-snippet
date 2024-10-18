@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+(async function main() {
+  ${0:// code goes here}
+})().catch(error => {
+  process.exitCode = 1;
+  console.error(error);
+});
+]]></content>
+  <tabTrigger>main</tabTrigger>
+  <scope>source.js, source.ts</scope>
+<description>Snippet: insert main function for a CLI tool</description>
+</snippet>

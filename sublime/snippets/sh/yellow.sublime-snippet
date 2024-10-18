@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+YELLOW='\033[1;33m'
+]]></content>
+  <tabTrigger>yellow</tabTrigger>
+  <description>Snippet: Adds ANSI color code for yellow</description>
+  <scope>source.shell</scope>
+</snippet>

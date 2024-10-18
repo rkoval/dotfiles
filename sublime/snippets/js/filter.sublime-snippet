@@ -1,0 +1,14 @@
+<!--
+  See `<description/>` for more details
+-->
+
+<snippet>
+  <content><![CDATA[
+filter((${1:item}) => {
+  return ${2:condition};
+})
+]]></content>
+  <tabTrigger>filter</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+<description>Snippet: filter. inserts common `filter` function</description>
+</snippet>

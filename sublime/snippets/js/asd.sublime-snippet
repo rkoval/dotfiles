@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+assert.deepStrictEqual(${1:paramName}, ${2:paramName}, `${3:expected \${JSON.stringify(${1:paramName})\} but got \${JSON.stringify(${2:paramName})\}}`);
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>asd</tabTrigger>
+  <description>Snippet: Insert assert deep strict equal</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+assert.strictEqual(typeof ${1:paramName}, 'number', `${2:${1:paramName} must be a number}`);
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>astnumber</tabTrigger>
+  <description>Snippet: Insert assert for type number</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

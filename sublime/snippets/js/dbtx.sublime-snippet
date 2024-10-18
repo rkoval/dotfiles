@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+const result = await db.tx(async t => {
+	return t.batch([
+		${1:// something}
+	]):
+});
+]]></content>
+  <tabTrigger>dbtx</tabTrigger>
+  <description>Snippet: db.tx()</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

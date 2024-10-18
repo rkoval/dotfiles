@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+assert.deepStrictEqual(${1:actual}, ${2:expected}, '${3:was not equal}')
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>asdse</tabTrigger>
+  <description>Snippet: Insert assert</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

@@ -1,0 +1,32 @@
+{
+  "usecallback": {
+    "prefix": "usecallback",
+    "body": "const ${1:fn} = useCallback(function() {\n  ${2:body}\n}, [${3:dep}]);",
+    "description": "useCallback",
+    "scope": "source.js, source.jsx, source.ts, source.tsx",
+  },
+  "useeffect": {
+    "prefix": "useeffect",
+    "body": "useEffect(() => {\n  ${1:effect}\n  return () => {\n    ${2:destructor}\n  };\n}, [${3:deps}]);",
+    "description": "useEffect",
+    "scope": "source.js, source.jsx, source.ts, source.tsx",
+  },
+  "usememo": {
+    "prefix": "usememo",
+    "body": "useMemo(() => {\n  return ${1:effect}\n}, [${2:deps}]);",
+    "description": "useEffect",
+    "scope": "source.js, source.jsx, source.ts, source.tsx",
+  },
+  "usercontext": {
+    "prefix": "usercontext",
+    "body": "const {user} = useContext(UserContext);",
+    "description": "Snippet: UserContext",
+    "scope": "source.js, source.ts, source.jsx, source.tsx",
+  },
+  "usestate": {
+    "prefix": "usestate",
+    "body": "const [${2:state}, ${3:setState}] = useState(${1:obj});",
+    "description": "Snippet: useState",
+    "scope": "source.js, source.jsx, source.ts, source.tsx",
+  },
+}

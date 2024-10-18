@@ -1,0 +1,14 @@
+<!--
+  See `<description/>` for more details
+-->
+
+<snippet>
+  <content><![CDATA[
+forEach((${1:item}) => {
+  $0
+})
+]]></content>
+  <tabTrigger>foreach</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+<description>Snippet: foreach. inserts common `foreach` function</description>
+</snippet>

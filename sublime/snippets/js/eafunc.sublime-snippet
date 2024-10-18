@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+export async function ${1:name}(${2:params}) {
+  $0
+}
+]]></content>
+  <tabTrigger>eafunc</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: export async function</description>
+</snippet>

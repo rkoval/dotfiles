@@ -1,0 +1,12 @@
+<!--
+  See `<description/>` for more details
+-->
+
+<snippet>
+  <content><![CDATA[
+map(({${1:prop}}) => ${1:prop})$0
+]]></content>
+  <tabTrigger>mapprop</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+<description>Snippet: map prop. inserts map function to extract a property</description>
+</snippet>

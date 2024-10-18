@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[
+ErrorLogger.Log(error)
+]]></content>
+  <tabTrigger>errlogger</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

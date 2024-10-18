@@ -1,0 +1,15 @@
+<!--
+  See `<description/>` for more details
+-->
+
+<snippet>
+  <content><![CDATA[
+map((${1:item}) => {
+  $0
+  return ${2:mapped};
+})
+]]></content>
+  <tabTrigger>map</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+<description>Snippet: map. inserts common `map` function</description>
+</snippet>

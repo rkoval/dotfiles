@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+// ${1:please explain why you're doing this (required)}
+// eslint-disable-next-line ${2:eslint-rule-name (required)}
+]]></content>
+  <tabTrigger>eslint-disable</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: disables eslint rule</description>
+</snippet>

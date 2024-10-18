@@ -1,0 +1,8 @@
+{
+  "nnull": {
+    "prefix": "nnull",
+    "body": "NonNullable<${1:T}>",
+    "description": "Snippet: NonNullable",
+    "scope": "source.ts, source.tsx",
+  },
+}

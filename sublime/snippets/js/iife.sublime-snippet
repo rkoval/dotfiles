@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+(() => {
+  ${1:// code here}
+})();
+]]></content>
+  <tabTrigger>iife</tabTrigger>
+  <description>Snippet: inserts an iife</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

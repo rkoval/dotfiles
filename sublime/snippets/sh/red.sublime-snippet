@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+RED='\033[0;31m'
+]]></content>
+  <tabTrigger>red</tabTrigger>
+  <description>Snippet: Adds ANSI color code for red</description>
+  <scope>source.shell</scope>
+</snippet>

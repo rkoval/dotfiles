@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+/* NOCOMMIT ${1:todo} */$0
+]]></content>
+  <tabTrigger>nocom</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx, source.scss</scope>
+  <description>Snippet: Inserts NOCOMMIT message</description>
+</snippet>

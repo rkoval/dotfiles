@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+LIGHT_PURPLE='\033[1;35m'
+]]></content>
+  <tabTrigger>lightpurple</tabTrigger>
+  <description>Snippet: Adds ANSI color code for light purple</description>
+  <scope>source.shell</scope>
+</snippet>

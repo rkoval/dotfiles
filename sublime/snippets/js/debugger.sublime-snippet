@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+let that = this;
+debugger;
+]]></content>
+  <tabTrigger>debugger</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>debugger statement with 'this' (that) context</description>
+</snippet>

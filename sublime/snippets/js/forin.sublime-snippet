@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+for (const ${1:property} in ${2:object}) {
+  const item = ${2:object}[${1:property}];
+}
+]]></content>
+  <tabTrigger>forin</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: for...in object</description>
+</snippet>

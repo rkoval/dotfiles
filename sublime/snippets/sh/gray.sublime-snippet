@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+GRAY='\033[1;30m'
+]]></content>
+  <tabTrigger>gray</tabTrigger>
+  <description>Snippet: Adds ANSI color code for gray</description>
+  <scope>source.shell</scope>
+</snippet>

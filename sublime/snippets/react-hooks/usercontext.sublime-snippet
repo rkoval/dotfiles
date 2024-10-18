@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+const {user} = useContext(UserContext);
+]]></content>
+  <tabTrigger>usercontext</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: UserContext</description>
+</snippet>

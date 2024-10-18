@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+${1:prop}={${1:prop}}
+]]></content>
+  <tabTrigger>ppt</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: pass through a prop to a sub-component</description>
+</snippet>

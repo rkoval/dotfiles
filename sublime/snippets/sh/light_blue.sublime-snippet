@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+LIGHT_BLUE='\033[1;34m'
+]]></content>
+  <tabTrigger>lightblue</tabTrigger>
+  <description>Snippet: Adds ANSI color code for light blue</description>
+  <scope>source.shell</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+for (const ${1:element} of ${1:element}s) {
+  // TODO
+}
+]]></content>
+  <tabTrigger>forof</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: for...of (array)</description>
+</snippet>

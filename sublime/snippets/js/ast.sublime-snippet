@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+assert(${1:paramName}, `${2:${1:paramName} is required}`);
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>ast</tabTrigger>
+  <description>Snippet: Insert assert</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

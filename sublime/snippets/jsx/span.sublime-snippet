@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<span className="${TM_FILENAME/(.+)\..+|.*/$1/:name}-${1:name}">
+  ${2:content}
+</span>
+]]></content>
+  <tabTrigger>span</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: Insert a span</description>
+</snippet>

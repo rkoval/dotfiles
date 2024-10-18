@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+Object.entries(${1:obj})
+]]></content>
+  <tabTrigger>obje</tabTrigger>
+  <description>Snippet: Object.entries</description>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+(${1:params}) => {
+  $0
+}
+]]></content>
+  <tabTrigger>arrfunc</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: arrow function</description>
+</snippet>

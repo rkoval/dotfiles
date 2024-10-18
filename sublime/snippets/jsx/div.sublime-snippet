@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<div className="${TM_FILENAME/(.+)\..+|.*/$1/:name}-${1:name}">
+  ${2:content}
+</div>
+]]></content>
+  <tabTrigger>div</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: Insert a div</description>
+</snippet>

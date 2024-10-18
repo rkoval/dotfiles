@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+export default ${1:member};
+]]></content>
+  <tabTrigger>edefault</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: export default</description>
+</snippet>

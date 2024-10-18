@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+GREEN="\033[0;32m"
+]]></content>
+  <tabTrigger>green</tabTrigger>
+  <description>Snippet: Adds ANSI color code for green</description>
+  <scope>source.shell</scope>
+</snippet>

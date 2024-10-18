@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+reduce((acc, ${1:val}) => {
+  $0
+  return acc
+}, ${2:{\}});
+]]></content>
+  <tabTrigger>redlong</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: .reduce(...)</description>
+</snippet>

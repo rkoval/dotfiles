@@ -1,0 +1,15 @@
+<!--
+  See `<description/>` for more details
+-->
+
+<snippet>
+  <content><![CDATA[
+find((${1:item}) => {
+  $0
+  return ${2:trueOrFalse}
+})
+]]></content>
+  <tabTrigger>find</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+<description>Snippet: find function</description>
+</snippet>

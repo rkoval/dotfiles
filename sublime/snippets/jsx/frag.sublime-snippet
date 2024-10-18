@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<React.Fragment>
+  ${1:stuff}
+</React.Fragment>
+]]></content>
+  <tabTrigger>frag</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: insert fragment</description>
+</snippet>

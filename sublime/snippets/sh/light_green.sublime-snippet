@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+LIGHT_GREEN='\033[1;32m'
+]]></content>
+  <tabTrigger>lightgreen</tabTrigger>
+  <description>Snippet: Adds ANSI color code for light green</description>
+  <scope>source.shell</scope>
+</snippet>

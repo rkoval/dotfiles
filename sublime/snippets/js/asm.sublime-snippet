@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+static async ${1:StaticMethodName}(${2:}) {
+  ${3:}
+}
+]]></content>
+  <tabTrigger>asm</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: async static method</description>
+</snippet>

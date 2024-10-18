@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+export default class ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}} {
+  ${2:constructor() {
+    super();
+    ${3://tab to complete}
+  }}
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>nc</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: new class (non-component)</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+CYAN='\033[0;36m'
+]]></content>
+  <tabTrigger>cyan</tabTrigger>
+  <description>Snippet: Adds ANSI color code for cyan</description>
+  <scope>source.shell</scope>
+</snippet>

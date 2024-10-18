@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+setTimeout(() => {
+  $0
+}, ${1:timeout});
+]]></content>
+  <tabTrigger>settimeout</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: setTimeout</description>
+</snippet>

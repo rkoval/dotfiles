@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+try {
+  $0
+} catch (error) {
+  ErrorLogger.Log(error)
+}]]></content>
+  <tabTrigger>try</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: try/catch</description>
+</snippet>

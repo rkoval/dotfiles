@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+util.inspect(${1:data}, false, null, true)
+]]></content>
+  <tabTrigger>utilinspect</tabTrigger>
+  <scope>source.js, source.ts</scope>
+  <description>Snippet: insert util.inspect</description>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+constructor(...args) {
+  super(...args);
+  $1
+}
+]]></content>
+  <tabTrigger>constructor</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: insert a constructor</description>
+</snippet>

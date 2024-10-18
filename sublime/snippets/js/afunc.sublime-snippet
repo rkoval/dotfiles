@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+async function ${1:name}(${2:params}) {
+  $0
+}
+]]></content>
+  <tabTrigger>afunc</tabTrigger>
+  <scope>source.js, source.ts, source.jsx, source.tsx</scope>
+  <description>Snippet: async function</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+RESET_COLOR='\033[0m'
+]]></content>
+  <tabTrigger>resetcolor</tabTrigger>
+  <description>Snippet: Adds ANSI color code to reset the color</description>
+  <scope>source.shell</scope>
+</snippet>
