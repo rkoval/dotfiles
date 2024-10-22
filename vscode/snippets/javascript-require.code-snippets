@@ -1,0 +1,8 @@
+{
+  "require": {
+    "prefix": "require",
+    "body": ["const ${1:module} = require('${1:module}');"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: CommonJS require",
+  },
+}

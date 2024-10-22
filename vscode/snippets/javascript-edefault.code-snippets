@@ -1,0 +1,8 @@
+{
+  "edefault": {
+    "prefix": "edefault",
+    "body": ["export default ${1:member};"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: export default",
+  },
+}

@@ -1,0 +1,8 @@
+{
+  "mapprop": {
+    "prefix": "mapprop",
+    "body": ["map(({${1:prop}}) => ${1:prop})$0"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: map prop. inserts map function to extract a property",
+  },
+}

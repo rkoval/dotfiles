@@ -1,0 +1,12 @@
+{
+  "newpromise": {
+    "prefix": "newpromise",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "\t${1:// do something}",
+      "});",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: new Promise",
+  },
+}

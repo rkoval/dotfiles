@@ -1,0 +1,7 @@
+{
+  "fn": {
+    "prefix": "fn",
+    "body": ["${TM_FILENAME/(.+)\\..+|.*/$1/:name}$0"],
+    "description": "Snippet: inserts filename without extensions",
+  },
+}

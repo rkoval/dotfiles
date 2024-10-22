@@ -1,0 +1,10 @@
+{
+  "astarray": {
+    "prefix": "astarray",
+    "body": [
+      "assert(Array.isArray(${1:array}), `${2:${1:array} must be an array}`);",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert assert for type array",
+  },
+}

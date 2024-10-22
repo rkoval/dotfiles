@@ -1,0 +1,8 @@
+{
+  "red": {
+    "prefix": "red",
+    "body": ["RED='\\033[0;31m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for red",
+  },
+}

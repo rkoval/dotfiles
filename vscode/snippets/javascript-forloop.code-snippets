@@ -1,0 +1,13 @@
+{
+  "forloop": {
+    "prefix": "forloop",
+    "body": [
+      "for (let i = 0; i < ${2:${1:arr}.length}; i++) {",
+      "  const ${3:element} = ${1:arr}[i];",
+      "  $0",
+      "}",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,typescript,typescriptreact",
+    "description": "Snippet: forloop",
+  },
+}

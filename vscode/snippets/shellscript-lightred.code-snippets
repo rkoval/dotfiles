@@ -1,0 +1,8 @@
+{
+  "lightred": {
+    "prefix": "lightred",
+    "body": ["LIGHT_RED='\\033[1;31m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for lightred",
+  },
+}

@@ -1,0 +1,13 @@
+{
+  "redlong": {
+    "prefix": "redlong",
+    "body": [
+      "reduce((acc, ${1:val}) => {",
+      "  $0",
+      "  return acc",
+      "}, ${2:{\\}});",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: .reduce(...)",
+  },
+}

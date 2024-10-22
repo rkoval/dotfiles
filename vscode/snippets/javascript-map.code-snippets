@@ -1,0 +1,8 @@
+{
+  "map": {
+    "prefix": "map",
+    "body": ["map((${1:item}) => {", "  $0", "  return ${2:mapped};", "})"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: map. inserts common `map` function",
+  },
+}

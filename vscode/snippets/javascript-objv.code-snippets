@@ -1,0 +1,8 @@
+{
+  "objv": {
+    "prefix": "objv",
+    "body": ["Object.values(${1:obj})"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Object.values",
+  },
+}

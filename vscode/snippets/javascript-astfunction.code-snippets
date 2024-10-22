@@ -1,0 +1,10 @@
+{
+  "astfunction": {
+    "prefix": "astfunction",
+    "body": [
+      "assert.strictEqual(typeof ${1:paramName}, 'function', `${2:${1:paramName} must be a function}`);",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert assert for type function",
+  },
+}

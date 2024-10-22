@@ -1,0 +1,8 @@
+{
+  "iife": {
+    "prefix": "iife",
+    "body": ["(() => {", "  ${1:// code here}", "})();"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: inserts an iife",
+  },
+}

@@ -1,0 +1,7 @@
+{
+  "errlogger": {
+    "prefix": "errlogger",
+    "body": ["ErrorLogger.Log(error)"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+  },
+}

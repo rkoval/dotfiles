@@ -1,0 +1,12 @@
+{
+  "forin": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:property} in ${2:object}) {",
+      "  const item = ${2:object}[${1:property}];",
+      "}",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: for...in object",
+  },
+}

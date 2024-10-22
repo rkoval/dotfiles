@@ -1,0 +1,11 @@
+{
+  "nsc": {
+    "prefix": "nsc",
+    "body": [
+      "export default class ${1:${TM_FILENAME/(.+?)(\\.(server|client))?\\..+|.*/$1/:name}} {",
+      "}",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: new static class",
+  },
+}

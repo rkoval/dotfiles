@@ -1,0 +1,8 @@
+{
+  "usestate": {
+    "prefix": "usestate",
+    "body": [],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "description": "Snippet: useState",
+  },
+}

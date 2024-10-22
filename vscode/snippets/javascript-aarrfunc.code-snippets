@@ -1,0 +1,8 @@
+{
+  "aarrfunc": {
+    "prefix": "aarrfunc",
+    "body": ["async (${1:params}) => {", "  $0", "},"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: async arrow function",
+  },
+}

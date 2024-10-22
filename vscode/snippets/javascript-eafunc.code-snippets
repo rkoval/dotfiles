@@ -1,0 +1,8 @@
+{
+  "eafunc": {
+    "prefix": "eafunc",
+    "body": ["export async function ${1:name}(${2:params}) {", "  $0", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: export async function",
+  },
+}

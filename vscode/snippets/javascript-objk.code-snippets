@@ -1,0 +1,8 @@
+{
+  "objk": {
+    "prefix": "objk",
+    "body": ["Object.keys(${1:obj})"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Object.keys",
+  },
+}

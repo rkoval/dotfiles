@@ -1,0 +1,8 @@
+{
+  "func": {
+    "prefix": "func",
+    "body": ["function ${1:name}(${2:params}) {", "  $0", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: function",
+  },
+}

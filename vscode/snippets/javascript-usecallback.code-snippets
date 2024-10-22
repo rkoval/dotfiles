@@ -1,0 +1,8 @@
+{
+  "usecallback": {
+    "prefix": "usecallback",
+    "body": ["  ${2:body}"],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "description": "useCallback",
+  },
+}

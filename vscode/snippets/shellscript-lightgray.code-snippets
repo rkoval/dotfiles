@@ -1,0 +1,8 @@
+{
+  "lightgray": {
+    "prefix": "lightgray",
+    "body": ["LIGHT_GRAY='\\033[0;37m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for light gray",
+  },
+}

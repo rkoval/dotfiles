@@ -1,0 +1,8 @@
+{
+  "shebang": {
+    "prefix": "shebang",
+    "body": ["#!/usr/bin/env node", "$0"],
+    "scope": "javascript,typescript",
+    "description": "Snippet: Shebang for nodejs script",
+  },
+}

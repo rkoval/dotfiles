@@ -1,0 +1,8 @@
+{
+  "nocom": {
+    "prefix": "nocom",
+    "body": ["/* NOCOMMIT ${1:todo} */$0"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,scss",
+    "description": "Snippet: Inserts NOCOMMIT message",
+  },
+}

@@ -1,0 +1,10 @@
+{
+  "asdse": {
+    "prefix": "asdse",
+    "body": [
+      "assert.deepStrictEqual(${1:actual}, ${2:expected}, '${3:was not equal}')",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert assert",
+  },
+}

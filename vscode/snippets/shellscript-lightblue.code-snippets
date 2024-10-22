@@ -1,0 +1,8 @@
+{
+  "lightblue": {
+    "prefix": "lightblue",
+    "body": ["LIGHT_BLUE='\\033[1;34m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for light blue",
+  },
+}

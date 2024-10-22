@@ -1,0 +1,8 @@
+{
+  "black": {
+    "prefix": "black",
+    "body": ["BLACK='\\033[0;30m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for black",
+  },
+}

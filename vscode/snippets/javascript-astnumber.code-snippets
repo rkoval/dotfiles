@@ -1,0 +1,10 @@
+{
+  "astnumber": {
+    "prefix": "astnumber",
+    "body": [
+      "assert.strictEqual(typeof ${1:paramName}, 'number', `${2:${1:paramName} must be a number}`);",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert assert for type number",
+  },
+}

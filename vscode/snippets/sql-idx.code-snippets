@@ -1,0 +1,10 @@
+{
+  "idx": {
+    "prefix": "idx",
+    "body": [
+      "create index if not exists ${1:table_name}_${2:field_name} on ${1:table_name} (${2:field_name});",
+    ],
+    "scope": "sql",
+    "description": "Snippet: insert index;",
+  },
+}

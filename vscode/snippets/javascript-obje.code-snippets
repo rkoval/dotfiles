@@ -1,0 +1,8 @@
+{
+  "obje": {
+    "prefix": "obje",
+    "body": ["Object.entries(${1:obj})"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Object.entries",
+  },
+}

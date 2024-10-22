@@ -1,0 +1,8 @@
+{
+  "constructor": {
+    "prefix": "constructor",
+    "body": ["constructor(...args) {", "  super(...args);", "  $1", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: insert a constructor",
+  },
+}

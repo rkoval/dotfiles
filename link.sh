@@ -29,3 +29,5 @@ mkdir -p ~/.cursor/extensions
 mkdir -p ~/.vscode/extensions
 ln -sFv "$SCRIPT_DIR/vscode/extension/rkoval.rkoval-0.0.1" ~/.cursor/extensions
 ln -sFv "$SCRIPT_DIR/vscode/extension/rkoval.rkoval-0.0.1" ~/.vscode/extensions
+ln -sFv "$SCRIPT_DIR/vscode/snippets" "$HOME/Library/Application Support/Cursor/User"
+# ln -sFv "$SCRIPT_DIR/vscode/snippets" "$HOME/Library/Application Support/VSCode/User"

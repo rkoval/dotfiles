@@ -1,0 +1,13 @@
+{
+  "find": {
+    "prefix": "find",
+    "body": [
+      "find((${1:item}) => {",
+      "  $0",
+      "  return ${2:trueOrFalse}",
+      "})",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: find function",
+  },
+}

@@ -1,0 +1,8 @@
+{
+  "frag": {
+    "prefix": "frag",
+    "body": ["<React.Fragment>", "  ${1:stuff}", "</React.Fragment>"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: insert fragment",
+  },
+}

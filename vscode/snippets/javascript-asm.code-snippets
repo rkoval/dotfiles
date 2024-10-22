@@ -1,0 +1,8 @@
+{
+  "asm": {
+    "prefix": "asm",
+    "body": ["static async ${1:StaticMethodName}(${2:}) {", "  ${3:}", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: async static method",
+  },
+}

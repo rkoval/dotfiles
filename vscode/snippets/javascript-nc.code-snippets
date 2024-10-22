@@ -1,0 +1,15 @@
+{
+  "nc": {
+    "prefix": "nc",
+    "body": [
+      "export default class ${1:${TM_FILENAME/(.+)\\..+|.*/$1/:name}} {",
+      "  ${2:constructor() {",
+      "    super();",
+      "    ${3://tab to complete}",
+      "  }}",
+      "}",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: new class (non-component)",
+  },
+}

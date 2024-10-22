@@ -1,0 +1,8 @@
+{
+  "cyan": {
+    "prefix": "cyan",
+    "body": ["CYAN='\\033[0;36m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for cyan",
+  },
+}

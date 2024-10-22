@@ -1,0 +1,8 @@
+{
+  "forof": {
+    "prefix": "forof",
+    "body": ["for (const ${1:element} of ${1:element}s) {", "  // TODO", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: for...of (array)",
+  },
+}

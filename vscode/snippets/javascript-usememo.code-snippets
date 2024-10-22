@@ -1,0 +1,8 @@
+{
+  "usememo": {
+    "prefix": "usememo",
+    "body": ["  return ${1:effect}"],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "description": "useEffect",
+  },
+}

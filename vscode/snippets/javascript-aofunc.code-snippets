@@ -1,0 +1,8 @@
+{
+  "aofunc": {
+    "prefix": "aofunc",
+    "body": ["async ${1:name}(${2:params}) {", "  $0", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: async object function",
+  },
+}

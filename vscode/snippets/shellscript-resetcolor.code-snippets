@@ -1,0 +1,8 @@
+{
+  "resetcolor": {
+    "prefix": "resetcolor",
+    "body": ["RESET_COLOR='\\033[0m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code to reset the color",
+  },
+}

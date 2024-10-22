@@ -1,0 +1,12 @@
+{
+  "span": {
+    "prefix": "span",
+    "body": [
+      "<span className=\"${TM_FILENAME/(.+)\\..+|.*/$1/:name}-${1:name}\">",
+      "  ${2:content}",
+      "</span>",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert a span",
+  },
+}

@@ -1,0 +1,8 @@
+{
+  "foreach": {
+    "prefix": "foreach",
+    "body": ["forEach((${1:item}) => {", "  $0", "})"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: foreach. inserts common `foreach` function",
+  },
+}

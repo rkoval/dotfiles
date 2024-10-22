@@ -1,0 +1,8 @@
+{
+  "ppt": {
+    "prefix": "ppt",
+    "body": ["${1:prop}={${1:prop}}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: pass through a prop to a sub-component",
+  },
+}

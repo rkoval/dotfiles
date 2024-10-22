@@ -1,0 +1,8 @@
+{
+  "utilinspect": {
+    "prefix": "utilinspect",
+    "body": ["util.inspect(${1:data}, false, null, true)"],
+    "scope": "javascript,typescript",
+    "description": "Snippet: insert util.inspect",
+  },
+}

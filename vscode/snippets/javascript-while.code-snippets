@@ -1,0 +1,8 @@
+{
+  "while": {
+    "prefix": "while",
+    "body": ["while (${1:condition}) {", "  $0", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,typescript,typescriptreact",
+    "description": "Snippet: while",
+  },
+}

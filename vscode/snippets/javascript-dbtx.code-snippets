@@ -1,0 +1,14 @@
+{
+  "dbtx": {
+    "prefix": "dbtx",
+    "body": [
+      "const result = await db.tx(async t => {",
+      "\treturn t.batch([",
+      "\t\t${1:// something}",
+      "\t]):",
+      "});",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: db.tx()",
+  },
+}

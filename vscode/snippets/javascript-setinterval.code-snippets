@@ -1,0 +1,8 @@
+{
+  "setinterval": {
+    "prefix": "setinterval",
+    "body": ["setInterval(() => {", "  $0", "}, ${1:interval});"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: setInterval",
+  },
+}

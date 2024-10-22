@@ -1,0 +1,8 @@
+{
+  "settimeout": {
+    "prefix": "settimeout",
+    "body": ["setTimeout(() => {", "  $0", "}, ${1:timeout});"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: setTimeout",
+  },
+}

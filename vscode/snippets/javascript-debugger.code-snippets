@@ -1,0 +1,8 @@
+{
+  "debugger": {
+    "prefix": "debugger",
+    "body": ["let that = this;", "debugger;"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "debugger statement with 'this' (that) context",
+  },
+}

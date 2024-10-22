@@ -1,0 +1,8 @@
+{
+  "brown": {
+    "prefix": "brown",
+    "body": ["BROWN='\\033[0;33m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for brown",
+  },
+}

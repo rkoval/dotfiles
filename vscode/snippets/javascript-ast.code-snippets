@@ -1,0 +1,8 @@
+{
+  "ast": {
+    "prefix": "ast",
+    "body": ["assert(${1:paramName}, `${2:${1:paramName} is required}`);"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert assert",
+  },
+}

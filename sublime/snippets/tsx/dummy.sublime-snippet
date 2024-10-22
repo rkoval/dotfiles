@@ -2,7 +2,7 @@
   <content><![CDATA[
 dummy
 ]]></content>
-  <tabTrigger>$^&*dummy</tabTrigger>
+  <tabTrigger>***dummy</tabTrigger>
   <scope>source.tsx</scope>
   <description>Snippet: dummy</description>
 </snippet>

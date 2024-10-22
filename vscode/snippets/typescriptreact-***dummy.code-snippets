@@ -1,0 +1,8 @@
+{
+  "***dummy": {
+    "prefix": "***dummy",
+    "body": ["dummy"],
+    "scope": "typescriptreact",
+    "description": "Snippet: dummy",
+  },
+}

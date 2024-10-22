@@ -1,0 +1,8 @@
+{
+  "gray": {
+    "prefix": "gray",
+    "body": ["GRAY='\\033[1;30m'"],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for gray",
+  },
+}

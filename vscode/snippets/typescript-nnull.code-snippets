@@ -1,8 +1,8 @@
 {
   "nnull": {
     "prefix": "nnull",
-    "body": "NonNullable<${1:T}>",
+    "body": ["NonNullable<${1:T}>"],
+    "scope": "typescript,typescriptreact",
     "description": "Snippet: NonNullable",
-    "scope": "source.ts, source.tsx",
   },
 }

@@ -1,0 +1,8 @@
+{
+  "usercontext": {
+    "prefix": "usercontext",
+    "body": ["const {user} = useContext(UserContext);"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: UserContext",
+  },
+}

@@ -1,0 +1,8 @@
+{
+  "else": {
+    "prefix": "else",
+    "body": ["else {", "  $0", "}"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: else",
+  },
+}

@@ -1,0 +1,8 @@
+{
+  "odes": {
+    "prefix": "odes",
+    "body": ["const {${1:property}} = ${2:obj};", "$0"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: object destructure",
+  },
+}

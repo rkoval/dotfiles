@@ -1,0 +1,26 @@
+{
+  "include": ["*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "allowJs": true,
+    "allowUnreachableCode": false,
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "jsx": "preserve",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es2023",
+    "types": ["bun-types"],
+    "incremental": true
+  }
+}

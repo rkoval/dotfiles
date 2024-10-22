@@ -1,0 +1,8 @@
+{
+  "ret": {
+    "prefix": "ret",
+    "body": ["return $0"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: return",
+  },
+}

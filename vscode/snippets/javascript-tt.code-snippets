@@ -1,0 +1,8 @@
+{
+  "tt": {
+    "prefix": "tt",
+    "body": ["const {${1:prop}} = this;"],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "description": "[G] Snippet: Inserts const {prop} = this;",
+  },
+}

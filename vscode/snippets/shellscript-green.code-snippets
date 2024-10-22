@@ -1,0 +1,8 @@
+{
+  "green": {
+    "prefix": "green",
+    "body": ["GREEN=\"\\033[0;32m\""],
+    "scope": "shellscript",
+    "description": "Snippet: Adds ANSI color code for green",
+  },
+}

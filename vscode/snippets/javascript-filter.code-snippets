@@ -1,0 +1,8 @@
+{
+  "filter": {
+    "prefix": "filter",
+    "body": ["filter((${1:item}) => {", "  return ${2:condition};", "})"],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: filter. inserts common `filter` function",
+  },
+}

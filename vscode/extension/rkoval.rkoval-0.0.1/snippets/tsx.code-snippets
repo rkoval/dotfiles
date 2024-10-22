@@ -1,8 +1,0 @@
-{
-  "$^&*dummy": {
-    "prefix": "$^&*dummy",
-    "body": "dummy",
-    "description": "Snippet: dummy",
-    "scope": "source.tsx",
-  },
-}

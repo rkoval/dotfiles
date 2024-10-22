@@ -12,40 +12,6 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "snippets": [
-      {
-        "language": "javascript",
-        "path": "./snippets/js.code-snippets"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/jsx.code-snippets"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/react-hooks.code-snippets"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/js.code-snippets"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/ts.code-snippets"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/tsx.code-snippets"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/jsx.code-snippets"
-      },
-      {
-        "language": "shellscript",
-        "path": "./snippets/sh.code-snippets"
-      }
-    ],
     "commands": [
       {
         "command": "rkoval.helloWorld",

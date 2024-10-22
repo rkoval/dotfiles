@@ -1,0 +1,11 @@
+{
+  "aststring": {
+    "prefix": "aststring",
+    "body": [
+      "assert.strictEqual(typeof ${1:paramName}, 'string', `${2:${1:paramName} must be a string}`);",
+      "assert(${1:paramName}.length > 0, `${3:${1:paramName} must not be empty}`);",
+    ],
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "description": "Snippet: Insert assert for type string",
+  },
+}
