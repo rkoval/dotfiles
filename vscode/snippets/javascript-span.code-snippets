@@ -2,7 +2,7 @@
   "span": {
     "prefix": "span",
     "body": [
-      "<span className=\"${TM_FILENAME/(.+)\\..+|.*/$1/:name}-${1:name}\">",
+      "<span className=\"${TM_FILENAME_BASE}-${1:name}\">",
       "  ${2:content}",
       "</span>",
     ],

@@ -2,7 +2,7 @@
   "div": {
     "prefix": "div",
     "body": [
-      "<div className=\"${TM_FILENAME/(.+)\\..+|.*/$1/:name}-${1:name}\">",
+      "<div className=\"${TM_FILENAME_BASE}-${1:name}\">",
       "  ${2:content}",
       "</div>",
     ],

@@ -2,7 +2,7 @@
   "nc": {
     "prefix": "nc",
     "body": [
-      "export default class ${1:${TM_FILENAME/(.+)\\..+|.*/$1/:name}} {",
+      "export default class ${1:${TM_FILENAME_BASE}} {",
       "  ${2:constructor() {",
       "    super();",
       "    ${3://tab to complete}",
