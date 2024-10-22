@@ -29,14 +29,11 @@ for (const file of await readdir(snippetsDir, { recursive: true })) {
   console.log(`reading ${snippetsDir}/${file} ...`);
   const rawXml = await fs.readFile(`${snippetsDir}/${file}`, "utf8");
   const xmlJson = await xml2js.parseStringPromise(rawXml);
-  console.log(xmlJson);
   const prefix = xmlJson.snippet.tabTrigger[0];
   const scope = xmlJson.snippet.scope?.[0]
     .split(",")
     .map((scope: string) => {
-      console.log("scope", scope);
       const mapped = sublimeScopeToVsCodeScope[scope.trim()];
-      console.log(mapped);
       assert(mapped, `mapped is required`);
       return mapped;
     })
