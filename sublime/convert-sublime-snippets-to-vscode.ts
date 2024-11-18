@@ -39,7 +39,11 @@ for (const file of await readdir(snippetsDir, { recursive: true })) {
     })
     .join(",");
   const description = xmlJson.snippet.description?.[0];
-  let body = xmlJson.snippet.content[0].split("\n").slice(1, -1); // trim leading and trailing newlines because they are not needed
+  let body = xmlJson.snippet.content[0].split("\n");
+  body = body.slice(
+    body[0] === "" ? 1 : 0,
+    body[body.length - 1] === "" ? -1 : undefined
+  ); // trim leading and trailing newlines if they are not needed
   body = body.map((line: string) => {
     // sublime's filename syntax is different from vscode's
     return line

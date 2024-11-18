@@ -1,7 +1,7 @@
 {
   "some": {
     "prefix": "some",
-    "body": ["some((${1:item}) => {", "  ${0}"],
+    "body": ["some((${1:item}) => {", "  ${0}", "});"],
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "description": "Snippet: some",
   },

@@ -2,10 +2,12 @@
   "useeffect": {
     "prefix": "useeffect",
     "body": [
+      "useEffect(() => {",
       "  ${1:effect}",
       "  return () => {",
       "    ${2:destructor}",
       "  };",
+      "}, [${3:deps}]);",
     ],
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "description": "useEffect",

@@ -1,7 +1,7 @@
 {
   "usestate": {
     "prefix": "usestate",
-    "body": [],
+    "body": ["const [${2:state}, ${3:setState}] = useState(${1:obj});"],
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "description": "Snippet: useState",
   },

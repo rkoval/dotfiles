@@ -1,7 +1,11 @@
 {
   "usecallback": {
     "prefix": "usecallback",
-    "body": ["  ${2:body}"],
+    "body": [
+      "const ${1:fn} = useCallback(function() {",
+      "  ${2:body}",
+      "}, [${3:dep}]);",
+    ],
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "description": "useCallback",
   },

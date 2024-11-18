@@ -1,7 +1,13 @@
 {
   "try": {
     "prefix": "try",
-    "body": ["try {", "  $0", "} catch (error) {", "  ErrorLogger.Log(error)"],
+    "body": [
+      "try {",
+      "  $0",
+      "} catch (error) {",
+      "  ErrorLogger.Log(error)",
+      "}",
+    ],
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "description": "Snippet: try/catch",
   },
