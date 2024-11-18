@@ -42,10 +42,12 @@ for (const file of await readdir(snippetsDir, { recursive: true })) {
   let body = xmlJson.snippet.content[0].split("\n").slice(1, -1); // trim leading and trailing newlines because they are not needed
   body = body.map((line: string) => {
     // sublime's filename syntax is different from vscode's
-    return line.replaceAll(
-      "${TM_FILENAME/(.+)..+|.*/$1/:name}",
-      "${TM_FILENAME_BASE}"
-    );
+    return line
+      .replaceAll("${TM_FILENAME/(.+)..+|.*/$1/:name}", "${TM_FILENAME_BASE}")
+      .replaceAll(
+        "${TM_FILENAME/(.+)\\..+|.*/$1/:name}",
+        "${TM_FILENAME_BASE}"
+      );
   });
   const snippet: any = {
     [prefix]: {
