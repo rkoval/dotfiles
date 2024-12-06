@@ -32,23 +32,21 @@ local function run_action_with_cached_text(action, cache_key)
 end
 
 -- adapted from https://github.com/nvim-telescope/telescope.nvim/issues/1939#issuecomment-1128619298
-local function enter_select_mode_on_complete(picker)
+local function enter_select_mode(picker)
   local mode = vim.fn.mode()
   local keys = mode ~= 'n' and '<ESC>' or ''
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys .. [[^llv$<C-g>]], true, false, true), 'n', true)
-  -- should you have more callbacks, just pop the first one
-  table.remove(picker._completion_callbacks, 1)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys .. [[^v$<C-g>]], true, false, true), 'n', true)
 
-  local prompt_bufnr = picker.prompt_bufnr
-  vim.keymap.set('s', '<C-n>', function()
-    actions.move_selection_next(prompt_bufnr)
-  end, { buffer = prompt_bufnr })
-  vim.keymap.set('s', '<C-p>', function()
-    actions.move_selection_previous(prompt_bufnr)
-  end, { buffer = prompt_bufnr })
-  vim.keymap.set('s', '<Esc>', function()
-    actions.close(prompt_bufnr)
-  end, { buffer = prompt_bufnr })
+  -- local prompt_bufnr = picker.prompt_bufnr
+  -- vim.keymap.set('s', '<C-n>', function()
+  --   actions.move_selection_next(prompt_bufnr)
+  -- end, { buffer = prompt_bufnr })
+  -- vim.keymap.set('s', '<C-p>', function()
+  --   actions.move_selection_previous(prompt_bufnr)
+  -- end, { buffer = prompt_bufnr })
+  -- vim.keymap.set('s', '<Esc>', function()
+  --   actions.close(prompt_bufnr)
+  -- end, { buffer = prompt_bufnr })
 end
 
 local binary_files = {
@@ -338,14 +336,15 @@ function M.git_files(opts)
   end
 end
 
-function M.live_grep(opts)
-  require('telescope.builtin').live_grep(vim.tbl_extend('force', {
-    default_text = last_prompts.live_grep,
-    on_complete = {
-      enter_select_mode_on_complete,
-    },
-  }, opts))
-end
+-- function M.live_grep(opts)
+--   require('telescope.builtin').live_grep(vim.tbl_extend('force', {
+--     default_text = last_prompts.live_grep,
+--     initial_mode = 'select',
+--     -- on_picker_find_pre = {
+--     --   enter_select_mode,
+--     -- },
+--   }, opts))
+-- end
 
 function M.notifications(opts)
   require('telescope').extensions.notify.notify(opts)

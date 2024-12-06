@@ -6,10 +6,12 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	# pager = less -+F -c
-	pager = delta
+	difftool = true
 	attributesfile = ~/.gitattributes
+[pager]
+	difftool = true
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = difftastic --color-only
 [push]
 	default = current
 [alias]
@@ -21,13 +23,18 @@
 	prompt = false
 [rebase]
 	autosquash = true
-[merge]
-	tool = gvimdiff
 [color "diff"]
 	meta = cyan
 	frag = cyan dim
 [color "status"]
 	untracked = black
+[diff]
+  external = difft
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
 [difftool "sourcetree"]
 	cmd = " "
 	path =
@@ -44,10 +51,10 @@
 	command = /nastygoat/git-diff-image/git_diff_image
 [delta]
   decorations = true
-  side-by-side = true
+  # side-by-side = true
   whitespace-error-style = 22 reverse
   file-decoration-style = none
-  hunk-header-style = omit
+  # hunk-header-style = omit
   line-numbers = true
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul

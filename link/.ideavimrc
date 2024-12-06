@@ -1,9 +1,16 @@
 let mapleader = ','
 
+inoremap jk <Esc>
+inoremap Jk <Esc>
+nnoremap K <Esc>
+
+nnoremap <Backspace> 10k
+nnoremap <Space> 10j
+
 nnoremap gd :action GotoImplementation<CR>
 nnoremap gD :action GotoTypeDeclaration<CR>
 nnoremap gf :action GotoTypeDeclaration<CR>
-nnoremap gh :action QuickTypeDefinition<CR>
+nnoremap gh :action ShowHoverInfo<CR>
 
 nnoremap <Leader>hu :action Vcs.RollbackChangedLines<CR>
 " do annotate action twice because of relative numbering weirdness with ideavim
@@ -30,17 +37,25 @@ nnoremap <C-Tab> :action NextTab<cr>
 nnoremap <C-O> :action Back<cr>
 nnoremap <C-I> :action Forward<cr>
 
+set multiple-cursors
+nnoremap <D-S-d> :action SelectAllOccurrences<cr>
+
+set commentary
+inoremap <D-/> <esc>:Commentary<cr>a
+nnoremap <D-/> :Commentary<cr><esc>
+vnoremap <D-/> :Commentary<cr><esc>
+
 nnoremap <Leader>lb :action ToggleLineBreakpoint<cr>
 
-nnoremap <M-1> :action GoToTab1<cr>
-nnoremap <M-2> :action GoToTab2<cr>
-nnoremap <M-3> :action GoToTab3<cr>
-nnoremap <M-4> :action GoToTab4<cr>
-nnoremap <M-5> :action GoToTab5<cr>
-nnoremap <M-6> :action GoToTab6<cr>
-nnoremap <M-7> :action GoToTab7<cr>
-nnoremap <M-8> :action GoToTab8<cr>
-nnoremap <M-9> :action GoToTab9<cr>
+nnoremap <D-1> 1gt
+nnoremap <D-2> 2gt
+nnoremap <D-3> 3gt
+nnoremap <D-4> 4gt
+nnoremap <D-5> 5gt
+nnoremap <D-6> 6gt
+nnoremap <D-7> 7gt
+nnoremap <D-8> 8gt
+nnoremap <D-9> 9gt
 
 " mimic behavior of macvim for copy/paste, which escapes from visual mode after Cmd+C/Cmd+V
 vnoremap <M-C> "*y
@@ -52,4 +67,15 @@ inoremap <M-V> <C-C>"*pa
 "nnoremap <Leader>f :action ActivateProjectToolWindow<cr>
 nnoremap <Leader>f :action SelectInProjectView<cr>
 
+nnoremap + <C-a>
+nnoremap - <C-x>
+xnoremap + g<C-a>
+xnoremap - g<C-x>
+
+" plugins
+set NERDTree
 set surround
+set incsearch
+set ignorecase smartcase
+set highlightedyank
+
