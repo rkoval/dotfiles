@@ -1,7 +1,11 @@
 {
   "usememo": {
     "prefix": "usememo",
-    "body": ["useMemo(() => {", "  return ${1:effect}", "}, [${2:deps}]);"],
+    "body": [
+      "const ${1:memoized} = useMemo(() => {",
+      "  return ${2:effect}",
+      "}, [${3:deps}]);",
+    ],
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "description": "useEffect",
   },

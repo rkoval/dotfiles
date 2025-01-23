@@ -4,8 +4,9 @@
     "body": [
       "try {",
       "  $0",
-      "} catch (error) {",
-      "  ErrorLogger.Log(error)",
+      "} catch (e) {",
+      "  const error = e as Error;",
+      "  ErrorLogger.Log(error);",
       "}",
     ],
     "scope": "javascript,typescript,javascriptreact,typescriptreact",

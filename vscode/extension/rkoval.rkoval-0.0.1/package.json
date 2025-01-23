@@ -24,6 +24,11 @@
         "category": "rkoval"
       },
       {
+        "command": "rkoval.goToProblemWithSeverityPriority",
+        "title": "goToProblemWithSeverityPriority",
+        "category": "rkoval"
+      },
+      {
         "command": "rkoval.openFileFromCursor",
         "title": "openFileFromCursor",
         "category": "rkoval"
