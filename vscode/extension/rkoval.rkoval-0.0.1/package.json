@@ -1,10 +1,11 @@
 {
   "name": "rkoval",
   "description": "Ryan Koval's VSCode Extension",
+  "repository": "https://github.com/rkoval/dotfiles",
   "publisher": "rkoval",
   "version": "0.0.1",
   "engines": {
-    "vscode": "1.93.1"
+    "vscode": "1.96.2"
   },
   "categories": [
     "Other"
@@ -48,7 +49,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
-    "@types/vscode": "1.93.0",
+    "@types/vscode": "1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vscode/test-cli": "^0.0.10",
@@ -56,6 +57,10 @@
     "bun-types": "1.1.30",
     "eslint": "^9.11.1",
     "prettier": "^3.3.3",
+    "vsce": "^2.15.0",
     "typescript": "^5.6.2"
+  },
+  "__metadata": {
+    "size": 65777964
   }
 }
