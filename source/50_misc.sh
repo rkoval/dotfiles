@@ -121,6 +121,9 @@ codi() {
 
 alias strip_image_metadata='exiftool -all= --icc_profile:all'
 
+alias convert_to_jpg='mogrify -format jpg -quality 85'
+alias convert_to_png='mogrify -format png -quality 70'
+
 # must make sure the encryption key is the same across browsers!!
 update_alfred_bookmarks_from_chromium() {
   local RED='\033[0;31m'
