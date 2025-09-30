@@ -6,6 +6,7 @@ casks=(
   alfred
   bettertouchtool
   brave-browser
+  cleanshot
   cursor
   discord
   docker

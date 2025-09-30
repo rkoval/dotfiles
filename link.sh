@@ -19,9 +19,9 @@ function symlinkDirectory() {
 }
 
 symlinkDirectory "$SCRIPT_DIR/link"
-ln -sFv "$SCRIPT_DIR/link/.config/lazygit" ~/.config
-ln -sFv "$SCRIPT_DIR/link/.config/direnv" ~/.config
-ln -sFv "$SCRIPT_DIR/nvim" ~/.config
+ln -sFv "$SCRIPT_DIR/link/.config/lazygit" ~/.config/lazygit
+ln -sFv "$SCRIPT_DIR/link/.config/direnv" ~/.config/direnv
+ln -sFv "$SCRIPT_DIR/nvim" ~/.config/nvim
 ln -sFv "$SCRIPT_DIR/submodules/packer.nvim" "$NVIM_PLUGINS_DIRECTORY"
 ln -sFv "$SCRIPT_DIR/prompt_rkoval_setup" ~/.zgen/sorin-ionescu/prezto-master/modules/prompt/functions/prompt_rkoval_setup
 
