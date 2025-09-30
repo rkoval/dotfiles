@@ -10,7 +10,6 @@ recipes=(
   ctop
   direnv
   editorconfig
-  fasd
   fzf
   gpg2
   php # for alfred workflows

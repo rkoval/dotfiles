@@ -6,14 +6,15 @@ casks=(
   alfred
   bettertouchtool
   brave-browser
+  cursor
   discord
-  disk-inventory-x
   docker
   firefox
   font-anonymice-nerd-font
   font-anonymous-pro
   font-lato
   fork
+  grandperspective
   google-chrome
   istat-menus
   iterm2
@@ -25,16 +26,12 @@ casks=(
   raycast
   resilio-sync
   spotify
-  steam
   sublime-text
   tableplus
   the-unarchiver
-  vlc
 )
 
-./sublime-text.sh
-
-brew tap homebrew/cask-fonts
+$SCRIPT_DIR/sublime-text.sh
 
 for cask in "${casks[@]}"; do
   brew install "$cask"
