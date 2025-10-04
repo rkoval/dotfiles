@@ -33,7 +33,7 @@ alias gcom='git checkout master 2> /dev/null || git checkout main'
 alias gmm='git merge master 2> /dev/null || git merge main'
 
 nb() {
-  git checkout -b ryan/$@
+  git checkout -b $USER/$@
 }
 
 gbu() {

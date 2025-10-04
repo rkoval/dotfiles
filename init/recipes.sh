@@ -19,7 +19,6 @@ recipes=(
   mitchellh/gon/gon # for notarizing mac apps
   neovim
   lua-language-server
-  nvm
   rbenv
   wakeonlan
   shellcheck
@@ -41,3 +40,6 @@ done
 
 # post-install steps
 "$HOMEBREW_HOME/opt/fzf/install" --no-bash --key-bindings --completion --update-rc
+
+# install nvm; not supported via homebrew anymore
+command -v nvm >> /dev/null || curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash

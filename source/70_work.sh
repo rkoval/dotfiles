@@ -24,8 +24,6 @@ use-livan-snippets () {
   ln -sf "$HOME/workspace/livan-app/editor/sublime/snippets" "$SNIPPET_SYMLINK"
 }
 
-export ANSIBLE_VAULT_PASSWORD_FILE=~/.ssh/vault_pass.txt
-
 alias dco='docker compose'
 
 dcou () {
@@ -33,16 +31,15 @@ dcou () {
     echo "usage: $0 {images...}"
     return 1
   fi
-  docker-compose stop $@ && docker-compose build $@ && docker-compose up -d --no-deps $@
+  docker compose stop $@ && docker compose build $@ && docker compose up -d --no-deps $@
 }
 
 dcodbu () {
   IMAGE=$1
-  docker-compose down $IMAGE && docker-compose build $IMAGE && docker-compose up $IMAGE
+  docker compose down $IMAGE && docker compose build $IMAGE && docker compose up $IMAGE
 }
 
 # kubernetes
-alias emk='eval $(minikube docker-env)'
 alias ku='kubectl'
 
 kuns () {
@@ -65,9 +62,6 @@ alias tf='terraform'
 alias pa='pachctl'
 alias jest='nocorrect jest'
 
-alias jg1="cd ~/GitHub/guilded && source guilded_profile.sh"
-alias jg2="cd ~/GitHub/guilded2 && source guilded_profile.sh"
-alias jg3="cd ~/GitHub/guilded3 && source guilded_profile.sh"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 pathappend "$ANDROID_HOME/platform-tools"
 
@@ -109,6 +103,4 @@ c2o() {
   cd "$src"
 }
 
-alias sshuserver='ec2connect i-012c81a7a5763cd0a'
-alias sshuserverstress='ec2connect i-069ab7d5062ca8196'
-alias sshmodbot='ec2connect i-0a4789ff84f0393ef'
+export LC_ALL=en_US.UTF-8
