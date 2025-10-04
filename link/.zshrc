@@ -69,10 +69,6 @@ setopt nosharehistory
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-if $(which kops > /dev/null 2>&1); then
-  source <(kops completion zsh)
-fi
-
 bindkey '^R' history-incremental-search-backward
 bindkey '^N' down-history
 bindkey '^P' up-history
@@ -95,3 +91,9 @@ eval "$(direnv hook zsh)"
 
 unsetopt correct
 unsetopt correct_all
+
+# bun completions
+[ -s "/Users/ryankoval/.bun/_bun" ] && source "/Users/ryankoval/.bun/_bun"
+
+which uv > /dev/null 2>&1 && eval "$(uv generate-shell-completion zsh)"
+which uvx > /dev/null 2>&1 && eval "$(uvx --generate-shell-completion zsh)"

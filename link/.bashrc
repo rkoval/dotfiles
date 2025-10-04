@@ -18,3 +18,5 @@ function src() {
 }
 
 src
+
+. "$HOME/.local/bin/env"
