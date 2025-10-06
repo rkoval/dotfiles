@@ -47,6 +47,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
+    "bun": "1.2.23",
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
     "@types/vscode": "1.96.0",
@@ -57,8 +58,8 @@
     "bun-types": "1.1.30",
     "eslint": "^9.11.1",
     "prettier": "^3.3.3",
-    "vsce": "^2.15.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vsce": "^2.15.0"
   },
   "__metadata": {
     "size": 65777964
