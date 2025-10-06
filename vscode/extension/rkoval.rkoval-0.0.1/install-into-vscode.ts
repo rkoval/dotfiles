@@ -24,7 +24,7 @@ for (const commandFile of commandFiles) {
   });
 }
 await fs.writeFile('./package.json', JSON.stringify(packageJson, null, 2));
-await $`bun install`;
+await $`npm install`;
 await $`rm -rf out`;
 await $`bun run compile`;
 await $`vsce package`;
