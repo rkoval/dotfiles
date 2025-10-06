@@ -72,7 +72,25 @@ alias hbr='hub browse'
 alias hbra='hub browse -- actions'
 alias hbrv='hub browse -- commit/$(grph)'
 hbrc() {
-  hub browse -c -- commit/$(grph) && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
+  remote_url=$(git remote get-url origin 2>/dev/null)
+
+  if [ -z "$remote_url" ]; then
+    echo "No remote origin found."
+    exit 1
+  fi
+
+  commit_sha=$(git rev-parse --verify HEAD)
+  if [[ "$remote_url" == *"git@github"* ]]; then
+    hub browse -c -- commit/$commit_sha && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
+  elif [[ "$remote_url" == *"git@gitlab"* ]]; then
+    repo_url=$(glab repo view -F json | jq -r '.web_url')
+    permalink="${repo_url%/}/-/commit/${commit_sha}"
+    echo -n "$permalink" | pbcopy
+    osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
+  else
+    echo "Remote is neither GitHub nor GitLab (URL: $remote_url)"
+    return 1
+  fi
   gp || osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
 }
 
