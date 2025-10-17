@@ -31,6 +31,7 @@ alias gwt='git worktree'
 alias gs='git stash save --include-untracked'
 alias gcom='git checkout master 2> /dev/null || git checkout main'
 alias gmm='git merge master 2> /dev/null || git merge main'
+alias grim='git rebase --interactive master 2> /dev/null || git rebase --interactive main'
 
 nb() {
   git checkout -b $USER/$@
@@ -67,28 +68,105 @@ gcowt() {
   git worktree add "$tempRepoFolder" $@ && subl "$tempRepoFolder" && cd "$tempRepoFolder"
 }
 
-alias hpr='hub pull-request --browse --push --edit'
-alias hbr='hub browse'
-alias hbra='hub browse -- actions'
-alias hbrv='hub browse -- commit/$(grph)'
-hbrc() {
+get_remote_type() {
+  local remote_url
   remote_url=$(git remote get-url origin 2>/dev/null)
-
+  
   if [ -z "$remote_url" ]; then
-    echo "No remote origin found."
-    exit 1
+    echo "NONE"
+    return
   fi
-
-  commit_sha=$(git rev-parse --verify HEAD)
+  
   if [[ "$remote_url" == *"git@github"* ]]; then
-    hub browse -c -- commit/$commit_sha && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
+    echo "GITHUB"
   elif [[ "$remote_url" == *"git@gitlab"* ]]; then
+    echo "GITLAB"
+  else
+    echo "NONE"
+  fi
+}
+
+# Create pull/merge request
+hpr() {
+  local remote_type
+  remote_type=$(get_remote_type)
+  
+  if [ "$remote_type" = "GITHUB" ]; then
+    hub pull-request --browse --push --edit "$@"
+  elif [ "$remote_type" = "GITLAB" ]; then
+    glab mr create --push --remove-source-branch --squash-before-merge "$@"
+  else
+    echo "No GitHub or GitLab remote found"
+    return 1
+  fi
+}
+
+# Browse repository
+hbr() {
+  local remote_type
+  remote_type=$(get_remote_type)
+  
+  if [ "$remote_type" = "GITHUB" ]; then
+    hub browse
+  elif [ "$remote_type" = "GITLAB" ]; then
+    # glab URL encodes branch name when going through `glab repo view` directly, which breaks web
+    open "$(glab repo view -F json | jq -r '.web_url')/-/tree/$(git rev-parse --abbrev-ref HEAD)"
+  else
+    echo "No GitHub or GitLab remote found"
+    return 1
+  fi
+}
+
+# Browse actions/pipelines
+hbra() {
+  local remote_type
+  remote_type=$(get_remote_type)
+  
+  if [ "$remote_type" = "GITHUB" ]; then
+    hub browse -- actions
+  elif [ "$remote_type" = "GITLAB" ]; then
+    # GitLab equivalent - open pipelines page
+    local repo_url
+    repo_url=$(glab repo view -F json | jq -r '.web_url')
+    open "${repo_url}/-/pipelines"
+  else
+    echo "No GitHub or GitLab remote found"
+    return 1
+  fi
+}
+
+# Browse specific commit
+hbrv() {
+  local remote_type
+  remote_type=$(get_remote_type)
+  
+  if [ "$remote_type" = "GITHUB" ]; then
+    hub browse -- commit/"$(grph)"
+  elif [ "$remote_type" = "GITLAB" ]; then
+    local repo_url commit_sha
+    repo_url=$(glab repo view -F json | jq -r '.web_url')
+    commit_sha=$(grph)
+    open "${repo_url}/-/commit/${commit_sha}"
+  else
+    echo "No GitHub or GitLab remote found"
+    return 1
+  fi
+}
+
+hbrc() {
+  local remote_type
+  remote_type=$(get_remote_type)
+
+  commit_sha=$(git rev-parse HEAD)
+  if [ "$remote_type" = "GITHUB" ]; then
+    hub browse -c -- commit/$commit_sha && osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
+  elif [ "$remote_type" = "GITLAB" ]; then
     repo_url=$(glab repo view -F json | jq -r '.web_url')
     permalink="${repo_url%/}/-/commit/${commit_sha}"
     echo -n "$permalink" | pbcopy
     osascript -e "display notification \"$(pbpaste)\" with title \"Copied to clipboard\""
   else
-    echo "Remote is neither GitHub nor GitLab (URL: $remote_url)"
+    echo "Remote is neither GitHub nor GitLab (type: $remote_type)"
     return 1
   fi
   gp || osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
@@ -103,7 +181,19 @@ hbrp() {
     prefix=""
   fi
   prefix="$(echo "$prefix" | xargs)" # trim whitespace
-  commit_link="$(hub browse -u -- commit/$(grph))"
+  local remote_type
+  remote_type=$(get_remote_type)
+
+  commit_sha=$(git rev-parse HEAD)
+  if [ "$remote_type" = "GITHUB" ]; then
+    commit_link=$(hub browse -c -- commit/$commit_sha)
+  elif [ "$remote_type" = "GITLAB" ]; then
+    repo_url=$(glab repo view -F json | jq -r '.web_url')
+    commit_link="${repo_url%/}/-/commit/${commit_sha}"
+  else
+    echo "Remote is neither GitHub nor GitLab (type: $remote_type)"
+    return 1
+  fi
   share-to-clipboard-url -content="$prefix $commit_link" -url="$url"
 }
 
