@@ -12,7 +12,12 @@ export default async function addConsoleLogToWordUnderCursor(options: {stringify
     let extension = document.fileName.split('.').pop()?.toLowerCase();
     let stringToInsert = '';
 
-    if (extension === 'py') {
+    if (
+      extension === 'py' ||
+      extension === 'star' ||
+      extension === 'bzl' ||
+      extension === 'bazel'
+    ) {
       stringToInsert = `${indent}print("🍕 ${word}", ${word})\n`;
     } else if (extension === 'go') {
       stringToInsert = `${indent}log.Printf("🍕 ${word} %#v", ${word})\n`;
