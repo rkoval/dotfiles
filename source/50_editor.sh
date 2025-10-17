@@ -7,10 +7,10 @@ alias vi=vim
 alias gvim='neovide'
 
 if [ ! $SSH_TTY ] && is_osx; then
-  export LESSEDIT='gvim ?lm+%lm -- %f'
+  export LESSEDIT='nvim ?lm+%lm -- %f'
 fi
 
-export VISUAL="gvim"
+export VISUAL="nvim"
 export PAGER='less'
 export MANPAGER='nvim +Man!'
 
