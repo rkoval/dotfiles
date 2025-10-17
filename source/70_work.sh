@@ -104,3 +104,9 @@ c2o() {
 }
 
 export LC_ALL=en_US.UTF-8
+
+alias bz='bazel'
+alias bzr='bazel run'
+alias bzb='bazel build'
+alias bzt='bazel test'
+alias bzc='bazel clean'
