@@ -65,7 +65,9 @@ fi
 # Customize to your needs...
 
 export KEYTIMEOUT=1
-setopt nosharehistory
+setopt appendhistory
+setopt incappendhistory
+unsetopt sharehistory
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
