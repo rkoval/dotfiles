@@ -194,7 +194,12 @@ hbrp() {
     echo "Remote is neither GitHub nor GitLab (type: $remote_type)"
     return 1
   fi
-  share-to-clipboard-url -content="$prefix $commit_link" -url="$url"
+  if gp; then
+    share-to-clipboard-url -content="$prefix $commit_link" -url="$url"
+  else
+    osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
+    return 1
+  fi
 }
 
 gcmp() {
@@ -202,11 +207,7 @@ gcmp() {
   message="$1"
   shift 1
   git commit --message "$message" -n || return 1
-  if gp; then
-    hbrp $@
-  else
-    osascript -e "display notification \"Failed to push after copy (probably needs force)\" with title \"Error\""
-  fi
+  hbrp "$@" || return 1
 }
 
 alias cib='circleci browse'
