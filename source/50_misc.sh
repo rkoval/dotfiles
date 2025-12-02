@@ -32,6 +32,7 @@ alias gs='git stash save --include-untracked'
 alias gcom='git checkout master 2> /dev/null || git checkout main'
 alias gmm='git merge master 2> /dev/null || git merge main'
 alias grim='git rebase --interactive master 2> /dev/null || git rebase --interactive main'
+alias gctb='gs && gcm "trigger build" --allow-empty && gsp && gp'
 
 nb() {
   git checkout -b $USER/$@
