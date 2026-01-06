@@ -54,7 +54,6 @@ if ! zgen saved; then
     zgen load djui/alias-tips
     command -v kubectl > /dev/null && zgen load mattbangert/kubectl-zsh-plugin
     command -v kubectl > /dev/null && zgen load Dbz/zsh-kubernetes
-    command -v docker-compose > /dev/null && zgen load docker/compose contrib/completion/zsh
     command -v docker > /dev/null && zgen load docker/cli contrib/completion/zsh
     command -v fly > /dev/null && zgen load sbodiu-pivotal/fly-zsh-autocomplete-plugin
 
