@@ -40,7 +40,6 @@ if ! zgen saved; then
     zgen prezto completion
     zgen prezto syntax-highlighting
     zgen prezto python
-    zgen prezto fasd
     zgen prezto prompt
     zgen prezto homebrew
     command -v docker > /dev/null && zgen prezto docker
@@ -123,6 +122,8 @@ load-nvmrc() {
     nvm use default
   fi
 }
+
+eval "$(zoxide init zsh)"
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc

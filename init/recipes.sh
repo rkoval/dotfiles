@@ -32,6 +32,7 @@ recipes=(
   vimpager
   difftastic
   rust
+  zoxide
 )
 
 for recipe in "${recipes[@]}"; do
