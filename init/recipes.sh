@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "installing homebrew recipes ..."
 recipes=(
-  'htop --ignore-dependencies'
+  btop
   ripgrep
   fd
   cmake
