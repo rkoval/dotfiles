@@ -29,7 +29,10 @@ ln -sFv "$SCRIPT_DIR/prompt_rkoval_setup" ~/.zgen/sorin-ionescu/prezto-master/mo
 
 mkdir -p ~/.cursor/extensions
 mkdir -p ~/.vscode/extensions
+mkdir -p ~/.claude
 ln -sFv "$SCRIPT_DIR/vscode/extension/rkoval.rkoval-0.0.1" ~/.cursor/extensions
 ln -sFv "$SCRIPT_DIR/vscode/extension/rkoval.rkoval-0.0.1" ~/.vscode/extensions
 ln -sFv "$SCRIPT_DIR/vscode/snippets" "$HOME/Library/Application Support/Cursor/User"
 # ln -sFv "$SCRIPT_DIR/vscode/snippets" "$HOME/Library/Application Support/VSCode/User"
+ln -sFv "$SCRIPT_DIR/claude/settings.json" ~/.claude/settings.json
+ln -sFv "$SCRIPT_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
