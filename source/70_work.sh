@@ -6,37 +6,12 @@ RESET_COLOR='\033[0m'
 
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
-dockercleanup() {
-  docker rmi $(docker images --filter "dangling=true" -q --no-trunc) \
-  docker rm $(docker ps -qa --no-trunc --filter "status=exited")
-}
-
 SUBLIME_DIRECTORY="$HOME/Library/Application Support/Sublime Text/Packages/User"
 SNIPPET_SYMLINK="$SUBLIME_DIRECTORY/project-snippets"
 use-marketing-site-snippets () {
   rm -f "$SNIPPET_SYMLINK"
   set -x
   ln -sf "$HOME/workspace/end-to-end-productions/marketing-site/editor/snippets" "$SNIPPET_SYMLINK"
-}
-use-livan-snippets () {
-  rm -f "$SNIPPET_SYMLINK"
-  set -x
-  ln -sf "$HOME/workspace/livan-app/editor/sublime/snippets" "$SNIPPET_SYMLINK"
-}
-
-alias dco='docker compose'
-
-dcou () {
-  if [ -z "$1" ]; then
-    echo "usage: $0 {images...}"
-    return 1
-  fi
-  docker compose stop $@ && docker compose build $@ && docker compose up -d --no-deps $@
-}
-
-dcodbu () {
-  IMAGE=$1
-  docker compose down $IMAGE && docker compose build $IMAGE && docker compose up $IMAGE
 }
 
 # kubernetes
@@ -59,7 +34,6 @@ kudc () {
 }
 
 alias tf='terraform'
-alias pa='pachctl'
 alias jest='nocorrect jest'
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -84,23 +58,6 @@ copy-to-other-git-repo() {
     cd "$dest"
     echo "$changes" | git apply
   fi
-}
-
-c2o() {
-  src="$GUILDED_ROOT_DIR"
-  if ! pwd | grep guilded3 >> /dev/null; then
-    dest="$HOME/GitHub/guilded3"
-  else
-    dest="$HOME/GitHub/guilded"
-  fi
-  copy-to-other-git-repo "$src" "$dest"
-
-  echo -e "\n${GRAY}current working tree:${RESET_COLOR}"
-  gws
-  cd "$dest"
-  echo -e "\n${GRAY}updated destination working tree:${RESET_COLOR}"
-  gws
-  cd "$src"
 }
 
 alias slack-paste-git-apply='pbpaste | cat - <(echo "") | git apply'
