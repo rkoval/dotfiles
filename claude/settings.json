@@ -10,5 +10,9 @@
     "playwright@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
-  "editorMode": "vim"
+  "skipDangerousModePermissionPrompt": true,
+  "themeId": 1,
+  "editorMode": "vim",
+  "defaultMode": "bypassPermissions",
+  "bypassPermissionsModeAccepted": true
 }
