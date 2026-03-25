@@ -1,0 +1,38 @@
+# docs at https://ghostty.org/docs/config/reference
+
+#
+# color theme
+#
+# `ghostty +list-themes` to see all themes
+theme = iTerm2 Default
+
+# override black
+palette = 0=#51576d
+palette = 4=#6060BF
+
+split-divider-color = #999999
+font-family = "AnonymicePro Nerd Font Mono"
+
+font-thicken = true
+font-thicken-strength = 255
+font-size = 12
+adjust-cell-height = 10%
+
+window-padding-x = 5
+macos-titlebar-style = tabs
+
+#
+# keybindings
+#
+
+keybind = global:ctrl+a=toggle_visibility
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+l=goto_split:right
+
+#
+# misc
+#
+copy-on-select = clipboard

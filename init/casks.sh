@@ -15,14 +15,14 @@ casks=(
   font-anonymous-pro
   font-lato
   fork
-  grandperspective
+  ghostty
   google-chrome
+  grandperspective
   istat-menus
-  iterm2
   karabiner-elements
-  ngrok
   linearmouse
   neovide
+  ngrok
   postman
   raycast
   resilio-sync
