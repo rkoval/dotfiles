@@ -24,9 +24,6 @@ macos-titlebar-style = tabs
 #
 # keybindings
 #
-
-keybind = global:ctrl+a=toggle_visibility
-
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+k=goto_split:up
 keybind = ctrl+j=goto_split:down
