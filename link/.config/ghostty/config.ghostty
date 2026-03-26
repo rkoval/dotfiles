@@ -14,9 +14,7 @@ split-divider-color = #999999
 font-family = "AnonymicePro Nerd Font Mono"
 
 font-thicken = true
-font-thicken-strength = 255
-font-size = 12
-adjust-cell-height = 10%
+font-size = 13
 
 window-padding-x = 5
 macos-titlebar-style = tabs
